@@ -1,0 +1,1382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4c4391a3-fbfe-4e09-a724-9acd9bf35d1d" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/finansvarsel.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/data.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/db.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/main.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/settings.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/user.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/certifi-2017.11.5.dist-info/DESCRIPTION.rst" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/certifi-2017.11.5.dist-info/INSTALLER" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/certifi-2017.11.5.dist-info/METADATA" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/certifi-2017.11.5.dist-info/RECORD" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/certifi-2017.11.5.dist-info/WHEEL" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/certifi-2017.11.5.dist-info/metadata.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/certifi-2017.11.5.dist-info/top_level.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/certifi/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/certifi/__main__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/certifi/cacert.pem" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/certifi/core.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/certifi/old_root.pem" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/certifi/weak.pem" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet-3.0.4.dist-info/DESCRIPTION.rst" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet-3.0.4.dist-info/INSTALLER" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet-3.0.4.dist-info/METADATA" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet-3.0.4.dist-info/RECORD" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet-3.0.4.dist-info/WHEEL" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet-3.0.4.dist-info/entry_points.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet-3.0.4.dist-info/metadata.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet-3.0.4.dist-info/top_level.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/big5freq.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/big5prober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/chardistribution.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/charsetgroupprober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/charsetprober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/cli/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/cli/chardetect.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/codingstatemachine.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/compat.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/cp949prober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/enums.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/escprober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/escsm.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/eucjpprober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/euckrfreq.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/euckrprober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/euctwfreq.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/euctwprober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/gb2312freq.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/gb2312prober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/hebrewprober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/jisfreq.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/jpcntx.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/langbulgarianmodel.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/langcyrillicmodel.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/langgreekmodel.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/langhebrewmodel.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/langhungarianmodel.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/langthaimodel.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/langturkishmodel.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/latin1prober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/mbcharsetprober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/mbcsgroupprober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/mbcssm.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/sbcharsetprober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/sbcsgroupprober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/sjisprober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/universaldetector.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/utf8prober.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/chardet/version.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/easy-install.pth" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/et_xmlfile-1.0.1-py3.5.egg-info/PKG-INFO" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/et_xmlfile-1.0.1-py3.5.egg-info/SOURCES.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/et_xmlfile-1.0.1-py3.5.egg-info/dependency_links.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/et_xmlfile-1.0.1-py3.5.egg-info/installed-files.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/et_xmlfile-1.0.1-py3.5.egg-info/top_level.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/et_xmlfile/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/et_xmlfile/tests/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/et_xmlfile/tests/common_imports.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/et_xmlfile/tests/helper.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/et_xmlfile/tests/test_incremental_xmlfile.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/et_xmlfile/xmlfile.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/gspread-0.6.2-py3.5.egg-info/PKG-INFO" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/gspread-0.6.2-py3.5.egg-info/SOURCES.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/gspread-0.6.2-py3.5.egg-info/dependency_links.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/gspread-0.6.2-py3.5.egg-info/installed-files.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/gspread-0.6.2-py3.5.egg-info/pbr.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/gspread-0.6.2-py3.5.egg-info/requires.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/gspread-0.6.2-py3.5.egg-info/top_level.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/gspread/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/gspread/client.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/gspread/exceptions.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/gspread/httpsession.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/gspread/models.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/gspread/ns.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/gspread/urls.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/gspread/utils.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/httplib2-0.10.3-py3.5.egg-info/PKG-INFO" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/httplib2-0.10.3-py3.5.egg-info/SOURCES.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/httplib2-0.10.3-py3.5.egg-info/dependency_links.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/httplib2-0.10.3-py3.5.egg-info/installed-files.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/httplib2-0.10.3-py3.5.egg-info/top_level.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/httplib2/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/httplib2/cacerts.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/httplib2/iri2uri.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna-2.6.dist-info/DESCRIPTION.rst" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna-2.6.dist-info/INSTALLER" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna-2.6.dist-info/METADATA" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna-2.6.dist-info/RECORD" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna-2.6.dist-info/WHEEL" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna-2.6.dist-info/metadata.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna-2.6.dist-info/top_level.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna/codec.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna/compat.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna/core.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna/idnadata.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna/intranges.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna/package_data.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/idna/uts46data.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/jdcal-1.3-py3.5.egg-info/PKG-INFO" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/jdcal-1.3-py3.5.egg-info/SOURCES.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/jdcal-1.3-py3.5.egg-info/dependency_links.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/jdcal-1.3-py3.5.egg-info/installed-files.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/jdcal-1.3-py3.5.egg-info/top_level.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/jdcal.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client-4.1.2.dist-info/DESCRIPTION.rst" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client-4.1.2.dist-info/INSTALLER" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client-4.1.2.dist-info/METADATA" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client-4.1.2.dist-info/RECORD" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client-4.1.2.dist-info/WHEEL" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client-4.1.2.dist-info/metadata.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client-4.1.2.dist-info/top_level.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/_helpers.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/_openssl_crypt.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/_pkce.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/_pure_python_crypt.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/_pycrypto_crypt.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/client.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/clientsecrets.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/_appengine_ndb.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/_metadata.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/appengine.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/devshell.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/dictionary_storage.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/django_util/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/django_util/apps.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/django_util/decorators.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/django_util/models.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/django_util/signals.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/django_util/site.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/django_util/storage.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/django_util/views.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/flask_util.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/gce.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/keyring_storage.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/multiprocess_file_storage.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/sqlalchemy.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/contrib/xsrfutil.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/crypt.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/file.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/service_account.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/tools.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/oauth2client/transport.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl-2.4.9-py3.5.egg-info/PKG-INFO" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl-2.4.9-py3.5.egg-info/SOURCES.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl-2.4.9-py3.5.egg-info/dependency_links.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl-2.4.9-py3.5.egg-info/installed-files.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl-2.4.9-py3.5.egg-info/requires.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl-2.4.9-py3.5.egg-info/top_level.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/.constants.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/cell/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/cell/cell.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/cell/interface.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/cell/read_only.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/cell/text.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/_3d.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/_chart.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/area_chart.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/axis.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/bar_chart.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/bubble_chart.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/chartspace.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/data_source.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/descriptors.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/error_bar.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/label.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/layout.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/legend.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/line_chart.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/marker.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/picture.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/pie_chart.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/print_settings.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/radar_chart.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/reader.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/reference.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/scatter_chart.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/series.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/series_factory.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/shapes.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/stock_chart.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/surface_chart.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/text.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/title.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/trendline.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chart/updown_bars.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chartsheet/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chartsheet/chartsheet.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chartsheet/custom.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chartsheet/properties.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chartsheet/protection.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chartsheet/publish.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chartsheet/relation.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/chartsheet/views.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/comments/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/comments/author.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/comments/comment_sheet.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/comments/comments.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/comments/shape_writer.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/compat/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/compat/abc.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/compat/numbers.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/compat/odict.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/compat/singleton.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/compat/strings.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/conftest.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/descriptors/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/descriptors/base.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/descriptors/excel.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/descriptors/namespace.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/descriptors/nested.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/descriptors/sequence.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/descriptors/serialisable.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/descriptors/slots.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/drawing/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/drawing/colors.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/drawing/drawing.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/drawing/effect.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/drawing/fill.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/drawing/graphic.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/drawing/image.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/drawing/line.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/drawing/shape.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/drawing/shapes.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/drawing/spreadsheet_drawing.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/drawing/text.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/formatting/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/formatting/formatting.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/formatting/rule.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/formula/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/formula/tokenizer.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/formula/translate.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/packaging/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/packaging/core.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/packaging/extended.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/packaging/interface.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/packaging/manifest.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/packaging/relationship.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/packaging/workbook.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/reader/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/reader/excel.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/reader/strings.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/reader/worksheet.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/alignment.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/borders.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/builtins.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/cell_style.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/colors.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/differential.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/fills.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/fonts.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/named_styles.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/numbers.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/protection.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/proxy.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/styleable.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/stylesheet.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/styles/table.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/utils/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/utils/bound_dictionary.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/utils/cell.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/utils/dataframe.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/utils/datetime.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/utils/escape.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/utils/exceptions.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/utils/formulas.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/utils/indexed_list.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/utils/protection.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/utils/units.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/child.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/defined_name.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/external_link/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/external_link/external.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/external_reference.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/function_group.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/interface.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/parser.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/pivot.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/properties.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/protection.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/read_only.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/smart_tags.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/views.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/web.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/workbook/workbook.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/copier.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/datavalidation.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/dimensions.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/drawing.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/filters.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/header_footer.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/hyperlink.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/merge.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/page.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/pagebreak.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/pivot.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/properties.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/protection.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/read_only.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/related.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/table.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/views.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/worksheet/worksheet.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/writer/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/writer/dump_worksheet.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/writer/etree_worksheet.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/writer/excel.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/writer/strings.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/writer/theme.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/writer/workbook.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/writer/worksheet.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/writer/write_only.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/xml/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/xml/constants.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/xml/functions.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/openpyxl/xml/namespace.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/EGG-INFO/PKG-INFO" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/EGG-INFO/SOURCES.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/EGG-INFO/dependency_links.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/EGG-INFO/entry_points.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/EGG-INFO/not-zip-safe" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/EGG-INFO/requires.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/EGG-INFO/top_level.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/appdirs.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/_cmd.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/adapter.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/cache.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/caches/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/caches/file_cache.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/caches/redis_cache.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/compat.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/controller.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/filewrapper.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/heuristics.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/serialize.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/cachecontrol/wrapper.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/colorama/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/colorama/ansi.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/colorama/ansitowin32.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/colorama/initialise.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/colorama/win32.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/colorama/winterm.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/_backport/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/_backport/misc.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/_backport/shutil.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/_backport/sysconfig.cfg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/_backport/sysconfig.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/_backport/tarfile.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/compat.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/database.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/index.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/locators.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/manifest.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/markers.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/metadata.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/resources.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/scripts.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/t32.exe" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/t64.exe" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/util.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/version.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/w32.exe" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/w64.exe" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distlib/wheel.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/distro.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_ihatexml.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_inputstream.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_tokenizer.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_trie/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_trie/_base.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_trie/datrie.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_trie/py.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/_utils.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/constants.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/alphabeticalattributes.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/base.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/inject_meta_charset.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/lint.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/optionaltags.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/sanitizer.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/filters/whitespace.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/html5parser.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/serializer.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treeadapters/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treeadapters/genshi.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treeadapters/sax.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treebuilders/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treebuilders/base.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treebuilders/dom.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treebuilders/etree.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treebuilders/etree_lxml.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treewalkers/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treewalkers/base.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treewalkers/dom.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treewalkers/etree.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treewalkers/etree_lxml.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/html5lib/treewalkers/genshi.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/ipaddress.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/lockfile/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/lockfile/linklockfile.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/lockfile/mkdirlockfile.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/lockfile/pidlockfile.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/lockfile/sqlitelockfile.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/lockfile/symlinklockfile.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/ordereddict.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/__about__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/_compat.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/_structures.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/markers.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/requirements.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/specifiers.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/utils.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/packaging/version.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/pkg_resources/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/progress/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/progress/bar.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/progress/counter.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/progress/helpers.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/progress/spinner.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/pyparsing.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/re-vendor.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/adapters.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/api.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/auth.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/cacert.pem" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/_vendor/requests/certs.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/basecommand.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/baseparser.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/cmdoptions.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/commands/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/commands/check.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/commands/completion.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/commands/download.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/commands/freeze.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/commands/hash.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/commands/help.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/commands/install.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/commands/list.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/commands/search.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/commands/show.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/commands/uninstall.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/commands/wheel.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/compat/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/compat/dictconfig.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/download.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/exceptions.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/index.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/locations.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/models/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/models/index.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/operations/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/operations/check.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/operations/freeze.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/pep425tags.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/req/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/req/req_file.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/req/req_install.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/req/req_set.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/req/req_uninstall.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/status_codes.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/utils/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/utils/appdirs.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/utils/build.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/utils/deprecation.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/utils/encoding.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/utils/filesystem.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/utils/glibc.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/utils/hashes.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/utils/logging.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/utils/outdated.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/utils/packaging.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/utils/setuptools_build.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/utils/ui.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/vcs/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/vcs/bazaar.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/vcs/git.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/vcs/mercurial.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/vcs/subversion.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-9.0.1-py3.5.egg/pip/wheel.py" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+              <folding>
+                <element signature="e#1#60#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="683">
+              <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+              <folding>
+                <element signature="e#1#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1309">
+              <caret line="79" column="23" lean-forward="false" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+                <marker date="1514290721564" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+                <marker date="1514290721564" expanded="true" signature="520:693" ph="CREATE TABLE... bsu" />
+                <marker date="1514290721564" expanded="true" signature="911:1066" ph="CREATE TABLE... users" />
+                <marker date="1514290721564" expanded="true" signature="1677:1813" ph="INSERT INTO bsu... " />
+                <marker date="1514290721564" expanded="true" signature="2115:2180" ph="INSERT INTO users... " />
+                <marker date="1514290721564" expanded="true" signature="2115:2448" ph="INSERT INTO users... " />
+                <marker date="1514290721564" expanded="true" signature="2305:2362" ph="UPDATE users... " />
+                <marker date="1514290721564" expanded="true" signature="2305:2376" ph="UPDATE users... " />
+                <marker date="1514290721564" expanded="true" signature="2305:2377" ph="UPDATE users... " />
+                <marker date="1514290721564" expanded="true" signature="2305:2378" ph="UPDATE users... " />
+                <marker date="1514290721564" expanded="true" signature="2822:2898" ph="SELECT id,na... users" />
+                <marker date="1514290721564" expanded="true" signature="2822:2940" ph="SELECT users... users" />
+                <marker date="1514290721564" expanded="true" signature="3156:3173" ph="SELECT produ... bsu" />
+                <marker date="1514290721564" expanded="true" signature="3173:3176" ph="SELECT date,... " />
+                <marker date="1514290721564" expanded="true" signature="3372:3397" ph="SELECT produ... bsu" />
+                <marker date="1514290721564" expanded="true" signature="3372:3420" ph="SELECT bank_... bsu" />
+                <marker date="1514290721564" expanded="true" signature="3635:3682" ph="SELECT inter... bsu" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1819">
+              <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="49" column="27" lean-forward="false" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/__init__.py" />
+        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/user.py" />
+        <option value="$PROJECT_DIR$/db.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/data.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="910" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="finansvarsel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finansvarsel" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\pycharm-projects\finansvarsel" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4c4391a3-fbfe-4e09-a724-9acd9bf35d1d" name="Default" comment="" />
+      <created>1514054465808</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1514054465808</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="0" width="910" height="1047" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11086718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37176472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="79" column="23" lean-forward="true" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1514290721564" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514290721564" expanded="true" signature="520:693" ph="CREATE TABLE... bsu" />
+            <marker date="1514290721564" expanded="true" signature="911:1066" ph="CREATE TABLE... users" />
+            <marker date="1514290721564" expanded="true" signature="1677:1813" ph="INSERT INTO bsu... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2180" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2448" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2362" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2376" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2377" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2378" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2822:2898" ph="SELECT id,na... users" />
+            <marker date="1514290721564" expanded="true" signature="2822:2940" ph="SELECT users... users" />
+            <marker date="1514290721564" expanded="true" signature="3156:3173" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3173:3176" ph="SELECT date,... " />
+            <marker date="1514290721564" expanded="true" signature="3372:3397" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3372:3420" ph="SELECT bank_... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3635:3682" ph="SELECT inter... bsu" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding>
+            <element signature="e#1#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1819">
+          <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="49" column="27" lean-forward="false" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="e#1#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+          <folding>
+            <element signature="e#1#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1683">
+          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1514290721564" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514290721564" expanded="true" signature="520:693" ph="CREATE TABLE... bsu" />
+            <marker date="1514290721564" expanded="true" signature="911:1066" ph="CREATE TABLE... users" />
+            <marker date="1514290721564" expanded="true" signature="1677:1813" ph="INSERT INTO bsu... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2180" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2448" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2362" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2376" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2377" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2378" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2822:2898" ph="SELECT id,na... users" />
+            <marker date="1514290721564" expanded="true" signature="2822:2940" ph="SELECT users... users" />
+            <marker date="1514290721564" expanded="true" signature="3156:3173" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3173:3176" ph="SELECT date,... " />
+            <marker date="1514290721564" expanded="true" signature="3372:3397" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3372:3420" ph="SELECT bank_... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3635:3682" ph="SELECT inter... bsu" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="49" column="27" lean-forward="true" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="88" column="31" lean-forward="true" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="66" column="29" lean-forward="true" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1514290721564" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514290721564" expanded="true" signature="520:693" ph="CREATE TABLE... bsu" />
+            <marker date="1514290721564" expanded="true" signature="911:1066" ph="CREATE TABLE... users" />
+            <marker date="1514290721564" expanded="true" signature="1677:1813" ph="INSERT INTO bsu... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2180" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2448" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2362" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2376" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2377" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2378" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2822:2898" ph="SELECT id,na... users" />
+            <marker date="1514290721564" expanded="true" signature="2822:2940" ph="SELECT users... users" />
+            <marker date="1514290721564" expanded="true" signature="3156:3173" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3173:3176" ph="SELECT date,... " />
+            <marker date="1514290721564" expanded="true" signature="3372:3397" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3372:3420" ph="SELECT bank_... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3635:3682" ph="SELECT inter... bsu" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="49" column="27" lean-forward="true" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="69" column="21" lean-forward="true" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1514290721564" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514290721564" expanded="true" signature="520:693" ph="CREATE TABLE... bsu" />
+            <marker date="1514290721564" expanded="true" signature="911:1066" ph="CREATE TABLE... users" />
+            <marker date="1514290721564" expanded="true" signature="1677:1813" ph="INSERT INTO bsu... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2180" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2448" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2362" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2376" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2377" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2378" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2822:2898" ph="SELECT id,na... users" />
+            <marker date="1514290721564" expanded="true" signature="2822:2940" ph="SELECT users... users" />
+            <marker date="1514290721564" expanded="true" signature="3156:3173" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3173:3176" ph="SELECT date,... " />
+            <marker date="1514290721564" expanded="true" signature="3372:3397" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3372:3420" ph="SELECT bank_... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3635:3682" ph="SELECT inter... bsu" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="e#1#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="48" lean-forward="false" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+          <folding>
+            <element signature="e#1#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1514290721564" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514290721564" expanded="true" signature="520:693" ph="CREATE TABLE... bsu" />
+            <marker date="1514290721564" expanded="true" signature="911:1066" ph="CREATE TABLE... users" />
+            <marker date="1514290721564" expanded="true" signature="1677:1813" ph="INSERT INTO bsu... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2180" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2448" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2362" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2376" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2377" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2378" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2822:2898" ph="SELECT id,na... users" />
+            <marker date="1514290721564" expanded="true" signature="2822:2940" ph="SELECT users... users" />
+            <marker date="1514290721564" expanded="true" signature="3156:3173" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3173:3176" ph="SELECT date,... " />
+            <marker date="1514290721564" expanded="true" signature="3372:3397" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3372:3420" ph="SELECT bank_... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3635:3682" ph="SELECT inter... bsu" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1514290721564" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514290721564" expanded="true" signature="520:693" ph="CREATE TABLE... bsu" />
+            <marker date="1514290721564" expanded="true" signature="911:1066" ph="CREATE TABLE... users" />
+            <marker date="1514290721564" expanded="true" signature="1677:1813" ph="INSERT INTO bsu... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2180" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2448" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2362" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2376" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2377" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2378" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2822:2898" ph="SELECT id,na... users" />
+            <marker date="1514290721564" expanded="true" signature="2822:2940" ph="SELECT users... users" />
+            <marker date="1514290721564" expanded="true" signature="3156:3173" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3173:3176" ph="SELECT date,... " />
+            <marker date="1514290721564" expanded="true" signature="3372:3397" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3372:3420" ph="SELECT bank_... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3635:3682" ph="SELECT inter... bsu" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="50" lean-forward="false" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1514290721564" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514290721564" expanded="true" signature="520:693" ph="CREATE TABLE... bsu" />
+            <marker date="1514290721564" expanded="true" signature="911:1066" ph="CREATE TABLE... users" />
+            <marker date="1514290721564" expanded="true" signature="1677:1813" ph="INSERT INTO bsu... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2180" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2448" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2362" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2376" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2377" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2378" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2822:2898" ph="SELECT id,na... users" />
+            <marker date="1514290721564" expanded="true" signature="2822:2940" ph="SELECT users... users" />
+            <marker date="1514290721564" expanded="true" signature="3156:3173" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3173:3176" ph="SELECT date,... " />
+            <marker date="1514290721564" expanded="true" signature="3372:3397" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3372:3420" ph="SELECT bank_... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3635:3682" ph="SELECT inter... bsu" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1514290721564" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514290721564" expanded="true" signature="520:693" ph="CREATE TABLE... bsu" />
+            <marker date="1514290721564" expanded="true" signature="911:1066" ph="CREATE TABLE... users" />
+            <marker date="1514290721564" expanded="true" signature="1677:1813" ph="INSERT INTO bsu... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2180" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2448" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2362" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2376" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2377" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2378" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2822:2898" ph="SELECT id,na... users" />
+            <marker date="1514290721564" expanded="true" signature="2822:2940" ph="SELECT users... users" />
+            <marker date="1514290721564" expanded="true" signature="3156:3173" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3173:3176" ph="SELECT date,... " />
+            <marker date="1514290721564" expanded="true" signature="3372:3397" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3372:3420" ph="SELECT bank_... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3635:3682" ph="SELECT inter... bsu" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client_secret.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client_secret.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="49" column="27" lean-forward="false" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="79" column="23" lean-forward="false" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1514290721564" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514290721564" expanded="true" signature="520:693" ph="CREATE TABLE... bsu" />
+            <marker date="1514290721564" expanded="true" signature="911:1066" ph="CREATE TABLE... users" />
+            <marker date="1514290721564" expanded="true" signature="1677:1813" ph="INSERT INTO bsu... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2180" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2115:2448" ph="INSERT INTO users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2362" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2376" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2377" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2305:2378" ph="UPDATE users... " />
+            <marker date="1514290721564" expanded="true" signature="2822:2898" ph="SELECT id,na... users" />
+            <marker date="1514290721564" expanded="true" signature="2822:2940" ph="SELECT users... users" />
+            <marker date="1514290721564" expanded="true" signature="3156:3173" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3173:3176" ph="SELECT date,... " />
+            <marker date="1514290721564" expanded="true" signature="3372:3397" ph="SELECT produ... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3372:3420" ph="SELECT bank_... bsu" />
+            <marker date="1514290721564" expanded="true" signature="3635:3682" ph="SELECT inter... bsu" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding>
+            <element signature="e#1#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1819">
+          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding>
+            <element signature="e#1#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="683">
+          <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
