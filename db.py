@@ -15,7 +15,7 @@ def create_bsu_table():
     c.execute(sql_cmd_dt)
 
     # Create table
-    sql_cmd_ct = '''CREATE TABLE bsu(product_id TEXT, bank_name TEXT, bank_url TEXT, bank_region TEXT, bank_account_name TEXT, publication_date TEXT, interest_rate TEXT, PRIMARY KEY(bank_name))'''
+    sql_cmd_ct = '''CREATE TABLE bsu(product_id TEXT, bank_id TEXT, bank_name TEXT, bank_url TEXT, bank_region TEXT, bank_account_name TEXT, publication_date TEXT, interest_rate REAL, PRIMARY KEY(bank_name))'''
     c.execute(sql_cmd_ct)
 
     c.close()
@@ -40,10 +40,10 @@ def create_user_table():
 ########################################################################################################################
 
 # Insert BSU bank data into BSU database
-def insert_bsu(product_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate):
+def insert_bsu(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate):
     c = database_connection()
 
-    c.execute('''INSERT INTO bsu(product_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate) VALUES (?,?,?,?,?,?,?)''', (product_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate))
+    c.execute('''INSERT INTO bsu(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate) VALUES (?,?,?,?,?,?,?,?)''', (product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate))
     c.commit()
 
     c.close()
@@ -123,3 +123,24 @@ def get_bsu_rates(bank_name):
     c.close()
 
     return interest_rate
+
+
+# Get BSU banks with higher interest rates
+def get_banks_with_higher_rates(user):
+    c = database_connection()
+
+    results = []
+
+    # Select the best country bsu
+    sql_cmd_s = c.execute('''SELECT * FROM bsu WHERE interest_rate > 0 AND bank_region = "Landsdekkende" LIMIT 1''')
+
+    best_bsu_bank_country = sql_cmd_s.fetchall()[0][7]
+
+    sql_cmd_s = c.execute('''SELECT * FROM bsu WHERE interest_rate >= ? AND interest_rate > ? ''', (best_bsu_bank_country, user[3],))
+
+    for row in sql_cmd_s:
+        results.append(row)
+
+    c.close()
+
+    return results

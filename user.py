@@ -1,5 +1,5 @@
 
-from db import insert_user, get_bsu_rates
+from db import insert_user
 from settings import access_spreadsheet
 
 ### USER CONTROLLER

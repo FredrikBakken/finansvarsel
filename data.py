@@ -3,6 +3,8 @@ import openpyxl as opxl
 import requests
 import contextlib
 
+## TODO: GET BANK ID FROM XLSX AND STORE IN DB
+
 from db import create_bsu_table, insert_bsu, get_bsu_banks, get_bsu_content
 
 from settings import access_spreadsheet, bsu_count, url_bsu_regions, url_bsu_country, check_codec, time_now
@@ -32,7 +34,7 @@ def get_bsu_data():
         bsu_url = bsu_urls[x]
 
         # Download data content
-        download_content(bsu_url, bsu_file)
+        #download_content(bsu_url, bsu_file)
 
         # Load file
         wb = opxl.load_workbook('download/' + bsu_file)
@@ -44,7 +46,7 @@ def get_bsu_data():
         # Read specific columns row by row contents from file
         for row in range(2, ws.max_row + 1):
             bsu_data_item = []
-            for column in "BOMPDEH":
+            for column in "BLOMPDEH":
                 cell_name = "{}{}".format(column, row)
                 cell_data = ws[cell_name].value
                 bsu_data_item.append(cell_data)
@@ -52,11 +54,12 @@ def get_bsu_data():
             bsu_data.append(bsu_data_item)
 
         # Delete temporary file downloaded
-        with contextlib.suppress(FileNotFoundError):
-            os.remove('download/' + bsu_file)
+        #with contextlib.suppress(FileNotFoundError):
+        #    os.remove('download/' + bsu_file)
 
         # Reset variables
         product_id = ''
+        bank_id = ''
         bank_name = ''
         bank_url = ''
         bank_region = ''
@@ -67,23 +70,22 @@ def get_bsu_data():
         # Loop through rows in Excel file
         for y in range(len(bsu_data)):
             product_id = str(int(bsu_data[y][0]))
+            bank_id = str(int(bsu_data[y][1]))
 
-            bank_name = bsu_data[y][1].encode('ISO-8859-1', 'ignore')
+            bank_name = bsu_data[y][2].encode('ISO-8859-1', 'ignore')
             bank_name = check_codec(bank_name).decode('ISO-8859-1')
 
-            bank_url = bsu_data[y][2]
+            bank_url = bsu_data[y][3]
             if 'http:' in bank_url:
                 bank_url = bank_url.replace('http:', 'https:')  # For security reasons
 
-            bank_region = bsu_data[y][3]
-            bank_account_name = bsu_data[y][4]
-            publication_date = bsu_data[y][5]
-            interest_rate = str("%.2f" % bsu_data[y][6])
+            bank_region = bsu_data[y][4]
+            bank_account_name = bsu_data[y][5]
+            publication_date = bsu_data[y][6]
+            interest_rate = float("%.2f" % bsu_data[y][7])
 
             # Insert bsu data into database
-            insert_bsu(product_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate)
-
-    get_bsu_content()
+            insert_bsu(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate)
 
 
     print('Start Google Spreadsheet handling for BSU data.')
