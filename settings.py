@@ -1,3 +1,4 @@
+import json
 import gspread
 import sqlite3
 
@@ -5,6 +6,9 @@ from datetime import datetime
 from oauth2client.service_account import ServiceAccountCredentials
 
 # Centralized global variables
+
+### Change Bank URL
+url_change_bank = 'https://www.finansportalen.no/bank/bankbytte/'
 
 ### BSU Banks URL
 bsu_count = 2
@@ -56,5 +60,13 @@ def check_codec(v):
     elif b"\xe6" in variable:
         variable = variable.replace(b'\xe6', b'ae')
 
-
     return variable
+
+
+### Get email credentials from secrets file
+def email_credentials():
+    jdata = json.loads(open('secrets.json').read())
+    username = jdata['email-username']
+    password = jdata['email-password']
+
+    return username, password

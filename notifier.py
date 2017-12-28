@@ -1,13 +1,12 @@
 
-from db import get_user_current_bsu_bank, get_banks_with_higher_rates
+from db import get_banks_with_higher_rates
+from settings import url_change_bank
 
-def bsu_notifier():
-    # Get all users
-    user = get_user_current_bsu_bank()
+def bsu_notifier(user):
+    print('\n' + user[0] + ' ' + user[1])
+    results = get_banks_with_higher_rates(user)
 
-    for x in range(len(user)):
-        print('\n' + user[x][1])
-        results = get_banks_with_higher_rates(user[x])
+    for y in range(len(results)):
+        print(results[y])
 
-        for y in range(len(results)):
-            print(results[y])
+    return results

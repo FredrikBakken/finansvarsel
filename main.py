@@ -1,8 +1,10 @@
 
-from db import create_user_table, get_user_current_bsu_bank
-from data import get_bsu_data, get_savings_data
+from db import create_user_table, get_users_current_bsu_bank
+from data import get_bsu_data
 from user import register_users
+from emailer import format_email, send_email
 from notifier import bsu_notifier
+from settings import time_now, email_credentials
 
 
 # FINANCE CONTROLLER
@@ -13,11 +15,6 @@ from notifier import bsu_notifier
 def finance_controller():
     ## Collect and store BSU data
     get_bsu_data()
-
-    ## Collect and store savings data
-    get_savings_data()
-
-    ## etc.
 
 
 # USER CONTROLLER
@@ -32,23 +29,27 @@ def user_controller():
     ## Register new user entries
     register_users()
 
-    ## Get all users and connected BSU banks
-    data = get_user_current_bsu_bank()
-    for x in range(len(data)):
-        print(data[x])
-
 
 # NOTIFICATION CONTROLLER
 def notification_controller():
-    bsu_notifier()
+    # Get all users
+    users = get_users_current_bsu_bank()
 
+    for x in range(len(users)):
+        bsu_data = bsu_notifier(users[x])
+
+        # ALL OTHER DATA
+
+        # SEND EMAIL TO CURRENT USER
+        recipient = users[x][2]
+        body = format_email(users[x], bsu_data)
+        send_email(recipient, 'Oppdatering fra Finansvarsel: ' + time_now('date.month.year'), body)
 
 
 def run():
     #finance_controller()
     user_controller()
     notification_controller()
-
 
 if __name__ == "__main__":
     run()

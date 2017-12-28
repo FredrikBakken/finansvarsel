@@ -52,3 +52,4 @@ venv/
 database/db.db
 download/bsu_country.xlsx
 download/bsu_regions.xlsx
+*.json

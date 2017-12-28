@@ -3,8 +3,6 @@ import openpyxl as opxl
 import requests
 import contextlib
 
-## TODO: GET BANK ID FROM XLSX AND STORE IN DB
-
 from db import create_bsu_table, insert_bsu, get_bsu_banks, get_bsu_content
 
 from settings import access_spreadsheet, bsu_count, url_bsu_regions, url_bsu_country, check_codec, time_now
@@ -34,7 +32,7 @@ def get_bsu_data():
         bsu_url = bsu_urls[x]
 
         # Download data content
-        #download_content(bsu_url, bsu_file)
+        download_content(bsu_url, bsu_file)
 
         # Load file
         wb = opxl.load_workbook('download/' + bsu_file)
@@ -114,11 +112,3 @@ def get_bsu_data():
             break
 
         after_row += 1
-
-
-
-
-
-# Method for handling savings data (Placeholder)
-def get_savings_data():
-    return True

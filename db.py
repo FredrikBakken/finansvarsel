@@ -26,7 +26,7 @@ def create_user_table():
     print('Creating new user table in the SQLite3 database.')
     c = database_connection()
 
-    sql_cmd_ct = '''CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT, email TEXT unique, age TEXT, bsu TEXT, bsu_bank TEXT, FOREIGN KEY(bsu_bank) REFERENCES bsu(bsu_bank))'''
+    sql_cmd_ct = '''CREATE TABLE users(id INTEGER PRIMARY KEY, email TEXT unique, firstname TEXT, lastname TEXT, postal_number INTEGER, street_name TEXT, street_number TEXT, phone INTEGER, bsu TEXT, bsu_bank TEXT, FOREIGN KEY(bsu_bank) REFERENCES bsu(bsu_bank))'''
 
     try:
         c.execute(sql_cmd_ct)
@@ -50,16 +50,16 @@ def insert_bsu(product_id, bank_id, bank_name, bank_url, bank_region, bank_accou
 
 
 # Insert user into database
-def insert_user(name, email, age, bsu, bsu_bank):
+def insert_user(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank):
     c = database_connection()
 
     # New user ==> Insert
     try:
-        c.execute('''INSERT INTO users(name,email,age,bsu,bsu_bank) VALUES (?,?,?,?,?)''', (name, email, age, bsu, bsu_bank))
+        c.execute('''INSERT INTO users(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank) VALUES (?,?,?,?,?,?,?,?,?)''', (email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank))
 
     # User exist ==> Update
     except sqlite3.IntegrityError:
-        c.execute('''UPDATE users SET name = ?, age = ?, bsu = ?, bsu_bank = ? WHERE email = ?''', (name, age, bsu, bsu_bank, email))
+        c.execute('''UPDATE users SET firstname = ?, lastname = ?, postal_number = ?, street_name = ?, street_number = ?, phone = ?, bsu = ?, bsu_bank = ? WHERE email = ?''', (firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, email))
 
     c.commit()
 
@@ -70,10 +70,10 @@ def insert_user(name, email, age, bsu, bsu_bank):
 ########################################################################################################################
 
 # Get users' current BSU bank data
-def get_user_current_bsu_bank():
+def get_users_current_bsu_bank():
     c = database_connection()
 
-    sql_cmd_s = c.execute('''SELECT users.name, users.email, users.bsu_bank, bsu.interest_rate FROM users, bsu WHERE users.bsu_bank = bsu.bank_name''')
+    sql_cmd_s = c.execute('''SELECT users.firstname, users.lastname, users.email, users.postal_number, users.street_name, users.street_number, users.phone, users.bsu_bank, bsu.bank_id, bsu.interest_rate FROM users, bsu WHERE users.bsu_bank = bsu.bank_name''')
 
     data = []
     for row in sql_cmd_s:
@@ -136,7 +136,7 @@ def get_banks_with_higher_rates(user):
 
     best_bsu_bank_country = sql_cmd_s.fetchall()[0][7]
 
-    sql_cmd_s = c.execute('''SELECT * FROM bsu WHERE interest_rate >= ? AND interest_rate > ? ''', (best_bsu_bank_country, user[3],))
+    sql_cmd_s = c.execute('''SELECT * FROM bsu WHERE interest_rate >= ? AND interest_rate > ? ''', (best_bsu_bank_country, user[9],))
 
     for row in sql_cmd_s:
         results.append(row)
