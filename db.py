@@ -52,18 +52,23 @@ def insert_bsu(product_id, bank_id, bank_name, bank_url, bank_region, bank_accou
 # Insert user into database
 def insert_user(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank):
     c = database_connection()
+    response = ''
 
     # New user ==> Insert
     try:
         c.execute('''INSERT INTO users(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank) VALUES (?,?,?,?,?,?,?,?,?)''', (email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank))
+        response = 'new_user'
 
     # User exist ==> Update
     except sqlite3.IntegrityError:
         c.execute('''UPDATE users SET firstname = ?, lastname = ?, postal_number = ?, street_name = ?, street_number = ?, phone = ?, bsu = ?, bsu_bank = ? WHERE email = ?''', (firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, email))
+        response = 'update_user'
 
     c.commit()
 
     c.close()
+
+    return response
 
 
 ########################################################################################################################

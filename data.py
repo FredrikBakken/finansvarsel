@@ -98,11 +98,13 @@ def get_bsu_data():
     after_row = (len(bsu_banks) + 3)
 
     # Insert all data into sheet
+    print('Adding BSU banks to form.')
     for x in range(len(bsu_banks)):
         bsu_bank_sheet.update_acell('A%s' % (row), bsu_banks[x])
         row += 1
 
     # Deleting all banks that are no longer represented
+    print('Deleting old BSU banks from form.')
     for x in range(1000):
         next_cell = bsu_bank_sheet.acell('A%s' % (after_row))
 

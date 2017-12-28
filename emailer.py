@@ -2,7 +2,38 @@ import smtplib
 
 from settings import url_change_bank, email_credentials
 
-def format_email(user, bsu_data):
+#TODO: FIX EMAIL CONTENTS AS HTML AND ALLOW NORWEGIAN CHARACTERS INSTEAD OF AE, OE, AA
+
+
+# New user registration confirmation email
+def registration_email(email, firstname, lastname):
+    body = ''
+
+    hello_message = 'Hei ' + firstname + ' ' + lastname + ',\n\n'
+    registration_message = 'Velkommen som ny bruker paa Finansvarsel! Du vil motta nyhetsmail om banker fra oss en gang i uken.\n\n'
+    finansportalen_message = 'All vaar data kommer fra Finansportalen (https://www.finansportalen.no).\n\n'
+    from_message = 'Med vennlig hilsen,\nFinansvarsel\nhttp://fredrikbakken.no\nhttps://github.com/FredrikBakken/finansvarsel'
+
+    body = hello_message + registration_message + finansportalen_message + from_message
+
+    send_email(email, 'Velkommen til Finansvarsel!', body)
+
+
+# Update user data confirmation email
+def update_email(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank):
+    body = ''
+
+    hello_message = 'Hei ' + firstname + ' ' + lastname + ',\n\n'
+    update_message = 'Vi har registrert din brukeroppdatering ved Finansvarsel og har lagret folgende om deg:\nFornavn: ' + firstname + '\nEtternavn: ' + lastname + '\nPostnummer: ' + postal_number + '\nGatenavn: ' + street_name + '\nGatenummer: ' + street_number + '\nTelefonnummer: ' + phone + '\nEr du interessert i BSU-konto? ' + bsu + '\nBSU bank: ' + bsu_bank.replace('Æ', 'Ae').replace('æ', 'ae').replace('Ø', 'Oe').replace('ø', 'oe').replace('Å', 'Aa').replace('å', 'aa') + '.\n\n'
+    finansportalen_message = 'All vaar data kommer fra Finansportalen (https://www.finansportalen.no).\n\n'
+    from_message = 'Med vennlig hilsen,\nFinansvarsel\nhttp://fredrikbakken.no\nhttps://github.com/FredrikBakken/finansvarsel'
+
+    body = hello_message + update_message + finansportalen_message + from_message
+
+    send_email(email, 'Finansvarsel - Brukeroppdatering', body)
+
+
+def news_email(user, bsu_data):
     complete_body = ''
 
     firstname = user[0]
@@ -45,12 +76,12 @@ def send_email(recipient, subject, body):
     message = """From: %s\nTo: %s\nSubject: %s\n\n%s
     """ % (FROM, ", ".join(TO), SUBJECT, TEXT)
     try:
-        server = smtplib.SMTP("send.one.com", 587)
+        server = smtplib.SMTP(email_credentials()[2], email_credentials()[3])
         server.ehlo()
         server.starttls()
         server.login(email_credentials()[0], email_credentials()[1])
         server.sendmail(FROM, TO, message)
         server.close()
-        print('Successfully sent the mail')
+        print('Successfully sent the mail.')
     except:
-        print("Failed to send mail")
+        print('Failed to send mail.')
