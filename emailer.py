@@ -1,22 +1,37 @@
 import smtplib
 
-from settings import url_change_bank, email_credentials
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
-#TODO: FIX EMAIL CONTENTS AS HTML AND ALLOW NORWEGIAN CHARACTERS INSTEAD OF AE, OE, AA
+from settings import url_change_bank, email_credentials, email_strings
 
 
 # New user registration confirmation email
 def registration_email(email, firstname, lastname):
-    body = ''
+    TO = email
+    FROM = 'finansvarsel@fredrikbakken.no'
+    SUBJECT = 'Velkommen til Finansvarsel!'
 
-    hello_message = 'Hei ' + firstname + ' ' + lastname + ',\n\n'
-    registration_message = 'Velkommen som ny bruker paa Finansvarsel! Du vil motta nyhetsmail om banker fra oss en gang i uken.\n\n'
-    finansportalen_message = 'All vaar data kommer fra Finansportalen (https://www.finansportalen.no).\n\n'
-    from_message = 'Med vennlig hilsen,\nFinansvarsel\nhttp://fredrikbakken.no\nhttps://github.com/FredrikBakken/finansvarsel'
+    reg_firstname = email_strings(firstname)
+    reg_lastname = email_strings(lastname)
 
-    body = hello_message + registration_message + finansportalen_message + from_message
+    email_content = """
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>Finansvarsel: Registration Email</title>
+    </head>
+    <body>
+      <p>Hei """ + reg_firstname + """ """ + reg_lastname + """,</p>
+      <p>Velkommen som ny bruker på Finansvarsel! Du vil motta nyhetsmail om banker fra oss en gang i uken.</p>
+      <p>Alle våre data er hentet fra Finansportalen (https://www.finansportalen.no).</p>
+      <p>Med vennlig hilsen,<br>
+      Finansvarsel<br>
+      http://fredrikbakken.no<br>
+      https://github.com/FredrikBakken/finansvarsel</p>
+    </body>
+    """
 
-    send_email(email, 'Velkommen til Finansvarsel!', body)
+    send_email(SUBJECT, email_content, TO, FROM)
 
 
 # Update user data confirmation email
@@ -66,22 +81,25 @@ def news_email(user, bsu_data):
     return complete_body
 
 
-def send_email(recipient, subject, body):
-    FROM = email_credentials()[0]
-    TO = recipient if type(recipient) is list else [recipient]
-    SUBJECT = subject
-    TEXT = body
+def send_email(SUBJECT, BODY, TO, FROM):
+    # Create message container - the correct MIME type is multipart/alternative here!
+    MESSAGE = MIMEMultipart('alternative')
+    MESSAGE['subject'] = SUBJECT
+    MESSAGE['To'] = TO
+    MESSAGE['From'] = FROM
 
-    # Prepare actual message
-    message = """From: %s\nTo: %s\nSubject: %s\n\n%s
-    """ % (FROM, ", ".join(TO), SUBJECT, TEXT)
-    try:
-        server = smtplib.SMTP(email_credentials()[2], email_credentials()[3])
-        server.ehlo()
-        server.starttls()
-        server.login(email_credentials()[0], email_credentials()[1])
-        server.sendmail(FROM, TO, message)
-        server.close()
-        print('Successfully sent the mail.')
-    except:
-        print('Failed to send mail.')
+    # Record the MIME type text/html.
+    HTML_BODY = MIMEText(BODY, 'html')
+
+    # Attach parts into message container.
+    # According to RFC 2046, the last part of a multipart message, in this case
+    # the HTML message, is best and preferred.
+    MESSAGE.attach(HTML_BODY)
+
+    # The actual sending of the e-mail
+    server = smtplib.SMTP(email_credentials()[2])
+    server.ehlo()
+    server.starttls()
+    server.login(email_credentials()[0], email_credentials()[1])
+    server.sendmail(FROM, TO, MESSAGE.as_string())
+    server.quit()

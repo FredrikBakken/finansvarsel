@@ -68,5 +68,12 @@ def email_credentials():
     jdata = json.loads(open('secrets.json').read())
     username = jdata['email-username']
     password = jdata['email-password']
+    server_port = jdata['email-server']
 
-    return username, password
+    return username, password, server_port
+
+
+### Prepare the strings for html
+def email_strings(text_data):
+    text_data = text_data.replace('Æ', '&AElig;').replace('Ø', '&Oslash;').replace('Å', '&Aring;').replace('æ', '&aelig;').replace('ø', '&oslash;').replace('å', '&aring;')
+    return text_data

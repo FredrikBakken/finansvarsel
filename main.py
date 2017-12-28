@@ -2,7 +2,7 @@
 from db import create_user_table, get_users_current_bsu_bank
 from data import get_bsu_data
 from user import register_users, remove_users
-from emailer import news_email, send_email
+from emailer import news_email, send_email, registration_email
 from notifier import bsu_notifier
 from settings import time_now
 
@@ -51,8 +51,9 @@ def notification_controller():
 
 def run():
     #finance_controller()
-    user_controller()
-    notification_controller()
+    #user_controller()
+    #notification_controller()
+    registration_email('test', 'Testuser', 'Testuser')
 
 if __name__ == "__main__":
     run()

@@ -32,7 +32,7 @@ def get_bsu_data():
         bsu_url = bsu_urls[x]
 
         # Download data content
-        download_content(bsu_url, bsu_file)
+        #download_content(bsu_url, bsu_file)
 
         # Load file
         wb = opxl.load_workbook('download/' + bsu_file)
@@ -87,7 +87,8 @@ def get_bsu_data():
 
 
     print('Start Google Spreadsheet handling for BSU data.')
-
+    '''
+    
     # Get BSU bank names from BSU database
     bsu_banks = get_bsu_banks()
 
@@ -114,3 +115,4 @@ def get_bsu_data():
             break
 
         after_row += 1
+    '''
