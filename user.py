@@ -22,7 +22,7 @@ def register_users():
     # Loop through new user registrations
     for x in range(number_of_users):
         new_user = users_sheet.row_values(2 + x)
-        print('New user ' + str(x + 1) + ': ' + str(new_user))
+        #print('New user ' + str(x + 1) + ': ' + str(new_user))
 
         # Formatting user data
         email = new_user[1]

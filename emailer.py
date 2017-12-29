@@ -22,9 +22,9 @@ def registration_email(email, firstname, lastname):
       <title>""" + SUBJECT + """</title>
     </head>
     <body>
-      <p>Hei """ + reg_firstname + """ """ + reg_lastname + """,</p>
+      <p>Hei """ + reg_firstname + """ """ + reg_lastname + """,<br></p>
       <p>Velkommen som ny bruker på Finansvarsel! Du vil motta nyhetsmail om banker fra oss en gang i uken.</p>
-      <p>Alle våre data er hentet fra <a href='https://www.finansportalen.no'>Finansportalen</a>.</p>
+      <p>Alle våre data er hentet fra <a href='https://www.finansportalen.no'>Finansportalen</a>.<br></p>
       <p>Med vennlig hilsen,<br>
       Finansvarsel<br>
       http://fredrikbakken.no</p>
@@ -57,7 +57,7 @@ def update_email(email, firstname, lastname, postal_number, street_name, street_
       <title>""" + SUBJECT + """</title>
     </head>
     <body>
-      <p>Hei """ + upd_firstname + """ """ + upd_lastname + """,</p>
+      <p>Hei """ + upd_firstname + """ """ + upd_lastname + """,<br></p>
       <p>Vi har registrert din brukeroppdatering på Finansvarsel og har lagret følgende om deg:<br>
       Fornavn: """ + upd_firstname + """<br>
       Etternavn: """ + upd_lastname + """<br>
@@ -69,7 +69,7 @@ def update_email(email, firstname, lastname, postal_number, street_name, street_
       BSU bank: """ + upd_bsu_bank + """<br>
       Er du interessert i sparekonto? """ + upd_savings + """<br>
       Sparekonto bank: """ + upd_savings_bank + """</p>
-      <p>Alle våre data er hentet fra <a href='https://www.finansportalen.no'>Finansportalen</a>.</p>
+      <p>Alle våre data er hentet fra <a href='https://www.finansportalen.no'>Finansportalen</a>.<br></p>
       <p>Med vennlig hilsen,<br>
       Finansvarsel<br>
       http://fredrikbakken.no</p>
@@ -91,7 +91,7 @@ def delete_email(email, store):
       <title>""" + SUBJECT + """</title>
     </head>
     <body>
-      <p>Hei,</p>
+      <p>Hei,<br></p>
       <p>Vi i Finansvarsel har mottat ditt ønske om å slette dine brukeropplysninger fra våre registre og ikke lengre motta ukentlige eposter fra oss.</p>"""
 
     if store == "Ja":
@@ -99,7 +99,7 @@ def delete_email(email, store):
 
     email_content += """
       <p>Takk for at du har testet Finansvarsel og vi ønsker deg velkommen igjen ved en senere anledning!</p>
-      <p>Alle våre data er hentet fra <a href='https://www.finansportalen.no'>Finansportalen</a>.</p>
+      <p>Alle våre data er hentet fra <a href='https://www.finansportalen.no'>Finansportalen</a>.<br></p>
       <p>Med vennlig hilsen,<br>
       Finansvarsel<br>
       http://fredrikbakken.no</p>
@@ -172,7 +172,7 @@ def news_email(user, bsu_data, savings_account_data):
 
 
     email_content += """
-      <p>Tusen takk for at du benytter Finansvarsel som er utviklet av Fredrik Bakken. Prosjektet hadde ikke vært mulig uten dataene <a href='https://www.finansportalen.no'>Finansportalen</a> tilbyr.</p>
+      <p>Tusen takk for at du benytter Finansvarsel som er utviklet av Fredrik Bakken. Prosjektet hadde ikke vært mulig uten dataene <a href='https://www.finansportalen.no'>Finansportalen</a> tilbyr.<br></p>
       <p>Med vennlig hilsen,<br>
       Finansvarsel<br>
       http://fredrikbakken.no</p>

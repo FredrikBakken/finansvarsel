@@ -189,10 +189,15 @@ def get_savings_banks():
 def get_bsu_banks_with_higher_rates(user):
     c = database_connection()
 
+    sql_cmd_interest = c.execute('''SELECT interest_rate FROM bsu WHERE bank_name = ?''', (user[9],))
+
+    current_rate = 0
+    for row in sql_cmd_interest:
+        current_rate = row[0]
+
+    sql_cmd_s = c.execute('''SELECT * FROM bsu WHERE interest_rate > ? ''', (current_rate,))
+
     results = []
-
-    sql_cmd_s = c.execute('''SELECT * FROM bsu WHERE interest_rate > ? ''', (user[9],))
-
     for row in sql_cmd_s:
         results.append(row)
 
