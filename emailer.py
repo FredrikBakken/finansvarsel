@@ -27,8 +27,7 @@ def registration_email(email, firstname, lastname):
       <p>Alle våre data er hentet fra <a href='https://www.finansportalen.no'>Finansportalen</a>.</p>
       <p>Med vennlig hilsen,<br>
       Finansvarsel<br>
-      http://fredrikbakken.no<br>
-      https://github.com/FredrikBakken/finansvarsel</p>
+      http://fredrikbakken.no</p>
     </body>
     """
 
@@ -73,8 +72,7 @@ def update_email(email, firstname, lastname, postal_number, street_name, street_
       <p>Alle våre data er hentet fra <a href='https://www.finansportalen.no'>Finansportalen</a>.</p>
       <p>Med vennlig hilsen,<br>
       Finansvarsel<br>
-      http://fredrikbakken.no<br>
-      https://github.com/FredrikBakken/finansvarsel</p>
+      http://fredrikbakken.no</p>
     </body>
     """
 
@@ -104,8 +102,7 @@ def delete_email(email, store):
       <p>Alle våre data er hentet fra <a href='https://www.finansportalen.no'>Finansportalen</a>.</p>
       <p>Med vennlig hilsen,<br>
       Finansvarsel<br>
-      http://fredrikbakken.no<br>
-      https://github.com/FredrikBakken/finansvarsel</p>
+      http://fredrikbakken.no</p>
     </body>
     """
 
@@ -178,8 +175,7 @@ def news_email(user, bsu_data, savings_account_data):
       <p>Tusen takk for at du benytter Finansvarsel som er utviklet av Fredrik Bakken. Prosjektet hadde ikke vært mulig uten dataene <a href='https://www.finansportalen.no'>Finansportalen</a> tilbyr.</p>
       <p>Med vennlig hilsen,<br>
       Finansvarsel<br>
-      http://fredrikbakken.no<br>
-      https://github.com/FredrikBakken/finansvarsel</p>
+      http://fredrikbakken.no</p>
     """
 
     send_email(SUBJECT, email_content, TO, FROM)

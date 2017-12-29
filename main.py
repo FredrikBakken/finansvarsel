@@ -36,8 +36,6 @@ def user_controller():
 def notification_controller():
     # Get all users
     users = get_all_users()
-    print(users)
-
 
     for x in range(len(users)):
         bsu_data = bsu_notifier(users[x])
@@ -47,11 +45,11 @@ def notification_controller():
         news_email(users[x], bsu_data, savings_account_data)
 
 
-
 def run():
     finance_controller()
     user_controller()
     notification_controller()
+
 
 if __name__ == "__main__":
     run()
