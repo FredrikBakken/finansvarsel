@@ -136,12 +136,7 @@ def get_banks_with_higher_rates(user):
 
     results = []
 
-    # Select the best country bsu
-    sql_cmd_s = c.execute('''SELECT * FROM bsu WHERE interest_rate > 0 AND bank_region = "Landsdekkende" LIMIT 1''')
-
-    best_bsu_bank_country = sql_cmd_s.fetchall()[0][7]
-
-    sql_cmd_s = c.execute('''SELECT * FROM bsu WHERE interest_rate >= ? AND interest_rate > ? ''', (best_bsu_bank_country, user[9],))
+    sql_cmd_s = c.execute('''SELECT * FROM bsu WHERE interest_rate > ? ''', (user[9],))
 
     for row in sql_cmd_s:
         results.append(row)

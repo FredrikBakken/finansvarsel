@@ -2,9 +2,8 @@
 from db import create_user_table, get_users_current_bsu_bank
 from data import get_bsu_data
 from user import register_users, remove_users
-from emailer import news_email, send_email, registration_email
+from emailer import news_email
 from notifier import bsu_notifier
-from settings import time_now
 
 
 # FINANCE CONTROLLER
@@ -44,16 +43,13 @@ def notification_controller():
         # ALL OTHER DATA
 
         # SEND EMAIL TO CURRENT USER
-        recipient = users[x][2]
-        body = news_email(users[x], bsu_data)
-        send_email(recipient, 'Oppdatering fra Finansvarsel: ' + time_now('date.month.year'), body)
+        news_email(users[x], bsu_data)
 
 
 def run():
     #finance_controller()
     #user_controller()
-    #notification_controller()
-    registration_email('test', 'Testuser', 'Testuser')
+    notification_controller()
 
 if __name__ == "__main__":
     run()

@@ -1,6 +1,5 @@
 
 from db import get_banks_with_higher_rates
-from settings import url_change_bank
 
 def bsu_notifier(user):
     print('\n' + user[0] + ' ' + user[1])

@@ -3,14 +3,14 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-from settings import url_change_bank, email_credentials, email_strings
+from settings import url_change_bank, email_credentials, email_strings, time_now
 
 
 # New user registration confirmation email
 def registration_email(email, firstname, lastname):
     TO = email
-    FROM = 'finansvarsel@fredrikbakken.no'
-    SUBJECT = 'Velkommen til Finansvarsel!'
+    FROM = email_credentials()[0]
+    SUBJECT = email_strings('Velkommen til Finansvarsel!')
 
     reg_firstname = email_strings(firstname)
     reg_lastname = email_strings(lastname)
@@ -18,12 +18,12 @@ def registration_email(email, firstname, lastname):
     email_content = """
     <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <title>Finansvarsel: Registration Email</title>
+      <title>""" + SUBJECT + """</title>
     </head>
     <body>
       <p>Hei """ + reg_firstname + """ """ + reg_lastname + """,</p>
       <p>Velkommen som ny bruker på Finansvarsel! Du vil motta nyhetsmail om banker fra oss en gang i uken.</p>
-      <p>Alle våre data er hentet fra Finansportalen (https://www.finansportalen.no).</p>
+      <p>Alle våre data er hentet fra <a href='https://www.finansportalen.no'>Finansportalen</a>.</p>
       <p>Med vennlig hilsen,<br>
       Finansvarsel<br>
       http://fredrikbakken.no<br>
@@ -36,49 +36,99 @@ def registration_email(email, firstname, lastname):
 
 # Update user data confirmation email
 def update_email(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank):
-    body = ''
+    TO = email
+    FROM = email_credentials()[0]
+    SUBJECT = email_strings('Finansvarsel - Brukeroppdatering')
 
-    hello_message = 'Hei ' + firstname + ' ' + lastname + ',\n\n'
-    update_message = 'Vi har registrert din brukeroppdatering ved Finansvarsel og har lagret folgende om deg:\nFornavn: ' + firstname + '\nEtternavn: ' + lastname + '\nPostnummer: ' + postal_number + '\nGatenavn: ' + street_name + '\nGatenummer: ' + street_number + '\nTelefonnummer: ' + phone + '\nEr du interessert i BSU-konto? ' + bsu + '\nBSU bank: ' + bsu_bank.replace('Æ', 'Ae').replace('æ', 'ae').replace('Ø', 'Oe').replace('ø', 'oe').replace('Å', 'Aa').replace('å', 'aa') + '.\n\n'
-    finansportalen_message = 'All vaar data kommer fra Finansportalen (https://www.finansportalen.no).\n\n'
-    from_message = 'Med vennlig hilsen,\nFinansvarsel\nhttp://fredrikbakken.no\nhttps://github.com/FredrikBakken/finansvarsel'
+    upd_firstname = email_strings(firstname)
+    upd_lastname = email_strings(lastname)
+    upd_postal_number = email_strings(postal_number)
+    upd_street_name = email_strings(street_name)
+    upd_street_number = email_strings(street_number)
+    upd_phone = email_strings(phone)
+    upd_bsu = email_strings(bsu)
+    upd_bsu_bank = email_strings(bsu_bank)
 
-    body = hello_message + update_message + finansportalen_message + from_message
+    email_content = """
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>""" + SUBJECT + """</title>
+    </head>
+    <body>
+      <p>Hei """ + upd_firstname + """ """ + upd_lastname + """,</p>
+      <p>Vi har registrert din brukeroppdatering på Finansvarsel og har lagret følgende om deg:<br>
+      Fornavn: """ + upd_firstname + """<br>
+      Etternavn: """ + upd_lastname + """<br>
+      Postnummer: """ + upd_postal_number + """<br>
+      Gatenavn: """ + upd_street_name + """<br>
+      Gatenummer: """ + upd_street_number + """<br>
+      Telefon/Mobil: """ + upd_phone + """<br>
+      Er du interessert i BSU-konto? """ + upd_bsu + """<br>
+      BSU bank: """ + upd_bsu_bank + """</p>
+      <p>Alle våre data er hentet fra <a href='https://www.finansportalen.no'>Finansportalen</a>.</p>
+      <p>Med vennlig hilsen,<br>
+      Finansvarsel<br>
+      http://fredrikbakken.no<br>
+      https://github.com/FredrikBakken/finansvarsel</p>
+    </body>
+    """
 
-    send_email(email, 'Finansvarsel - Brukeroppdatering', body)
+    send_email(SUBJECT, email_content, TO, FROM)
+
+
+# TODO: EMAIL CONFIRMATION FOR DELETED USER
+def delete_email():
+    return True
 
 
 def news_email(user, bsu_data):
-    complete_body = ''
+    TO = user[2]
+    FROM = email_credentials()[0]
+    SUBJECT = email_strings('Oppdatering fra Finansvarsel: ' + time_now('date.month.year'))
 
-    firstname = user[0]
-    lastname = user[1]
-    hello_message = 'Hei ' + firstname + ' ' + lastname + ',\n\n'
+    news_firstname = email_strings(user[0])
+    news_lastname = email_strings(user[1])
 
     number_of_bsu_banks = str(len(bsu_data))
-    bsu_message = 'Finansvarsel har registrert ' + number_of_bsu_banks + ' BSU-kontoer i norske banker med bedre rentevilkaar enn banken du i dag vurderer/benytter:\n'
 
-    bsu_banks = ''
-    for x in range(len(bsu_data)):
-        yourBankId = user[8]
-        seletectedBankId = bsu_data[x][1]
-        productType = 'banksparing'
-        product = 'bsu'
-        url_change_bsu_bank = url_change_bank + '?yourBankId=' + yourBankId + '&selectedBankId=' + seletectedBankId + '&productType=' + productType + '&product=' + product
+    email_content = """
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>""" + SUBJECT + """</title>
+    </head>
+    <body>
+      <p>Hei """ + news_firstname + """ """ + news_lastname + """,</p>
+      <p>
+    """
 
-        bank_name = bsu_data[x][2].replace('Æ', 'Ae').replace('æ', 'ae').replace('Ø', 'Oe').replace('ø', 'oe').replace('Å', 'Aa').replace('å', 'aa')
+    if not user[7] == '':
+        email_content += """
+          <b>Boligsparing Ungdom (BSU):</b> Finansvarsel har registrert """ + number_of_bsu_banks + """ kontoer i norske banker med rentevilkår enn banken du i dag vurderer/benytter:<br>
+        """
 
-        bsu_bank = str(x + 1) + '. Rente: %.2f' % bsu_data[x][7] + '%. ' + bank_name + ' (' + bsu_data[x][3] + '). Onsker du aa bytte til denne banken? Folg lenken: ' + url_change_bsu_bank + '\n'
+        for x in range(len(bsu_data)):
+            yourBankId = user[8]
+            seletectedBankId = bsu_data[x][1]
+            productType = 'banksparing'
+            product = 'bsu'
+            url_change_bsu_bank = url_change_bank + '?yourBankId=' + yourBankId + '&selectedBankId=' + seletectedBankId + '&productType=' + productType + '&product=' + product
 
-        bsu_banks += bsu_bank
+            bank_name = email_strings(bsu_data[x][2])
 
-    thank_you_message = '\nTusen takk for at du benytter Finansvarsel som er utviklet av Fredrik Bakken. Prosjektet hadde ikke vaert mulig uten den dataen Finansportalen (https://www.finansportalen.no) tilbyr.\n\n'
+            email_content += """
+              </p>
+              <p>""" + str(x + 1) + """. Rente: %.2f""" % bsu_data[x][7] + """%. <a href='""" + bsu_data[x][3] + """'>""" + bank_name + """</a>. Søk om å bytte til """ + bank_name + """: """ + url_change_bsu_bank + """</p>
+            """
 
-    from_message = 'Med vennlig hilsen,\nFinansvarsel'
+    email_content += """
+      <p>Tusen takk for at du benytter Finansvarsel som er utviklet av Fredrik Bakken. Prosjektet hadde ikke vært mulig uten dataene <a href='https://www.finansportalen.no'>Finansportalen</a> tilbyr.</p>
+      <p>Med vennlig hilsen,<br>
+      Finansvarsel<br>
+      http://fredrikbakken.no<br>
+      https://github.com/FredrikBakken/finansvarsel</p>
+    """
 
-    complete_body = hello_message + bsu_message + bsu_banks + thank_you_message + from_message
-
-    return complete_body
+    send_email(SUBJECT, email_content, TO, FROM)
 
 
 def send_email(SUBJECT, BODY, TO, FROM):
