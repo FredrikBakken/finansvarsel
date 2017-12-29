@@ -1,5 +1,5 @@
 
-from db import insert_user, delete_user, get_users_current_bsu_bank
+from db import create_user_table, inactive_user_table, insert_user, delete_user, get_users_current_bsu_bank
 from emailer import registration_email, update_email, delete_email
 from settings import access_spreadsheet
 
@@ -8,6 +8,9 @@ from settings import access_spreadsheet
 
 # Register new users and user updates
 def register_users():
+    ## SQLite3 user database initialization
+    create_user_table()
+
     # Open users worksheet
     sheet = access_spreadsheet()
     users_sheet = sheet.get_worksheet(0)
@@ -19,7 +22,7 @@ def register_users():
     # Loop through new user registrations
     for x in range(number_of_users):
         new_user = users_sheet.row_values(2 + x)
-        #print('New user ' + str(x + 1) + ': ' + str(new_user))
+        print('New user ' + str(x + 1) + ': ' + str(new_user))
 
         # Formatting user data
         email = new_user[1]
@@ -50,12 +53,15 @@ def register_users():
     ## Get all users and connected BSU banks
     data = get_users_current_bsu_bank()
     for x in range(len(data)):
-        #print(data[x])
+        print(data[x])
         pass
 
 
 # Delete user TODO: FIX MISSING FUNCTIONALITY
 def remove_users():
+    ## SQLite3 inactive_user database initialization
+    inactive_user_table()
+
     # Open delete users worksheet
     sheet = access_spreadsheet()
     remove_sheet = sheet.get_worksheet(1)
@@ -81,8 +87,6 @@ def remove_users():
         delete_email(email, store)
 
     # Loop through and delete user entries in sheet
-    '''
     print('Deleting delete user entries from sheet...')
     for x in range(number_of_users):
         remove_sheet.delete_row((number_of_users + 1) - x)
-    '''

@@ -1,5 +1,5 @@
 
-from db import create_user_table, get_users_current_bsu_bank
+from db import get_users_current_bsu_bank
 from data import get_bsu_data
 from user import register_users, remove_users
 from emailer import news_email
@@ -22,14 +22,11 @@ def finance_controller():
 # 2. Stores and removes user data from the database
 # 3. Connects the user table data with finance tables
 def user_controller():
-    ## SQLite3 database initialization
-    create_user_table()
-
     ## Register new user entries
     register_users()
 
     ## Delete user entries
-    #remove_users()
+    remove_users()
 
 
 # NOTIFICATION CONTROLLER
@@ -47,10 +44,9 @@ def notification_controller():
 
 
 def run():
-    #finance_controller()
-    #user_controller()
-    #notification_controller()
-    remove_users()
+    finance_controller()
+    user_controller()
+    notification_controller()
 
 if __name__ == "__main__":
     run()

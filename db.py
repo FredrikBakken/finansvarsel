@@ -36,6 +36,20 @@ def create_user_table():
     c.close()
 
 
+# Initialize inactive users database table
+def inactive_user_table():
+    c = database_connection()
+
+    sql_cmd_ct = '''CREATE TABLE inactive_users(id INTEGER PRIMARY KEY, email TEXT, reason TEXT)'''
+
+    try:
+        c.execute(sql_cmd_ct)
+    except sqlite3.OperationalError:
+        print('Inactive user table already exists, execution continues...')
+
+    c.close()
+
+
 ########################################################################################################################
 ########################################################################################################################
 
@@ -73,12 +87,24 @@ def insert_user(email, firstname, lastname, postal_number, street_name, street_n
 
 ########################################################################################################################
 ########################################################################################################################
-# TODO! DELETE USER DATA
+
 # Delete user from database
 def delete_user(email, reason, store):
     c = database_connection()
 
-    return True
+    try:
+        c.execute('''DELETE FROM users WHERE email = ?''', (email,))
+    except sqlite3.IntegrityError:
+        print('The user does not exist in the database, execution continues...')
+
+    if store == "Ja":
+        c.execute('''INSERT INTO inactive_users(email, reason) VALUES (?,?)''', (email, reason))
+    else:
+        c.execute('''INSERT INTO inactive_users(reason) VALUES (?)''', (reason,))
+
+    c.commit()
+
+    c.close()
 
 
 ########################################################################################################################
