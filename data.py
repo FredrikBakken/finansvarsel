@@ -94,7 +94,7 @@ def get_bsu_data():
 
     # Initialize spreadsheet and worksheet
     sheet = access_spreadsheet()
-    bsu_bank_sheet = sheet.get_worksheet(1)
+    bsu_bank_sheet = sheet.get_worksheet(2)
     row = 3
     after_row = (len(bsu_banks) + 3)
 

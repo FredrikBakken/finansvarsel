@@ -76,9 +76,35 @@ def update_email(email, firstname, lastname, postal_number, street_name, street_
     send_email(SUBJECT, email_content, TO, FROM)
 
 
-# TODO: EMAIL CONFIRMATION FOR DELETED USER
-def delete_email():
-    return True
+# Delete user data confirmation email
+def delete_email(email, store):
+    TO = email
+    FROM = email_credentials()[0]
+    SUBJECT = email_strings('Finansvarsel - Slett min bruker')
+
+    email_content = """
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>""" + SUBJECT + """</title>
+    </head>
+    <body>
+      <p>Hei,</p>
+      <p>Vi i Finansvarsel har mottat ditt ønske om å slette dine brukeropplysninger fra våre registre og ikke lengre motta ukentlige eposter fra oss.</p>"""
+
+    if store == "Ja":
+        email_content += """<p>Etter deres ønsker har vi lagret din epost, """ + email + """, for å sende deg varseler om større oppdateringer i våre systemer.</p>"""
+
+    email_content += """
+      <p>Takk for at du har testet Finansvarsel og vi ønsker deg velkommen igjen ved en senere anledning!</p>
+      <p>Alle våre data er hentet fra <a href='https://www.finansportalen.no'>Finansportalen</a>.</p>
+      <p>Med vennlig hilsen,<br>
+      Finansvarsel<br>
+      http://fredrikbakken.no<br>
+      https://github.com/FredrikBakken/finansvarsel</p>
+    </body>
+    """
+
+    send_email(SUBJECT, email_content, TO, FROM)
 
 
 def news_email(user, bsu_data):

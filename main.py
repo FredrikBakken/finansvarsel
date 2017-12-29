@@ -43,13 +43,14 @@ def notification_controller():
         # ALL OTHER DATA
 
         # SEND EMAIL TO CURRENT USER
-        news_email(users[x], bsu_data)
+        #news_email(users[x], bsu_data)
 
 
 def run():
     #finance_controller()
     #user_controller()
-    notification_controller()
+    #notification_controller()
+    remove_users()
 
 if __name__ == "__main__":
     run()
