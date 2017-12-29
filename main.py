@@ -1,9 +1,9 @@
 
-from db import get_users_current_bsu_bank
-from data import get_bsu_data
+from db import get_all_users
+from data import get_bsu_data, get_savings_account_data
 from user import register_users, remove_users
 from emailer import news_email
-from notifier import bsu_notifier
+from notifier import bsu_notifier, savings_account_notifier
 
 
 # FINANCE CONTROLLER
@@ -15,6 +15,9 @@ def finance_controller():
     ## Collect and store BSU data
     get_bsu_data()
 
+    ## Collect and store savings account data
+    get_savings_account_data()
+
 
 # USER CONTROLLER
 # About the User Controller:
@@ -22,7 +25,7 @@ def finance_controller():
 # 2. Stores and removes user data from the database
 # 3. Connects the user table data with finance tables
 def user_controller():
-    ## Register new user entries
+    ## Register new/updated user entries
     register_users()
 
     ## Delete user entries
@@ -32,15 +35,17 @@ def user_controller():
 # NOTIFICATION CONTROLLER
 def notification_controller():
     # Get all users
-    users = get_users_current_bsu_bank()
+    users = get_all_users()
+    print(users)
+
 
     for x in range(len(users)):
         bsu_data = bsu_notifier(users[x])
+        savings_account_data = savings_account_notifier(users[x])
 
-        # ALL OTHER DATA
+        # Send finance data by email to specific user
+        news_email(users[x], bsu_data, savings_account_data)
 
-        # SEND EMAIL TO CURRENT USER
-        #news_email(users[x], bsu_data)
 
 
 def run():

@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c4391a3-fbfe-4e09-a724-9acd9bf35d1d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/data.py" afterPath="$PROJECT_DIR$/data.py" />
       <change beforePath="$PROJECT_DIR$/db.py" afterPath="$PROJECT_DIR$/db.py" />
+      <change beforePath="$PROJECT_DIR$/emailer.py" afterPath="$PROJECT_DIR$/emailer.py" />
       <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change beforePath="$PROJECT_DIR$/notifier.py" afterPath="$PROJECT_DIR$/notifier.py" />
+      <change beforePath="$PROJECT_DIR$/settings.py" afterPath="$PROJECT_DIR$/settings.py" />
       <change beforePath="$PROJECT_DIR$/user.py" afterPath="$PROJECT_DIR$/user.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,10 +22,10 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="46" column="4" lean-forward="false" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
+            <state relative-caret-position="-75">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
-                <element signature="e#1#42#0" expanded="true" />
+                <element signature="e#1#29#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -31,8 +34,8 @@
       <file leaf-file-name="emailer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/emailer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+            <state relative-caret-position="2890">
+              <caret line="170" column="0" lean-forward="true" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -40,23 +43,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="secrets.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/secrets.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="user.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state relative-caret-position="833">
+              <caret line="49" column="51" lean-forward="false" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
               <folding>
-                <element signature="e#1#108#0" expanded="true" />
+                <element signature="e#1#80#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,25 +58,31 @@
       <file leaf-file-name="db.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+            <state relative-caret-position="4046">
+              <caret line="238" column="28" lean-forward="false" selection-start-line="238" selection-start-column="4" selection-end-line="238" selection-end-column="28" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1514550969102" expanded="true" signature="426:450" ph="DROP TABLE I... " />
-                <marker date="1514550969102" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
-                <marker date="1514550969102" expanded="true" signature="925:1166" ph="CREATE TABLE... users" />
-                <marker date="1514550969102" expanded="true" signature="1452:1528" ph="CREATE TABLE... inactive_users" />
-                <marker date="1514550969102" expanded="true" signature="2157:2304" ph="INSERT INTO bsu... " />
-                <marker date="1514550969102" expanded="true" signature="2693:2830" ph="INSERT INTO users... " />
-                <marker date="1514550969102" expanded="true" signature="3045:3194" ph="UPDATE users... " />
-                <marker date="1514550969102" expanded="true" signature="3752:3785" ph="DELETE FROM users... " />
-                <marker date="1514550969102" expanded="true" signature="3960:4014" ph="INSERT INTO inactive_users... " />
-                <marker date="1514550969102" expanded="true" signature="4067:4112" ph="INSERT INTO inactive_users... " />
-                <marker date="1514550969102" expanded="true" signature="4533:4759" ph="SELECT users... users" />
-                <marker date="1514550969102" expanded="true" signature="4975:4992" ph="SELECT * FRO... bsu" />
-                <marker date="1514550969102" expanded="true" signature="5191:5239" ph="SELECT bank_... bsu" />
-                <marker date="1514550969102" expanded="true" signature="5454:5501" ph="SELECT inter... bsu" />
-                <marker date="1514550969102" expanded="true" signature="5768:5809" ph="SELECT * FRO... bsu" />
+                <marker date="1514566655657" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+                <marker date="1514566655657" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
+                <marker date="1514566655657" expanded="true" signature="894:930" ph="DROP TABLE I... " />
+                <marker date="1514566655657" expanded="true" signature="1000:1199" ph="CREATE TABLE... savings_account" />
+                <marker date="1514566655657" expanded="true" signature="1417:1759" ph="CREATE TABLE... users" />
+                <marker date="1514566655657" expanded="true" signature="2045:2121" ph="CREATE TABLE... inactive_users" />
+                <marker date="1514566655657" expanded="true" signature="2750:2897" ph="INSERT INTO bsu... " />
+                <marker date="1514566655657" expanded="true" signature="3288:3447" ph="INSERT INTO bsu... " />
+                <marker date="1514566655657" expanded="true" signature="3872:4036" ph="INSERT INTO users... " />
+                <marker date="1514566655657" expanded="true" signature="4291:4471" ph="UPDATE users... " />
+                <marker date="1514566655657" expanded="true" signature="5069:5102" ph="DELETE FROM users... " />
+                <marker date="1514566655657" expanded="true" signature="5277:5331" ph="INSERT INTO inactive_users... " />
+                <marker date="1514566655657" expanded="true" signature="5384:5429" ph="INSERT INTO inactive_users... " />
+                <marker date="1514566655657" expanded="true" signature="5828:5847" ph="SELECT * FRO... users" />
+                <marker date="1514566655657" expanded="true" signature="6098:6146" ph="SELECT bank_... bsu" />
+                <marker date="1514566655657" expanded="true" signature="6392:6452" ph="SELECT bank_... savings_account" />
+                <marker date="1514566655657" expanded="true" signature="6728:6769" ph="SELECT * FRO... bsu" />
+                <marker date="1514566655657" expanded="true" signature="7048:7109" ph="SELECT inter... savings_account" />
+                <marker date="1514566655657" expanded="true" signature="7242:7295" ph="SELECT * FRO... savings_account" />
+                <marker date="1514566655657" expanded="true" signature="7544:7587" ph="SELECT bank_... bsu" />
+                <marker date="1514566655657" expanded="true" signature="7813:7868" ph="SELECT bank_... savings_account" />
               </folding>
             </state>
           </provider>
@@ -92,8 +91,8 @@
       <file leaf-file-name="notifier.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="42" lean-forward="false" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
+            <state relative-caret-position="289">
+              <caret line="17" column="41" lean-forward="false" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -102,8 +101,8 @@
       <file leaf-file-name="data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+            <state relative-caret-position="3315">
+              <caret line="195" column="64" lean-forward="true" selection-start-line="195" selection-start-column="64" selection-end-line="195" selection-end-column="64" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -114,8 +113,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1207">
-              <caret line="76" column="29" lean-forward="false" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
+            <state relative-caret-position="459">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -132,6 +131,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>get_users_current_bsu_bank</find>
+      <find>get_bsu_banks</find>
+      <find>get_bsu_rates</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -143,13 +149,13 @@
         <option value="$PROJECT_DIR$/email.py" />
         <option value="$PROJECT_DIR$/my_email.py" />
         <option value="$PROJECT_DIR$/secrets.json" />
-        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/db.py" />
+        <option value="$PROJECT_DIR$/emailer.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/user.py" />
         <option value="$PROJECT_DIR$/notifier.py" />
         <option value="$PROJECT_DIR$/data.py" />
-        <option value="$PROJECT_DIR$/emailer.py" />
-        <option value="$PROJECT_DIR$/user.py" />
-        <option value="$PROJECT_DIR$/db.py" />
-        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/settings.py" />
       </list>
     </option>
   </component>
@@ -236,14 +242,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38152173" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18478261" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.195629" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -278,7 +283,7 @@
         <state relative-caret-position="408">
           <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
           <folding>
-            <element signature="e#1#108#0" expanded="true" />
+            <element signature="e#1#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -308,7 +313,7 @@
         <state relative-caret-position="255">
           <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding>
-            <element signature="e#1#42#0" expanded="true" />
+            <element signature="e#1#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -318,7 +323,7 @@
         <state relative-caret-position="238">
           <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
           <folding>
-            <element signature="e#1#108#0" expanded="true" />
+            <element signature="e#1#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -329,21 +334,27 @@
           <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1514550969102" expanded="true" signature="426:450" ph="DROP TABLE I... " />
-            <marker date="1514550969102" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
-            <marker date="1514550969102" expanded="true" signature="925:1166" ph="CREATE TABLE... users" />
-            <marker date="1514550969102" expanded="true" signature="1452:1528" ph="CREATE TABLE... inactive_users" />
-            <marker date="1514550969102" expanded="true" signature="2157:2304" ph="INSERT INTO bsu... " />
-            <marker date="1514550969102" expanded="true" signature="2693:2830" ph="INSERT INTO users... " />
-            <marker date="1514550969102" expanded="true" signature="3045:3194" ph="UPDATE users... " />
-            <marker date="1514550969102" expanded="true" signature="3752:3785" ph="DELETE FROM users... " />
-            <marker date="1514550969102" expanded="true" signature="3960:4014" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4067:4112" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4533:4759" ph="SELECT users... users" />
-            <marker date="1514550969102" expanded="true" signature="4975:4992" ph="SELECT * FRO... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5191:5239" ph="SELECT bank_... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5454:5501" ph="SELECT inter... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5768:5809" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
+            <marker date="1514566655657" expanded="true" signature="894:930" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="1000:1199" ph="CREATE TABLE... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="1417:1759" ph="CREATE TABLE... users" />
+            <marker date="1514566655657" expanded="true" signature="2045:2121" ph="CREATE TABLE... inactive_users" />
+            <marker date="1514566655657" expanded="true" signature="2750:2897" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3288:3447" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3872:4036" ph="INSERT INTO users... " />
+            <marker date="1514566655657" expanded="true" signature="4291:4471" ph="UPDATE users... " />
+            <marker date="1514566655657" expanded="true" signature="5069:5102" ph="DELETE FROM users... " />
+            <marker date="1514566655657" expanded="true" signature="5277:5331" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5384:5429" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5828:5847" ph="SELECT * FRO... users" />
+            <marker date="1514566655657" expanded="true" signature="6098:6146" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="6392:6452" ph="SELECT bank_... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="6728:6769" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7048:7109" ph="SELECT inter... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7242:7295" ph="SELECT * FRO... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7544:7587" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7813:7868" ph="SELECT bank_... savings_account" />
           </folding>
         </state>
       </provider>
@@ -373,7 +384,7 @@
         <state relative-caret-position="323">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="e#1#42#0" expanded="true" />
+            <element signature="e#1#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -383,7 +394,7 @@
         <state relative-caret-position="595">
           <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
-            <element signature="e#1#108#0" expanded="true" />
+            <element signature="e#1#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -394,21 +405,27 @@
           <caret line="66" column="29" lean-forward="true" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1514550969102" expanded="true" signature="426:450" ph="DROP TABLE I... " />
-            <marker date="1514550969102" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
-            <marker date="1514550969102" expanded="true" signature="925:1166" ph="CREATE TABLE... users" />
-            <marker date="1514550969102" expanded="true" signature="1452:1528" ph="CREATE TABLE... inactive_users" />
-            <marker date="1514550969102" expanded="true" signature="2157:2304" ph="INSERT INTO bsu... " />
-            <marker date="1514550969102" expanded="true" signature="2693:2830" ph="INSERT INTO users... " />
-            <marker date="1514550969102" expanded="true" signature="3045:3194" ph="UPDATE users... " />
-            <marker date="1514550969102" expanded="true" signature="3752:3785" ph="DELETE FROM users... " />
-            <marker date="1514550969102" expanded="true" signature="3960:4014" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4067:4112" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4533:4759" ph="SELECT users... users" />
-            <marker date="1514550969102" expanded="true" signature="4975:4992" ph="SELECT * FRO... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5191:5239" ph="SELECT bank_... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5454:5501" ph="SELECT inter... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5768:5809" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
+            <marker date="1514566655657" expanded="true" signature="894:930" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="1000:1199" ph="CREATE TABLE... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="1417:1759" ph="CREATE TABLE... users" />
+            <marker date="1514566655657" expanded="true" signature="2045:2121" ph="CREATE TABLE... inactive_users" />
+            <marker date="1514566655657" expanded="true" signature="2750:2897" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3288:3447" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3872:4036" ph="INSERT INTO users... " />
+            <marker date="1514566655657" expanded="true" signature="4291:4471" ph="UPDATE users... " />
+            <marker date="1514566655657" expanded="true" signature="5069:5102" ph="DELETE FROM users... " />
+            <marker date="1514566655657" expanded="true" signature="5277:5331" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5384:5429" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5828:5847" ph="SELECT * FRO... users" />
+            <marker date="1514566655657" expanded="true" signature="6098:6146" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="6392:6452" ph="SELECT bank_... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="6728:6769" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7048:7109" ph="SELECT inter... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7242:7295" ph="SELECT * FRO... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7544:7587" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7813:7868" ph="SELECT bank_... savings_account" />
           </folding>
         </state>
       </provider>
@@ -438,7 +455,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1#42#0" expanded="true" />
+            <element signature="e#1#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -448,7 +465,7 @@
         <state relative-caret-position="595">
           <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
-            <element signature="e#1#108#0" expanded="true" />
+            <element signature="e#1#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -459,21 +476,27 @@
           <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1514550969102" expanded="true" signature="426:450" ph="DROP TABLE I... " />
-            <marker date="1514550969102" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
-            <marker date="1514550969102" expanded="true" signature="925:1166" ph="CREATE TABLE... users" />
-            <marker date="1514550969102" expanded="true" signature="1452:1528" ph="CREATE TABLE... inactive_users" />
-            <marker date="1514550969102" expanded="true" signature="2157:2304" ph="INSERT INTO bsu... " />
-            <marker date="1514550969102" expanded="true" signature="2693:2830" ph="INSERT INTO users... " />
-            <marker date="1514550969102" expanded="true" signature="3045:3194" ph="UPDATE users... " />
-            <marker date="1514550969102" expanded="true" signature="3752:3785" ph="DELETE FROM users... " />
-            <marker date="1514550969102" expanded="true" signature="3960:4014" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4067:4112" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4533:4759" ph="SELECT users... users" />
-            <marker date="1514550969102" expanded="true" signature="4975:4992" ph="SELECT * FRO... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5191:5239" ph="SELECT bank_... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5454:5501" ph="SELECT inter... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5768:5809" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
+            <marker date="1514566655657" expanded="true" signature="894:930" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="1000:1199" ph="CREATE TABLE... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="1417:1759" ph="CREATE TABLE... users" />
+            <marker date="1514566655657" expanded="true" signature="2045:2121" ph="CREATE TABLE... inactive_users" />
+            <marker date="1514566655657" expanded="true" signature="2750:2897" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3288:3447" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3872:4036" ph="INSERT INTO users... " />
+            <marker date="1514566655657" expanded="true" signature="4291:4471" ph="UPDATE users... " />
+            <marker date="1514566655657" expanded="true" signature="5069:5102" ph="DELETE FROM users... " />
+            <marker date="1514566655657" expanded="true" signature="5277:5331" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5384:5429" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5828:5847" ph="SELECT * FRO... users" />
+            <marker date="1514566655657" expanded="true" signature="6098:6146" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="6392:6452" ph="SELECT bank_... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="6728:6769" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7048:7109" ph="SELECT inter... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7242:7295" ph="SELECT * FRO... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7544:7587" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7813:7868" ph="SELECT bank_... savings_account" />
           </folding>
         </state>
       </provider>
@@ -503,7 +526,7 @@
         <state relative-caret-position="255">
           <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding>
-            <element signature="e#1#42#0" expanded="true" />
+            <element signature="e#1#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -513,7 +536,7 @@
         <state relative-caret-position="221">
           <caret line="13" column="48" lean-forward="false" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
           <folding>
-            <element signature="e#1#108#0" expanded="true" />
+            <element signature="e#1#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -524,21 +547,27 @@
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1514550969102" expanded="true" signature="426:450" ph="DROP TABLE I... " />
-            <marker date="1514550969102" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
-            <marker date="1514550969102" expanded="true" signature="925:1166" ph="CREATE TABLE... users" />
-            <marker date="1514550969102" expanded="true" signature="1452:1528" ph="CREATE TABLE... inactive_users" />
-            <marker date="1514550969102" expanded="true" signature="2157:2304" ph="INSERT INTO bsu... " />
-            <marker date="1514550969102" expanded="true" signature="2693:2830" ph="INSERT INTO users... " />
-            <marker date="1514550969102" expanded="true" signature="3045:3194" ph="UPDATE users... " />
-            <marker date="1514550969102" expanded="true" signature="3752:3785" ph="DELETE FROM users... " />
-            <marker date="1514550969102" expanded="true" signature="3960:4014" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4067:4112" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4533:4759" ph="SELECT users... users" />
-            <marker date="1514550969102" expanded="true" signature="4975:4992" ph="SELECT * FRO... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5191:5239" ph="SELECT bank_... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5454:5501" ph="SELECT inter... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5768:5809" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
+            <marker date="1514566655657" expanded="true" signature="894:930" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="1000:1199" ph="CREATE TABLE... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="1417:1759" ph="CREATE TABLE... users" />
+            <marker date="1514566655657" expanded="true" signature="2045:2121" ph="CREATE TABLE... inactive_users" />
+            <marker date="1514566655657" expanded="true" signature="2750:2897" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3288:3447" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3872:4036" ph="INSERT INTO users... " />
+            <marker date="1514566655657" expanded="true" signature="4291:4471" ph="UPDATE users... " />
+            <marker date="1514566655657" expanded="true" signature="5069:5102" ph="DELETE FROM users... " />
+            <marker date="1514566655657" expanded="true" signature="5277:5331" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5384:5429" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5828:5847" ph="SELECT * FRO... users" />
+            <marker date="1514566655657" expanded="true" signature="6098:6146" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="6392:6452" ph="SELECT bank_... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="6728:6769" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7048:7109" ph="SELECT inter... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7242:7295" ph="SELECT * FRO... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7544:7587" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7813:7868" ph="SELECT bank_... savings_account" />
           </folding>
         </state>
       </provider>
@@ -568,7 +597,7 @@
         <state relative-caret-position="408">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <element signature="e#1#42#0" expanded="true" />
+            <element signature="e#1#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -579,21 +608,27 @@
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1514550969102" expanded="true" signature="426:450" ph="DROP TABLE I... " />
-            <marker date="1514550969102" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
-            <marker date="1514550969102" expanded="true" signature="925:1166" ph="CREATE TABLE... users" />
-            <marker date="1514550969102" expanded="true" signature="1452:1528" ph="CREATE TABLE... inactive_users" />
-            <marker date="1514550969102" expanded="true" signature="2157:2304" ph="INSERT INTO bsu... " />
-            <marker date="1514550969102" expanded="true" signature="2693:2830" ph="INSERT INTO users... " />
-            <marker date="1514550969102" expanded="true" signature="3045:3194" ph="UPDATE users... " />
-            <marker date="1514550969102" expanded="true" signature="3752:3785" ph="DELETE FROM users... " />
-            <marker date="1514550969102" expanded="true" signature="3960:4014" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4067:4112" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4533:4759" ph="SELECT users... users" />
-            <marker date="1514550969102" expanded="true" signature="4975:4992" ph="SELECT * FRO... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5191:5239" ph="SELECT bank_... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5454:5501" ph="SELECT inter... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5768:5809" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
+            <marker date="1514566655657" expanded="true" signature="894:930" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="1000:1199" ph="CREATE TABLE... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="1417:1759" ph="CREATE TABLE... users" />
+            <marker date="1514566655657" expanded="true" signature="2045:2121" ph="CREATE TABLE... inactive_users" />
+            <marker date="1514566655657" expanded="true" signature="2750:2897" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3288:3447" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3872:4036" ph="INSERT INTO users... " />
+            <marker date="1514566655657" expanded="true" signature="4291:4471" ph="UPDATE users... " />
+            <marker date="1514566655657" expanded="true" signature="5069:5102" ph="DELETE FROM users... " />
+            <marker date="1514566655657" expanded="true" signature="5277:5331" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5384:5429" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5828:5847" ph="SELECT * FRO... users" />
+            <marker date="1514566655657" expanded="true" signature="6098:6146" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="6392:6452" ph="SELECT bank_... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="6728:6769" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7048:7109" ph="SELECT inter... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7242:7295" ph="SELECT * FRO... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7544:7587" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7813:7868" ph="SELECT bank_... savings_account" />
           </folding>
         </state>
       </provider>
@@ -603,7 +638,7 @@
         <state relative-caret-position="323">
           <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#1#108#0" expanded="true" />
+            <element signature="e#1#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -633,7 +668,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1#42#0" expanded="true" />
+            <element signature="e#1#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -644,21 +679,27 @@
           <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1514550969102" expanded="true" signature="426:450" ph="DROP TABLE I... " />
-            <marker date="1514550969102" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
-            <marker date="1514550969102" expanded="true" signature="925:1166" ph="CREATE TABLE... users" />
-            <marker date="1514550969102" expanded="true" signature="1452:1528" ph="CREATE TABLE... inactive_users" />
-            <marker date="1514550969102" expanded="true" signature="2157:2304" ph="INSERT INTO bsu... " />
-            <marker date="1514550969102" expanded="true" signature="2693:2830" ph="INSERT INTO users... " />
-            <marker date="1514550969102" expanded="true" signature="3045:3194" ph="UPDATE users... " />
-            <marker date="1514550969102" expanded="true" signature="3752:3785" ph="DELETE FROM users... " />
-            <marker date="1514550969102" expanded="true" signature="3960:4014" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4067:4112" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4533:4759" ph="SELECT users... users" />
-            <marker date="1514550969102" expanded="true" signature="4975:4992" ph="SELECT * FRO... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5191:5239" ph="SELECT bank_... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5454:5501" ph="SELECT inter... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5768:5809" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
+            <marker date="1514566655657" expanded="true" signature="894:930" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="1000:1199" ph="CREATE TABLE... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="1417:1759" ph="CREATE TABLE... users" />
+            <marker date="1514566655657" expanded="true" signature="2045:2121" ph="CREATE TABLE... inactive_users" />
+            <marker date="1514566655657" expanded="true" signature="2750:2897" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3288:3447" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3872:4036" ph="INSERT INTO users... " />
+            <marker date="1514566655657" expanded="true" signature="4291:4471" ph="UPDATE users... " />
+            <marker date="1514566655657" expanded="true" signature="5069:5102" ph="DELETE FROM users... " />
+            <marker date="1514566655657" expanded="true" signature="5277:5331" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5384:5429" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5828:5847" ph="SELECT * FRO... users" />
+            <marker date="1514566655657" expanded="true" signature="6098:6146" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="6392:6452" ph="SELECT bank_... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="6728:6769" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7048:7109" ph="SELECT inter... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7242:7295" ph="SELECT * FRO... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7544:7587" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7813:7868" ph="SELECT bank_... savings_account" />
           </folding>
         </state>
       </provider>
@@ -668,7 +709,7 @@
         <state relative-caret-position="323">
           <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#1#108#0" expanded="true" />
+            <element signature="e#1#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -698,7 +739,7 @@
         <state relative-caret-position="136">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#1#42#0" expanded="true" />
+            <element signature="e#1#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -709,21 +750,27 @@
           <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1514550969102" expanded="true" signature="426:450" ph="DROP TABLE I... " />
-            <marker date="1514550969102" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
-            <marker date="1514550969102" expanded="true" signature="925:1166" ph="CREATE TABLE... users" />
-            <marker date="1514550969102" expanded="true" signature="1452:1528" ph="CREATE TABLE... inactive_users" />
-            <marker date="1514550969102" expanded="true" signature="2157:2304" ph="INSERT INTO bsu... " />
-            <marker date="1514550969102" expanded="true" signature="2693:2830" ph="INSERT INTO users... " />
-            <marker date="1514550969102" expanded="true" signature="3045:3194" ph="UPDATE users... " />
-            <marker date="1514550969102" expanded="true" signature="3752:3785" ph="DELETE FROM users... " />
-            <marker date="1514550969102" expanded="true" signature="3960:4014" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4067:4112" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4533:4759" ph="SELECT users... users" />
-            <marker date="1514550969102" expanded="true" signature="4975:4992" ph="SELECT * FRO... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5191:5239" ph="SELECT bank_... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5454:5501" ph="SELECT inter... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5768:5809" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
+            <marker date="1514566655657" expanded="true" signature="894:930" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="1000:1199" ph="CREATE TABLE... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="1417:1759" ph="CREATE TABLE... users" />
+            <marker date="1514566655657" expanded="true" signature="2045:2121" ph="CREATE TABLE... inactive_users" />
+            <marker date="1514566655657" expanded="true" signature="2750:2897" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3288:3447" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3872:4036" ph="INSERT INTO users... " />
+            <marker date="1514566655657" expanded="true" signature="4291:4471" ph="UPDATE users... " />
+            <marker date="1514566655657" expanded="true" signature="5069:5102" ph="DELETE FROM users... " />
+            <marker date="1514566655657" expanded="true" signature="5277:5331" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5384:5429" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5828:5847" ph="SELECT * FRO... users" />
+            <marker date="1514566655657" expanded="true" signature="6098:6146" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="6392:6452" ph="SELECT bank_... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="6728:6769" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7048:7109" ph="SELECT inter... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7242:7295" ph="SELECT * FRO... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7544:7587" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7813:7868" ph="SELECT bank_... savings_account" />
           </folding>
         </state>
       </provider>
@@ -778,93 +825,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="76" column="29" lean-forward="false" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="42" lean-forward="false" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/secrets.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+        <state relative-caret-position="0">
+          <caret line="0" column="1" lean-forward="true" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#108#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/emailer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+        <state relative-caret-position="2890">
+          <caret line="170" column="0" lean-forward="true" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="51" lean-forward="false" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+          <folding>
+            <element signature="e#1#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        <state relative-caret-position="4046">
+          <caret line="238" column="28" lean-forward="false" selection-start-line="238" selection-start-column="4" selection-end-line="238" selection-end-column="28" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1514550969102" expanded="true" signature="426:450" ph="DROP TABLE I... " />
-            <marker date="1514550969102" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
-            <marker date="1514550969102" expanded="true" signature="925:1166" ph="CREATE TABLE... users" />
-            <marker date="1514550969102" expanded="true" signature="1452:1528" ph="CREATE TABLE... inactive_users" />
-            <marker date="1514550969102" expanded="true" signature="2157:2304" ph="INSERT INTO bsu... " />
-            <marker date="1514550969102" expanded="true" signature="2693:2830" ph="INSERT INTO users... " />
-            <marker date="1514550969102" expanded="true" signature="3045:3194" ph="UPDATE users... " />
-            <marker date="1514550969102" expanded="true" signature="3752:3785" ph="DELETE FROM users... " />
-            <marker date="1514550969102" expanded="true" signature="3960:4014" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4067:4112" ph="INSERT INTO inactive_users... " />
-            <marker date="1514550969102" expanded="true" signature="4533:4759" ph="SELECT users... users" />
-            <marker date="1514550969102" expanded="true" signature="4975:4992" ph="SELECT * FRO... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5191:5239" ph="SELECT bank_... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5454:5501" ph="SELECT inter... bsu" />
-            <marker date="1514550969102" expanded="true" signature="5768:5809" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="426:450" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="520:707" ph="CREATE TABLE... bsu" />
+            <marker date="1514566655657" expanded="true" signature="894:930" ph="DROP TABLE I... " />
+            <marker date="1514566655657" expanded="true" signature="1000:1199" ph="CREATE TABLE... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="1417:1759" ph="CREATE TABLE... users" />
+            <marker date="1514566655657" expanded="true" signature="2045:2121" ph="CREATE TABLE... inactive_users" />
+            <marker date="1514566655657" expanded="true" signature="2750:2897" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3288:3447" ph="INSERT INTO bsu... " />
+            <marker date="1514566655657" expanded="true" signature="3872:4036" ph="INSERT INTO users... " />
+            <marker date="1514566655657" expanded="true" signature="4291:4471" ph="UPDATE users... " />
+            <marker date="1514566655657" expanded="true" signature="5069:5102" ph="DELETE FROM users... " />
+            <marker date="1514566655657" expanded="true" signature="5277:5331" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5384:5429" ph="INSERT INTO inactive_users... " />
+            <marker date="1514566655657" expanded="true" signature="5828:5847" ph="SELECT * FRO... users" />
+            <marker date="1514566655657" expanded="true" signature="6098:6146" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="6392:6452" ph="SELECT bank_... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="6728:6769" ph="SELECT * FRO... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7048:7109" ph="SELECT inter... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7242:7295" ph="SELECT * FRO... savings_account" />
+            <marker date="1514566655657" expanded="true" signature="7544:7587" ph="SELECT bank_... bsu" />
+            <marker date="1514566655657" expanded="true" signature="7813:7868" ph="SELECT bank_... savings_account" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="41" lean-forward="false" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3315">
+          <caret line="195" column="64" lean-forward="true" selection-start-line="195" selection-start-column="64" selection-end-line="195" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="46" column="4" lean-forward="false" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
+        <state relative-caret-position="-75">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <element signature="e#1#42#0" expanded="true" />
+            <element signature="e#1#29#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -16,7 +16,9 @@ url_bsu_regions = 'https://www.finansportalen.no/services/kalkulator/banksparing
 url_bsu_country = 'https://www.finansportalen.no/services/kalkulator/banksparing/export?kalkulatortype=banksparing&totalt_innestaende=1&alderstilbudAr=24&nasjonalt=ja&visUtenProduktpakker=ja&neiforutsettermedlemskap=ja&kraft_sparekonto_med_spareavtale=ja&kraft_sparekonto_uten_spareavtale=ja&bsu=ja&sortcolumn=effectiveInterestRate%2C-bank.name%2C-name&sortdirection=desc'
 
 ### Bank Savings URL
-# INSERT URLS
+url_savings_account = 'https://www.finansportalen.no/services/kalkulator/banksparing/export?kalkulatortype=banksparing&totalt_innestaende=90000&alderstilbudAr=21&nasjonalt=ja&regionalt=ja&visUtenProduktpakker=ja&neiforutsettermedlemskap=ja&all=ja&sparekonto_uten_begrensninger=ja&sortcolumn=effectiveInterestRate%2C-bank.name%2C-name&sortdirection=desc'
+
+
 
 # Centralized data extraction methods
 

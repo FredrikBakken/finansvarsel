@@ -1,5 +1,5 @@
 
-from db import create_user_table, inactive_user_table, insert_user, delete_user, get_users_current_bsu_bank
+from db import create_user_table, inactive_user_table, insert_user, delete_user
 from emailer import registration_email, update_email, delete_email
 from settings import access_spreadsheet
 
@@ -34,15 +34,17 @@ def register_users():
         phone = new_user[7]
         bsu = new_user[8]
         bsu_bank = new_user[9]
+        savings = new_user[10]
+        savings_bank = new_user[11]
 
         # Insert new user into the user database
-        response = insert_user(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank)
+        response = insert_user(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank)
 
         # Send confirmation email for new registrations and updates
         if response == 'new_user':
             registration_email(email, firstname, lastname)
         elif response == 'update_user':
-            update_email(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank)
+            update_email(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank)
 
 
     # Loop through and delete user entries in sheet
@@ -50,14 +52,8 @@ def register_users():
     for x in range(number_of_users):
         users_sheet.delete_row((number_of_users + 1) - x)
 
-    ## Get all users and connected BSU banks
-    data = get_users_current_bsu_bank()
-    for x in range(len(data)):
-        print(data[x])
-        pass
 
-
-# Delete user TODO: FIX MISSING FUNCTIONALITY
+# Delete user
 def remove_users():
     ## SQLite3 inactive_user database initialization
     inactive_user_table()
@@ -83,7 +79,7 @@ def remove_users():
         # Delete user from user database
         delete_user(email, reason, store)
 
-        # TODO: SEND DELETE USER CONFIRMATION TO EMAIL
+        # Send confirmation email for deleted user
         delete_email(email, store)
 
     # Loop through and delete user entries in sheet
