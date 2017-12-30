@@ -65,8 +65,8 @@ def check_codec(v):
     return variable
 
 
-### Get email credentials from secrets file
-def email_credentials():
+### Get credentials from secrets file
+def credentials():
     jdata = json.loads(open('secrets.json').read())
     username = jdata['email-username']
     password = jdata['email-password']

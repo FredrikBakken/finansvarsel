@@ -4,13 +4,13 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 from db import get_user_bsu_bank_id, get_user_savings_bank_id
-from settings import url_change_bank, email_credentials, email_strings, time_now
+from settings import url_change_bank, credentials, email_strings, time_now
 
 
 # New user registration confirmation email
 def registration_email(email, firstname, lastname):
     TO = email
-    FROM = email_credentials()[0]
+    FROM = credentials()[0]
     SUBJECT = email_strings('Velkommen til Finansvarsel!')
 
     reg_firstname = email_strings(firstname)
@@ -37,7 +37,7 @@ def registration_email(email, firstname, lastname):
 # Update user data confirmation email
 def update_email(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank):
     TO = email
-    FROM = email_credentials()[0]
+    FROM = credentials()[0]
     SUBJECT = email_strings('Finansvarsel - Brukeroppdatering')
 
     upd_firstname = email_strings(firstname)
@@ -82,7 +82,7 @@ def update_email(email, firstname, lastname, postal_number, street_name, street_
 # Delete user data confirmation email
 def delete_email(email, store):
     TO = email
-    FROM = email_credentials()[0]
+    FROM = credentials()[0]
     SUBJECT = email_strings('Finansvarsel - Slett min bruker')
 
     email_content = """
@@ -111,7 +111,7 @@ def delete_email(email, store):
 
 def news_email(user, bsu_data, savings_account_data):
     TO = user[1]
-    FROM = email_credentials()[0]
+    FROM = credentials()[0]
     SUBJECT = email_strings('Oppdatering fra Finansvarsel: ' + time_now('date.month.year'))
 
     news_firstname = email_strings(user[2])
@@ -197,10 +197,10 @@ def send_email(SUBJECT, BODY, TO, FROM):
     MESSAGE.attach(HTML_BODY)
 
     # The actual sending of the e-mail
-    server = smtplib.SMTP(email_credentials()[2])
+    server = smtplib.SMTP(credentials()[2])
     server.ehlo()
     server.starttls()
-    server.login(email_credentials()[0], email_credentials()[1])
+    server.login(credentials()[0], credentials()[1])
     server.sendmail(FROM, TO, MESSAGE.as_string())
     server.quit()
 

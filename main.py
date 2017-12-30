@@ -1,7 +1,5 @@
-
 import sys
-import time
-import schedule
+import scheduler
 
 from db import get_all_users
 from data import get_bsu_data, get_savings_account_data
@@ -9,17 +7,6 @@ from user import register_users, remove_users
 from emailer import news_email
 from notifier import bsu_notifier, savings_account_notifier
 
-
-def scheduler():
-    schedule.every().day.at("02:00").do(finance_controller)
-
-    # Look into: https://schedule.readthedocs.io/en/stable/faq.html#how-to-execute-jobs-in-parallel
-
-
-    while True:
-        schedule.run_pending()
-        time.sleep(30)
-        user_controller()
 
 # FINANCE CONTROLLER
 # About the Finance Controller:
@@ -70,6 +57,6 @@ if __name__ == "__main__":
     argument = sys.argv
     try:
         if argument[1] == 'auto':
-            scheduler()
+            scheduler.thread_scheduler()
     except:
         run()
