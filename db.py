@@ -75,7 +75,6 @@ def insert_bsu(product_id, bank_id, bank_name, bank_url, bank_region, bank_accou
     c.execute('''INSERT INTO bsu(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate) VALUES (?,?,?,?,?,?,?,?)''',
              (product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate))
     c.commit()
-
     c.close()
 
 
@@ -86,7 +85,6 @@ def insert_savings_account(product_id, bank_id, bank_name, bank_url, bank_region
     c.execute('''INSERT INTO savings_account(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate) VALUES (?,?,?,?,?,?,?,?)''',
              (product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate))
     c.commit()
-
     c.close()
 
 
@@ -108,7 +106,6 @@ def insert_user(email, firstname, lastname, postal_number, street_name, street_n
         response = 'update_user'
 
     c.commit()
-
     c.close()
 
     return response
@@ -132,7 +129,6 @@ def delete_user(email, reason, store):
         c.execute('''INSERT INTO inactive_users(reason) VALUES (?)''', (reason,))
 
     c.commit()
-
     c.close()
 
 
@@ -237,6 +233,8 @@ def get_user_bsu_bank_id(user):
     for row in sql_cmd_s:
         id = row[0]
 
+    c.close()
+
     return id
 
 
@@ -249,5 +247,7 @@ def get_user_savings_bank_id(user):
     id = ''
     for row in sql_cmd_s:
         id = row[0]
+
+    c.close()
 
     return id
