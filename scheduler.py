@@ -8,9 +8,10 @@ from main import user_controller
 from main import notification_controller
 
 
+# Job queue
 jobqueue = queue.Queue()
 
-
+# Creating a queue for scheduled tasks to be executed
 def queue_worker():
     while 1:
         job_func = jobqueue.get()
@@ -18,13 +19,20 @@ def queue_worker():
         jobqueue.task_done()
 
 
+# Method for scheduling tasks
 def thread_scheduler():
+    # Do this once
+    finance_controller()
+
+    # Schedule these tasks
     schedule.every().day.at("02:00").do(finance_controller)
     schedule.every().friday.at("21:00").do(notification_controller)
 
+    # Start threading
     worker_thread = threading.Thread(target=queue_worker)
     worker_thread.start()
 
+    # Loop forever scheduled tasks
     while True:
         schedule.run_pending()
         time.sleep(30)
