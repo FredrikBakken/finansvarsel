@@ -46,11 +46,12 @@ def register_users():
         elif response == 'update_user':
             update_email(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank)
 
+    '''
     # Loop through and delete user entries in sheet
     print('Deleting new user entries from sheet...')
     for x in range(number_of_users):
         users_sheet.delete_row((number_of_users + 1) - x)
-
+    '''
 
 # Delete user
 def remove_users():

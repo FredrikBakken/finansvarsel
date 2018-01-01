@@ -1,6 +1,6 @@
 import sqlite3
 
-from settings import database_connection
+from settings import database_connection, db_encryption, db_decryption
 
 
 ########################################################################################################################
@@ -93,10 +93,13 @@ def insert_user(email, firstname, lastname, postal_number, street_name, street_n
     c = database_connection()
     response = ''
 
+    local_email = db_encryption(email.encode())
+    print(local_email)
+
     # New user ==> Insert
     try:
         c.execute('''INSERT INTO users(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank) VALUES (?,?,?,?,?,?,?,?,?,?,?)''',
-                 (email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank))
+                 (local_email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank))
         response = 'new_user'
 
     # User exist ==> Update
@@ -140,6 +143,21 @@ def get_all_users():
     c = database_connection()
 
     sql_cmd_s = c.execute('''SELECT * FROM users''')
+
+    user_list = []
+    for row in sql_cmd_s:
+        user_list.append(row)
+
+    c.close()
+
+    return user_list
+
+
+# Get specific user from database
+def get_specific_user(email):
+    c = database_connection()
+
+    sql_cmd_s = c.execute('''SELECT * FROM users WHERE email  = ?''', (email,))
 
     user_list = []
     for row in sql_cmd_s:

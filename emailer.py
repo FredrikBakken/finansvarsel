@@ -201,7 +201,7 @@ def send_email(SUBJECT, BODY, TO, FROM):
     server.ehlo()
     server.starttls()
     server.login(credentials()[0], credentials()[1])
-    server.sendmail(FROM, TO, MESSAGE.as_string())
+    #server.sendmail(FROM, TO, MESSAGE.as_string())
     server.quit()
 
     print('Email to ' + TO + ' has been sent.')

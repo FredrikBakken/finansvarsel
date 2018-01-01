@@ -1,11 +1,12 @@
 import sys
 import scheduler
 
-from db import get_all_users
+from db import get_all_users, get_specific_user
 from data import get_bsu_data, get_savings_account_data
 from user import register_users, remove_users
 from emailer import news_email
 from notifier import bsu_notifier, savings_account_notifier
+from settings import db_decryption, db_encryption
 
 
 # FINANCE CONTROLLER
@@ -48,9 +49,17 @@ def notification_controller():
 
 
 def run():
-    finance_controller()
-    user_controller()
-    notification_controller()
+    #finance_controller()
+    #user_controller()
+    #notification_controller()
+
+    #register_users()
+    #users = get_all_users()
+    #print(db_decryption(users[0][1]).decode())
+
+    value = get_specific_user(db_encryption('username'.encode()))
+    #print(value)
+    print(db_decryption(value[0][1]).decode())
 
 
 if __name__ == "__main__":

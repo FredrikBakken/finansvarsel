@@ -78,8 +78,9 @@ def credentials():
     password = jdata['email-password']
     server_port = jdata['email-server']
     db_key = jdata['db-key']
+    db_nonce = jdata['db-nonce']
 
-    return username, password, server_port, db_key
+    return username, password, server_port, db_key, db_nonce
 
 
 ### Prepare the strings for html
@@ -88,14 +89,15 @@ def email_strings(text_data):
     return text_data
 
 
-# Encryption/Decryption key
+# Encryption/Decryption key and nonce
 db_key = credentials()[3].encode()
+db_nonce = credentials()[4].encode()
 
 
 # Encryption method
 def db_encryption(message):
     box = nacl.secret.SecretBox(bytes(db_key))
-    encrypted = box.encrypt(message)
+    encrypted = box.encrypt(message, bytes(db_nonce))
     return encrypted
 
 
@@ -109,7 +111,6 @@ def db_decryption(ciphertext):
 '''
 EXAMPLE:
 message = 'fredda10x@gmail.com'.encode()
-
 
 encrypted = db_encryption(message)
 print(encrypted)
