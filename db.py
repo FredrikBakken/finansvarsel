@@ -1,6 +1,6 @@
 import sqlite3
 
-from settings import database_connection, db_encryption, db_decryption
+from settings import database_connection#, db_encryption, db_decryption
 
 
 ########################################################################################################################
@@ -93,13 +93,13 @@ def insert_user(email, firstname, lastname, postal_number, street_name, street_n
     c = database_connection()
     response = ''
 
-    local_email = db_encryption(email.encode())
-    print(local_email)
+    #local_email = db_encryption(email.encode())
+    #print(local_email)
 
     # New user ==> Insert
     try:
         c.execute('''INSERT INTO users(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank) VALUES (?,?,?,?,?,?,?,?,?,?,?)''',
-                 (local_email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank))
+                 (email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank))
         response = 'new_user'
 
     # User exist ==> Update

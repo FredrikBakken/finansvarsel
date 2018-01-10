@@ -10,6 +10,9 @@ from settings import access_spreadsheet, bsu_count, url_bsu_regions, url_bsu_cou
 
 # Method for downloading finansportalen content
 def download_content(url, filename):
+    if not os.path.exists('download'):
+        os.makedirs('download')
+
     response = requests.get(url)
     with open(os.path.join('download', filename), 'wb') as f:
         f.write(response.content)

@@ -1,9 +1,10 @@
+import os
 import sys
 import json
 import gspread
 import sqlite3
-import nacl.secret
-import nacl.utils
+#import nacl.secret
+#import nacl.utils
 
 from datetime import datetime
 from oauth2client.service_account import ServiceAccountCredentials
@@ -51,6 +52,9 @@ def access_spreadsheet():
 
 ### Open database connectivity
 def database_connection():
+    if not os.path.exists('database'):
+        os.makedirs('database')
+
     connection = sqlite3.connect('database/db.db')
     return connection
 
@@ -77,10 +81,10 @@ def credentials():
     username = jdata['email-username']
     password = jdata['email-password']
     server_port = jdata['email-server']
-    db_key = jdata['db-key']
-    db_nonce = jdata['db-nonce']
+    #db_key = jdata['db-key']
+    #db_nonce = jdata['db-nonce']
 
-    return username, password, server_port, db_key, db_nonce
+    return username, password, server_port#, db_key, db_nonce
 
 
 ### Prepare the strings for html
@@ -90,14 +94,14 @@ def email_strings(text_data):
 
 
 # Encryption/Decryption key and nonce
-db_key = credentials()[3].encode()
-db_nonce = credentials()[4].encode()
+#db_key = credentials()[3].encode()
+#db_nonce = credentials()[4].encode()
 
-
+'''
 # Encryption method
 def db_encryption(message):
     box = nacl.secret.SecretBox(bytes(db_key))
-    encrypted = box.encrypt(message, bytes(db_nonce))
+    encrypted = box.encrypt(message)#, bytes(db_nonce))
     return encrypted
 
 
@@ -106,7 +110,7 @@ def db_decryption(ciphertext):
     box = nacl.secret.SecretBox(bytes(db_key))
     plaintext = box.decrypt(ciphertext)
     return plaintext
-
+'''
 
 '''
 EXAMPLE:
