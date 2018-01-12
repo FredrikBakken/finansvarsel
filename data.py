@@ -34,7 +34,7 @@ def update_form(banks, sheet_number):
 
     # Deleting all banks that are no longer represented
     print('Deleting old banks from form.')
-    for x in range(1000):
+    while True:
         next_cell = bank_sheet.acell('A%s' % (after_row))
 
         if not next_cell.value == '':

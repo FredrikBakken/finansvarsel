@@ -27,6 +27,7 @@ def thread_scheduler():
     # Schedule these tasks
     schedule.every().day.at("02:00").do(finance_controller)
     schedule.every().friday.at("21:00").do(notification_controller)
+    #TODO schedule.every().tuesday.at("00:00").do(user_update_notifier)
 
     # Start threading
     worker_thread = threading.Thread(target=queue_worker)

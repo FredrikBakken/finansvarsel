@@ -1,5 +1,6 @@
 import sqlite3
 
+from classes import User
 from settings import database_connection#, db_encryption, db_decryption
 
 
@@ -89,7 +90,7 @@ def insert_savings_account(product_id, bank_id, bank_name, bank_url, bank_region
 
 
 # Insert user into database
-def insert_user(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank):
+def insert_user(usr):
     c = database_connection()
     response = ''
 
@@ -99,13 +100,13 @@ def insert_user(email, firstname, lastname, postal_number, street_name, street_n
     # New user ==> Insert
     try:
         c.execute('''INSERT INTO users(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank) VALUES (?,?,?,?,?,?,?,?,?,?,?)''',
-                 (email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank))
+                 (usr.email, usr.firstname, usr.lastname, usr.postal_number, usr.street_name, usr.street_number, usr.phone, usr.bsu, usr.bsu_bank, usr.savings, usr.savings_bank))
         response = 'new_user'
 
     # User exist ==> Update
     except sqlite3.IntegrityError:
         c.execute('''UPDATE users SET firstname = ?, lastname = ?, postal_number = ?, street_name = ?, street_number = ?, phone = ?, bsu = ?, bsu_bank = ?, savings = ?, savings_bank = ? WHERE email = ?''',
-                 (firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank, email))
+                 (usr.firstname, usr.lastname, usr.postal_number, usr.street_name, usr.street_number, usr.phone, usr.bsu, usr.bsu_bank, usr.savings, usr.savings_bank, usr.email))
         response = 'update_user'
 
     c.commit()
@@ -146,7 +147,20 @@ def get_all_users():
 
     user_list = []
     for row in sql_cmd_s:
-        user_list.append(row)
+        email           = row[1]
+        firstname       = row[2]
+        lastname        = row[3]
+        postal_number   = row[4]
+        street_name     = row[5]
+        street_number   = row[6]
+        phone           = row[7]
+        bsu             = row[8]
+        bsu_bank        = row[9]
+        savings         = row[10]
+        savings_bank    = row[11]
+
+        current_user = User(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank)
+        user_list.append(current_user)
 
     c.close()
 
@@ -200,10 +214,10 @@ def get_savings_banks():
 
 
 # Get BSU banks with higher interest rates
-def get_bsu_banks_with_higher_rates(user):
+def get_bsu_banks_with_higher_rates(usr):
     c = database_connection()
 
-    sql_cmd_interest = c.execute('''SELECT interest_rate FROM bsu WHERE bank_name = ?''', (user[9],))
+    sql_cmd_interest = c.execute('''SELECT interest_rate FROM bsu WHERE bank_name = ?''', (usr.bsu_bank,))
 
     current_rate = 0
     for row in sql_cmd_interest:
@@ -221,10 +235,10 @@ def get_bsu_banks_with_higher_rates(user):
 
 
 # Get savings banks with higher interest rates
-def get_savings_account_banks_with_higher_rates(user):
+def get_savings_account_banks_with_higher_rates(usr):
     c = database_connection()
 
-    sql_cmd_interest = c.execute('''SELECT interest_rate FROM savings_account WHERE bank_name = ?''', (user[11],))
+    sql_cmd_interest = c.execute('''SELECT interest_rate FROM savings_account WHERE bank_name = ?''', (usr.savings_bank,))
 
     current_rate = 0
     for row in sql_cmd_interest:
@@ -242,10 +256,10 @@ def get_savings_account_banks_with_higher_rates(user):
 
 
 # Get user's BSU bank id
-def get_user_bsu_bank_id(user):
+def get_user_bsu_bank_id(usr):
     c = database_connection()
 
-    sql_cmd_s = c.execute('''SELECT bank_id FROM bsu WHERE bank_name = ?''', (user[9],))
+    sql_cmd_s = c.execute('''SELECT bank_id FROM bsu WHERE bank_name = ?''', (usr.bsu_bank,))
 
     id = ''
     for row in sql_cmd_s:
@@ -257,10 +271,10 @@ def get_user_bsu_bank_id(user):
 
 
 # Get user's savings account bank id
-def get_user_savings_bank_id(user):
+def get_user_savings_bank_id(usr):
     c = database_connection()
 
-    sql_cmd_s = c.execute('''SELECT bank_id FROM savings_account WHERE bank_name = ?''', (user[11],))
+    sql_cmd_s = c.execute('''SELECT bank_id FROM savings_account WHERE bank_name = ?''', (usr.savings_bank,))
 
     id = ''
     for row in sql_cmd_s:

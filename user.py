@@ -1,5 +1,6 @@
 
 from db import create_user_table, inactive_user_table, insert_user, delete_user
+from classes import User
 from emailer import registration_email, update_email, delete_email
 from settings import access_spreadsheet
 
@@ -37,20 +38,22 @@ def register_users():
         savings = new_user[10]
         savings_bank = new_user[11]
 
+        # Formatting current user to class
+        current_user = User(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank)
+        
         # Insert new user into the user database
-        response = insert_user(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank)
-
+        response = insert_user(current_user)
+        
         # Send confirmation email for new registrations and updates
         if response == 'new_user':
-            registration_email(email, firstname, lastname)
+            registration_email(current_user)
         elif response == 'update_user':
-            update_email(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank)
-
+            update_email(current_user)
+            
     # Loop through and delete user entries in sheet
     print('Deleting new user entries from sheet...')
     for x in range(number_of_users):
         users_sheet.delete_row((number_of_users + 1) - x)
-
 
 # Delete user
 def remove_users():

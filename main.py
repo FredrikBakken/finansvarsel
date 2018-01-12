@@ -39,7 +39,7 @@ def user_controller():
 def notification_controller():
     # Get all users
     users = get_all_users()
-
+    
     for x in range(len(users)):
         bsu_data = bsu_notifier(users[x])
         savings_account_data = savings_account_notifier(users[x])

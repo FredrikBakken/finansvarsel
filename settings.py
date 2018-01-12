@@ -89,7 +89,7 @@ def credentials():
 
 ### Prepare the strings for html
 def email_strings(text_data):
-    text_data = text_data.replace('Æ', '&AElig;').replace('Ø', '&Oslash;').replace('Å', '&Aring;').replace('æ', '&aelig;').replace('ø', '&oslash;').replace('å', '&aring;')
+    text_data = text_data.replace('Ã†', '&AElig;').replace('Ã˜', '&Oslash;').replace('Ã…', '&Aring;').replace('Ã¦', '&aelig;').replace('Ã¸', '&oslash;').replace('Ã¥', '&aring;')
     return text_data
 
 
