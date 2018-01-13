@@ -24,6 +24,12 @@ url_savings_acc_nolimit = 'https://www.finansportalen.no/services/kalkulator/ban
 url_savings_acc_limit_34less = 'https://www.finansportalen.no/services/kalkulator/banksparing/export?kalkulatortype=banksparing&totalt_innestaende=50000&alderstilbudAr=30&nasjonalt=ja&regionalt=ja&visUtenProduktpakker=ja&neiforutsettermedlemskap=ja&all=ja&sparekonto_med_begrensninger=ja&sortcolumn=effectiveInterestRate%2C-bank.name%2C-name&sortdirection=desc'
 url_savings_acc_limit_34more = 'https://www.finansportalen.no/services/kalkulator/banksparing/export?kalkulatortype=banksparing&totalt_innestaende=50000&alderstilbudAr=36&nasjonalt=ja&regionalt=ja&visUtenProduktpakker=ja&neiforutsettermedlemskap=ja&all=ja&sparekonto_med_begrensninger=ja&sortcolumn=effectiveInterestRate%2C-bank.name%2C-name&sortdirection=desc'
 
+### Retirement Bank URL
+url_retirement_savings = 'https://www.finansportalen.no/services/kalkulator/banksparing/export?kalkulatortype=banksparing&totalt_innestaende=50000&alderstilbudAr=40&nasjonalt=ja&regionalt=ja&visUtenProduktpakker=ja&neiforutsettermedlemskap=ja&all=ja&pensjonssparing=ja&sortcolumn=effectiveInterestRate%2C-bank.name%2C-name&sortdirection=desc'
+
+### Use/Salary Bank URL
+url_usage_and_salary = 'https://www.finansportalen.no/services/kalkulator/banksparing/export?kalkulatortype=banksparing&totalt_innestaende=50000&alderstilbudAr=40&nasjonalt=ja&regionalt=ja&visUtenProduktpakker=ja&neiforutsettermedlemskap=ja&all=ja&brukskonto=ja&sortcolumn=effectiveInterestRate%2C-bank.name%2C-name&sortdirection=desc'
+
 
 
 # Centralized data extraction methods

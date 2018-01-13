@@ -2,7 +2,7 @@ import sys
 import scheduler
 
 from db import get_all_users, get_specific_user
-from data import get_bsu_data, get_savings_acc_nolimit_data, get_savings_acc_limit_data
+from data import get_bsu_data, get_savings_acc_nolimit_data, get_savings_acc_limit_data, get_retirement_data, get_usage_and_salary_data
 from user import register_users, remove_users
 from emailer import news_email
 from notifier import bsu_notifier, savings_account_notifier, savings_limit_account_notifier
@@ -23,6 +23,12 @@ def finance_controller():
 
     ## Collect and store savings account data (limitations)
     get_savings_acc_limit_data()
+
+    ## Collect and store retirement data
+    get_retirement_data()
+
+    ## Collect and store usage and salary data
+    get_usage_and_salary_data()
 
 
 # USER CONTROLLER

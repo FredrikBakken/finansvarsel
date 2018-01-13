@@ -37,7 +37,7 @@ def create_savings_table():
     c.close()
 
 
-#TODO Initialize savings limit account database table
+# Initialize savings limit account database table
 def create_savings_limit_table():
     c = database_connection()
 
@@ -47,6 +47,36 @@ def create_savings_limit_table():
 
     # Create table
     sql_cmd_ct = '''CREATE TABLE savings_account_limit(product_id TEXT, bank_id TEXT, bank_name TEXT, bank_url TEXT, bank_region TEXT, bank_account_name TEXT, publication_date TEXT, interest_rate REAL, limit_age INTEGER, PRIMARY KEY(bank_name, bank_account_name))'''
+    c.execute(sql_cmd_ct)
+
+    c.close()
+
+
+# Initialize retirement savings database table
+def create_retirement_table():
+    c = database_connection()
+
+    # Drop table
+    sql_cmd_dt = '''DROP TABLE IF EXISTS retirement'''
+    c.execute(sql_cmd_dt)
+
+    # Create table
+    sql_cmd_ct = '''CREATE TABLE retirement(product_id TEXT, bank_id TEXT, bank_name TEXT, bank_url TEXT, bank_region TEXT, bank_account_name TEXT, publication_date TEXT, interest_rate REAL, PRIMARY KEY(bank_name))'''
+    c.execute(sql_cmd_ct)
+
+    c.close()
+
+
+# Initialize usage and salary database table
+def create_usage_and_salary_table():
+    c = database_connection()
+
+    # Drop table
+    sql_cmd_dt = '''DROP TABLE IF EXISTS usage_and_salary'''
+    c.execute(sql_cmd_dt)
+
+    # Create table
+    sql_cmd_ct = '''CREATE TABLE usage_and_salary(product_id TEXT, bank_id TEXT, bank_name TEXT, bank_url TEXT, bank_region TEXT, bank_account_name TEXT, publication_date TEXT, interest_rate REAL, PRIMARY KEY(bank_name))'''
     c.execute(sql_cmd_ct)
 
     c.close()
@@ -120,6 +150,26 @@ def insert_savings_limit_account(product_id, bank_id, bank_name, bank_url, bank_
         c.execute('''INSERT INTO savings_account_limit(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate, limit_age) VALUES (?,?,?,?,?,?,?,?,?)''',
                     (product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate, limit_age))
 
+    c.commit()
+    c.close()
+
+
+# Insert retirement bank data into database
+def insert_retirement(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate):
+    c = database_connection()
+
+    c.execute('''INSERT INTO retirement(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate) VALUES (?,?,?,?,?,?,?,?)''',
+             (product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate))
+    c.commit()
+    c.close()
+
+
+# Insert usage and salary data into database
+def insert_usage_and_salary(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate):
+    c = database_connection()
+    
+    c.execute('''INSERT INTO usage_and_salary(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate) VALUES (?,?,?,?,?,?,?,?)''',
+             (product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate))
     c.commit()
     c.close()
 
@@ -271,6 +321,37 @@ def get_savings_limit_banks():
 
     return savings_limit_banks
 
+
+# Get retirement banks from database
+def get_retirement_banks():
+    c = database_connection()
+
+    retirement_banks = []
+
+    sql_cmd_s = c.execute('''SELECT bank_name FROM retirement ORDER BY bank_name ASC''')
+
+    for row in sql_cmd_s:
+        retirement_banks.append(row[0])
+
+    c.close()
+
+    return retirement_banks
+
+
+# Get usage and salary banks from database
+def get_usage_and_salary_banks():
+    c = database_connection()
+
+    usage_and_salary_banks = []
+
+    sql_cmd_s = c.execute('''SELECT bank_name FROM usage_and_salary ORDER BY bank_name ASC''')
+
+    for row in sql_cmd_s:
+        usage_and_salary_banks.append(row[0])
+
+    c.close()
+
+    return usage_and_salary_banks
 
 
 # Get BSU banks with higher interest rates

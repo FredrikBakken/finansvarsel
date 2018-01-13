@@ -3,9 +3,9 @@ import openpyxl as opxl
 import requests
 import contextlib
 
-from db import create_bsu_table, create_savings_table, create_savings_limit_table, insert_bsu, insert_savings_account, insert_savings_limit_account, get_bsu_banks, get_savings_banks, get_savings_limit_banks
+from db import create_bsu_table, create_savings_table, create_savings_limit_table, create_retirement_table, create_usage_and_salary_table, insert_bsu, insert_savings_account, insert_savings_limit_account, insert_retirement, insert_usage_and_salary, get_bsu_banks, get_savings_banks, get_savings_limit_banks, get_retirement_banks, get_usage_and_salary_banks
 
-from settings import access_spreadsheet, bsu_count, url_bsu_regions, url_bsu_country, url_savings_acc_nolimit, url_savings_acc_limit_34less, url_savings_acc_limit_34more, check_codec, time_now
+from settings import access_spreadsheet, bsu_count, url_bsu_regions, url_bsu_country, url_savings_acc_nolimit, url_savings_acc_limit_34less, url_savings_acc_limit_34more, url_retirement_savings, url_usage_and_salary, check_codec, time_now
 
 
 # Method for downloading finansportalen content
@@ -120,6 +120,12 @@ def handle_and_store_data(data, db_table, limit_age):
         elif db_table == 'savings_account_limit':
             insert_savings_limit_account(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name,
                                          publication_date, interest_rate, limit_age)
+        elif db_table == 'retirement':
+            insert_retirement(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date,
+                              interest_rate)
+        elif db_table == 'usage_salary':
+            insert_usage_and_salary(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date,
+                                    interest_rate)
 
 
 # Method for handling BSU data
@@ -209,3 +215,51 @@ def get_savings_acc_limit_data():
 
     print('Start Google Spreadsheet handling for savings limit banks data.')
     update_form(savings_limit_banks, 4)
+
+
+# Method for handling retirement data
+def get_retirement_data():
+    retirement_file = 'retirement_saving.xlsx'
+    retirement_url = url_retirement_savings
+
+    # Reset savings account database table
+    create_retirement_table()
+
+    # Download data content
+    download_content(retirement_url, retirement_file)
+
+    # Extract data from xlsx file
+    retirement_data = extract_xlsx_data(retirement_file)
+
+    # Handle and store data
+    handle_and_store_data(retirement_data, 'retirement', '')
+
+    # Get savings bank names from savings account database
+    retirement_banks = get_retirement_banks()
+
+    print('Start Google Spreadsheet handling for retirement data.')
+    update_form(retirement_banks, 5)
+
+
+# Method for handling usage and salary data
+def get_usage_and_salary_data():
+    usage_and_salary_file = 'usage_and_salary.xlsx'
+    usage_and_salary_url = url_usage_and_salary
+
+    # Reset savings account database table
+    create_usage_and_salary_table()
+
+    # Download data content
+    download_content(usage_and_salary_url, usage_and_salary_file)
+
+    # Extract data from xlsx file
+    usage_and_salary_data = extract_xlsx_data(usage_and_salary_file)
+
+    # Handle and store data
+    handle_and_store_data(usage_and_salary_data, 'usage_salary', '')
+
+    # Get savings bank names from savings account database
+    usage_and_salary_banks = get_usage_and_salary_banks()
+
+    print('Start Google Spreadsheet handling for usage and salary data.')
+    update_form(usage_and_salary_banks, 6)
