@@ -3,9 +3,9 @@ import openpyxl as opxl
 import requests
 import contextlib
 
-from db import create_bsu_table, create_savings_table, insert_bsu, insert_savings_account, get_bsu_banks, get_savings_banks
+from db import create_bsu_table, create_savings_table, create_savings_limit_table, insert_bsu, insert_savings_account, insert_savings_limit_account, get_bsu_banks, get_savings_banks, get_savings_limit_banks
 
-from settings import access_spreadsheet, bsu_count, url_bsu_regions, url_bsu_country, url_savings_account, check_codec, time_now
+from settings import access_spreadsheet, bsu_count, url_bsu_regions, url_bsu_country, url_savings_acc_nolimit, url_savings_acc_limit_34less, url_savings_acc_limit_34more, check_codec, time_now
 
 
 # Method for downloading finansportalen content
@@ -74,14 +74,14 @@ def extract_xlsx_data(file):
             data.append(data_item)
 
     # Delete temporary file downloaded
-    #with contextlib.suppress(FileNotFoundError):
-    #    os.remove('download/' + file)
+    with contextlib.suppress(FileNotFoundError):
+        os.remove('download/' + file)
 
     return data
 
 
 # Method for handling and storing extracted data
-def handle_and_store_data(data, db_table):
+def handle_and_store_data(data, db_table, limit_age):
     product_id = ''
     bank_id = ''
     bank_name = ''
@@ -117,6 +117,9 @@ def handle_and_store_data(data, db_table):
             # Insert bsu data into database
             insert_savings_account(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name,
                                    publication_date, interest_rate)
+        elif db_table == 'savings_account_limit':
+            insert_savings_limit_account(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name,
+                                         publication_date, interest_rate, limit_age)
 
 
 # Method for handling BSU data
@@ -136,40 +139,73 @@ def get_bsu_data():
         bsu_url = bsu_urls[x]
 
         # Download data content
-        #download_content(bsu_url, bsu_file)
+        download_content(bsu_url, bsu_file)
 
         # Extract data from xlsx file
         bsu_data = extract_xlsx_data(bsu_file)
 
         # Handle and store data
-        handle_and_store_data(bsu_data, 'bsu')
+        handle_and_store_data(bsu_data, 'bsu', '')
 
     # Get BSU bank names from BSU database
     bsu_banks = get_bsu_banks()
 
     print('Start Google Spreadsheet handling for BSU data.')
-    #update_form(bsu_banks, 2)
+    update_form(bsu_banks, 2)
 
 
-# Method for handling savings account data
-def get_savings_account_data():
-    savings_file = 'savings_account.xlsx'
-    savings_url = url_savings_account
+# Method for handling savings account (with no limit) data
+def get_savings_acc_nolimit_data():
+    savings_file = 'savings_account_nolimit.xlsx'
+    savings_url = url_savings_acc_nolimit
 
     # Reset savings account database table
     create_savings_table()
 
     # Download data content
-    #download_content(savings_url, savings_file)
+    download_content(savings_url, savings_file)
 
     # Extract data from xlsx file
     savings_data = extract_xlsx_data(savings_file)
 
     # Handle and store data
-    handle_and_store_data(savings_data, 'savings_account')
+    handle_and_store_data(savings_data, 'savings_account', '')
 
     # Get savings bank names from savings account database
     savings_banks = get_savings_banks()
 
     print('Start Google Spreadsheet handling for savings data.')
-    #update_form(savings_banks, 3)
+    update_form(savings_banks, 3)
+
+
+# Method for handling savings account (with limit) data
+def get_savings_acc_limit_data():
+    savings_files = ['savings_account_limit_34h.xlsx', 'savings_account_limit_34l.xlsx']
+    savings_urls = [url_savings_acc_limit_34more, url_savings_acc_limit_34less]
+    limit_age = [0, 1]
+
+    # Reset savings limit account database table
+    create_savings_limit_table()
+
+    # Looping through the data content
+    for x in range(len(savings_files)):
+        savings_limit_data = []
+
+        # Setting local savings variables
+        savings_file = savings_files[x]
+        savings_url = savings_urls[x]
+
+        # Download data content
+        download_content(savings_url, savings_file)
+
+        # Extract data from xlsx file
+        savings_limit_data = extract_xlsx_data(savings_file)
+
+        # Handle and store data
+        handle_and_store_data(savings_limit_data, 'savings_account_limit', limit_age[x])
+
+    # Get BSU bank names from BSU database
+    savings_limit_banks = get_savings_limit_banks()
+
+    print('Start Google Spreadsheet handling for savings limit banks data.')
+    update_form(savings_limit_banks, 4)

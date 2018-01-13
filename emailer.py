@@ -3,7 +3,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-from db import get_user_bsu_bank_id, get_user_savings_bank_id
+from db import get_user_bsu_bank_id, get_user_savings_bank_id, get_user_savings_limit_bank_id
 from settings import url_change_bank, credentials, email_strings, time_now
 
 
@@ -40,17 +40,19 @@ def update_email(usr):
     FROM = credentials()[0]
     SUBJECT = email_strings('Finansvarsel - Brukeroppdatering')
 
-    upd_firstname     = email_strings(usr.firstname)
-    upd_lastname      = email_strings(usr.lastname)
-    upd_age           = email_strings(usr.age)
-    upd_postal_number = email_strings(usr.postal_number)
-    upd_street_name   = email_strings(usr.street_name)
-    upd_street_number = email_strings(usr.street_number)
-    upd_phone         = email_strings(usr.phone)
-    upd_bsu           = email_strings(usr.bsu)
-    upd_bsu_bank      = email_strings(usr.bsu_bank)
-    upd_savings       = email_strings(usr.savings)
-    upd_savings_bank  = email_strings(usr.savings_bank)
+    upd_firstname           = email_strings(usr.firstname)
+    upd_lastname            = email_strings(usr.lastname)
+    upd_age                 = email_strings(usr.age)
+    upd_postal_number       = email_strings(usr.postal_number)
+    upd_street_name         = email_strings(usr.street_name)
+    upd_street_number       = email_strings(usr.street_number)
+    upd_phone               = email_strings(usr.phone)
+    upd_bsu                 = email_strings(usr.bsu)
+    upd_bsu_bank            = email_strings(usr.bsu_bank)
+    upd_savings             = email_strings(usr.savings)
+    upd_savings_bank        = email_strings(usr.savings_bank)
+    upd_savings_limit       = email_strings(usr.savings_limit_bank)
+    upd_savings_limit_bank  = email_strings(usr.savings_limit_bank)
 
     email_content = """
     <head>
@@ -69,8 +71,10 @@ def update_email(usr):
       Telefon/Mobil: """ + upd_phone + """<br>
       Er du interessert i BSU-konto? """ + upd_bsu + """<br>
       BSU bank: """ + upd_bsu_bank + """<br>
-      Er du interessert i sparekonto? """ + upd_savings + """<br>
-      Sparekonto bank: """ + upd_savings_bank + """</p>
+      Er du interessert i sparekonto (uten bruksbegrensning)? """ + upd_savings + """<br>
+      Sparekonto bank (uten bruksbegrensning): """ + upd_savings_bank + """<br>
+      Er du interessert i sparekonto (med bruksbegrensning)? """ + upd_savings_limit + """<br>
+      Sparekonto bank (med bruksbegrensning): """ + upd_savings_limit_bank + """</p>
       <p>Alle vÃ¥re data er hentet fra <a href='https://www.finansportalen.no'>Finansportalen</a>.<br></p>
       <p>Med vennlig hilsen,<br>
       Finansvarsel<br>
@@ -111,7 +115,7 @@ def delete_email(email, store):
     send_email(SUBJECT, email_content, TO, FROM)
 
 
-def news_email(usr, bsu_data, savings_account_data):
+def news_email(usr, bsu_data, savings_account_data, savings_limit_account_data):
     TO = usr.email
     FROM = credentials()[0]
     SUBJECT = email_strings('Oppdatering fra Finansvarsel: ' + time_now('date.month.year'))
@@ -121,6 +125,7 @@ def news_email(usr, bsu_data, savings_account_data):
 
     number_of_bsu_banks = str(len(bsu_data))
     number_of_savings_banks = str(len(savings_account_data))
+    number_of_savings_limit_banks = str(len(savings_limit_account_data))
 
     email_content = """
     <head>
@@ -132,10 +137,10 @@ def news_email(usr, bsu_data, savings_account_data):
       <p>
     """
 
-    ## Adding BSU-data
+    ## Adding BSU data
     if not bsu_data == '':
         email_content += """
-          <b>Boligsparing Ungdom (BSU):</b> Finansvarsel har registrert """ + number_of_bsu_banks + """ kontoer i norske banker med bedre rentevilkÃ¥r enn banken du i dag vurderer/benytter:<p>
+          <b>Boligsparing Ungdom (BSU):</b> Finansvarsel har registrert """ + number_of_bsu_banks + """ kontoer i norske banker med bedre rentevilkår enn banken du i dag vurderer/benytter:<p>
         """
 
         yourBankId = get_user_bsu_bank_id(usr)
@@ -148,15 +153,15 @@ def news_email(usr, bsu_data, savings_account_data):
             bank_name = email_strings(bsu_data[x][2])
 
             email_content += """
-              <p>""" + str(x + 1) + """. Rente: %.2f""" % bsu_data[x][7] + """%. <a href='""" + bsu_data[x][3] + """'>""" + bank_name + """</a>. SÃ¸k om Ã¥ bytte til """ + bank_name + """: """ + url_change_bsu_bank + """</p>
+              <p>""" + str(x + 1) + """. Rente: %.2f""" % bsu_data[x][7] + """%. <a href='""" + bsu_data[x][3] + """'>""" + bank_name + """</a>. Søk om å bytte til """ + bank_name + """: """ + url_change_bsu_bank + """</p>
             """
 
         email_content += """<p><br></p>"""
 
-    ## Adding savings account-data
+    ## Adding savings account data
     if not savings_account_data == '':
         email_content += """
-          <b>Sparekonto / Innskuddskonto:</b> Finansvarsel har registrert """ + number_of_savings_banks + """ kontoer i norske banker med bedre rentevilkÃ¥r enn banken du i dag vurderer/benytter:<br>
+          <b>Sparekonto / Innskuddskonto (uten bruksbegrensning):</b> Finansvarsel har registrert """ + number_of_savings_banks + """ kontoer i norske banker med bedre rentevilkår enn banken du i dag vurderer/benytter:<br>
         """
 
         yourBankId = get_user_savings_bank_id(usr)
@@ -169,9 +174,30 @@ def news_email(usr, bsu_data, savings_account_data):
             bank_name = email_strings(savings_account_data[x][2])
 
             email_content += """
-              <p>""" + str(x + 1) + """. Rente: %.2f""" % savings_account_data[x][7] + """%. <a href='""" + savings_account_data[x][3] + """'>""" + bank_name + """</a>. SÃ¸k om Ã¥ bytte til """ + bank_name + """: """ + url_change_bsu_bank + """</p>
+              <p>""" + str(x + 1) + """. Rente: %.2f""" % savings_account_data[x][7] + """%. <a href='""" + savings_account_data[x][3] + """'>""" + bank_name + """</a>. Søk om å bytte til """ + bank_name + """: """ + url_change_bsu_bank + """</p>
+            """
+        
+        email_content += """<p><br></p>"""
+
+    ## Adding savings limit account data
+    if not savings_limit_account_data == '':
+        email_content += """
+          <b>Sparekonto / Innskuddskonto (med bruksbegrensning):</b> Finansvarsel har registrert """ + number_of_savings_limit_banks + """ kontoer i norske banker med bedre rentevilkår enn banken du i dag vurderer/benytter:<br>
+        """
+
+        yourBankId = get_user_savings_limit_bank_id(usr)
+        productType = 'banksparing'
+        for x in range(len(savings_limit_account_data)):
+            seletectedBankId = savings_limit_account_data[x][1]
+            url_change_bsu_bank = url_change_bank + '?yourBankId=' + yourBankId + '&selectedBankId=' + seletectedBankId + '&productType=' + productType
+
+            bank_name = email_strings(savings_limit_account_data[x][2])
+
+            email_content += """
+              <p>""" + str(x + 1) + """. Rente: %.2f""" % savings_limit_account_data[x][7] + """%. <a href='""" + savings_limit_account_data[x][3] + """'>""" + bank_name + """</a>. Søk om å bytte til """ + bank_name + """: """ + url_change_bsu_bank + """</p>
             """
 
+        email_content += """<p><br></p>"""
 
     email_content += """
       <p>Tusen takk for at du benytter Finansvarsel som er utviklet av Fredrik Bakken. Prosjektet hadde ikke vÃ¦rt mulig uten dataene <a href='https://www.finansportalen.no'>Finansportalen</a> tilbyr.<br></p>
@@ -203,7 +229,7 @@ def send_email(SUBJECT, BODY, TO, FROM):
     server.ehlo()
     server.starttls()
     server.login(credentials()[0], credentials()[1])
-    #server.sendmail(FROM, TO, MESSAGE.as_string())
+    server.sendmail(FROM, TO, MESSAGE.as_string())
     server.quit()
 
     print('Email to ' + TO + ' has been sent.')

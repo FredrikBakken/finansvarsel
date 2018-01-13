@@ -11,9 +11,6 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 # Centralized global variables
 
-###
-
-
 ### Change Bank URL
 url_change_bank = 'https://www.finansportalen.no/bank/bankbytte/'
 
@@ -23,7 +20,9 @@ url_bsu_regions = 'https://www.finansportalen.no/services/kalkulator/banksparing
 url_bsu_country = 'https://www.finansportalen.no/services/kalkulator/banksparing/export?kalkulatortype=banksparing&totalt_innestaende=1&alderstilbudAr=24&nasjonalt=ja&visUtenProduktpakker=ja&neiforutsettermedlemskap=ja&kraft_sparekonto_med_spareavtale=ja&kraft_sparekonto_uten_spareavtale=ja&bsu=ja&sortcolumn=effectiveInterestRate%2C-bank.name%2C-name&sortdirection=desc'
 
 ### Bank Savings URL
-url_savings_account = 'https://www.finansportalen.no/services/kalkulator/banksparing/export?kalkulatortype=banksparing&totalt_innestaende=90000&alderstilbudAr=21&nasjonalt=ja&regionalt=ja&visUtenProduktpakker=ja&neiforutsettermedlemskap=ja&all=ja&sparekonto_uten_begrensninger=ja&sortcolumn=effectiveInterestRate%2C-bank.name%2C-name&sortdirection=desc'
+url_savings_acc_nolimit = 'https://www.finansportalen.no/services/kalkulator/banksparing/export?kalkulatortype=banksparing&totalt_innestaende=90000&alderstilbudAr=21&nasjonalt=ja&regionalt=ja&visUtenProduktpakker=ja&neiforutsettermedlemskap=ja&all=ja&sparekonto_uten_begrensninger=ja&sortcolumn=effectiveInterestRate%2C-bank.name%2C-name&sortdirection=desc'
+url_savings_acc_limit_34less = 'https://www.finansportalen.no/services/kalkulator/banksparing/export?kalkulatortype=banksparing&totalt_innestaende=50000&alderstilbudAr=30&nasjonalt=ja&regionalt=ja&visUtenProduktpakker=ja&neiforutsettermedlemskap=ja&all=ja&sparekonto_med_begrensninger=ja&sortcolumn=effectiveInterestRate%2C-bank.name%2C-name&sortdirection=desc'
+url_savings_acc_limit_34more = 'https://www.finansportalen.no/services/kalkulator/banksparing/export?kalkulatortype=banksparing&totalt_innestaende=50000&alderstilbudAr=36&nasjonalt=ja&regionalt=ja&visUtenProduktpakker=ja&neiforutsettermedlemskap=ja&all=ja&sparekonto_med_begrensninger=ja&sortcolumn=effectiveInterestRate%2C-bank.name%2C-name&sortdirection=desc'
 
 
 

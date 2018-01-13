@@ -2,10 +2,10 @@ import sys
 import scheduler
 
 from db import get_all_users, get_specific_user
-from data import get_bsu_data, get_savings_account_data
+from data import get_bsu_data, get_savings_acc_nolimit_data, get_savings_acc_limit_data
 from user import register_users, remove_users
 from emailer import news_email
-from notifier import bsu_notifier, savings_account_notifier
+from notifier import bsu_notifier, savings_account_notifier, savings_limit_account_notifier
 #from settings import db_decryption, db_encryption
 
 
@@ -18,8 +18,11 @@ def finance_controller():
     ## Collect and store BSU data
     get_bsu_data()
 
-    ## Collect and store savings account data
-    get_savings_account_data()
+    ## Collect and store savings account data (no limit)
+    get_savings_acc_nolimit_data()
+
+    ## Collect and store savings account data (limitations)
+    get_savings_acc_limit_data()
 
 
 # USER CONTROLLER
@@ -41,18 +44,20 @@ def notification_controller():
     users = get_all_users()
     
     for x in range(len(users)):
-        print("User age: " + users[x].age)
         bsu_data = bsu_notifier(users[x])
         savings_account_data = savings_account_notifier(users[x])
+        savings_limit_account_data = savings_limit_account_notifier(users[x])
 
         # Send finance data by email to specific user
-        news_email(users[x], bsu_data, savings_account_data)
+        news_email(users[x], bsu_data, savings_account_data, savings_limit_account_data)
 
 
 def run():
     finance_controller()
     user_controller()
     notification_controller()
+
+    #get_savings_acc_limit_data()
 
     #register_users()
     #users = get_all_users()
