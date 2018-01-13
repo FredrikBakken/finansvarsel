@@ -187,9 +187,10 @@ def news_email(usr, bsu_data, savings_account_data, savings_limit_account_data):
 
         yourBankId = get_user_savings_limit_bank_id(usr)
         productType = 'banksparing'
+        product = 'bankinnskudd'
         for x in range(len(savings_limit_account_data)):
             seletectedBankId = savings_limit_account_data[x][1]
-            url_change_bsu_bank = url_change_bank + '?yourBankId=' + yourBankId + '&selectedBankId=' + seletectedBankId + '&productType=' + productType
+            url_change_bsu_bank = url_change_bank + '?yourBankId=' + yourBankId + '&selectedBankId=' + seletectedBankId + '&productType=' + productType + '&product=' + product
 
             bank_name = email_strings(savings_limit_account_data[x][2])
 
