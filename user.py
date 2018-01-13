@@ -2,7 +2,7 @@
 from db import create_user_table, inactive_user_table, insert_user, delete_user
 from classes import User
 from emailer import registration_email, update_email, delete_email
-from settings import access_spreadsheet
+from settings import access_spreadsheet, time_now
 
 
 ### USER CONTROLLER
@@ -26,6 +26,7 @@ def register_users():
         #print('New user ' + str(x + 1) + ': ' + str(new_user))
 
         # Formatting user data
+        reg_date = time_now('date.month.year')
         email = new_user[1]
         firstname = new_user[2]
         lastname = new_user[3]
@@ -39,7 +40,7 @@ def register_users():
         savings_bank = new_user[11]
 
         # Formatting current user to class
-        current_user = User(email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank)
+        current_user = User(reg_date, email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank)
         
         # Insert new user into the user database
         response = insert_user(current_user)

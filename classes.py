@@ -1,7 +1,8 @@
 
 ## USER CLASS
 class User:
-    def __init__(self, email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank):
+    def __init__(self, reg_date, email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank):
+        self.reg_date = reg_date
         self.email = email
         self.firstname = firstname
         self.lastname = lastname

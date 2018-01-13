@@ -74,8 +74,8 @@ def extract_xlsx_data(file):
             data.append(data_item)
 
     # Delete temporary file downloaded
-    with contextlib.suppress(FileNotFoundError):
-        os.remove('download/' + file)
+    #with contextlib.suppress(FileNotFoundError):
+    #    os.remove('download/' + file)
 
     return data
 
@@ -136,7 +136,7 @@ def get_bsu_data():
         bsu_url = bsu_urls[x]
 
         # Download data content
-        download_content(bsu_url, bsu_file)
+        #download_content(bsu_url, bsu_file)
 
         # Extract data from xlsx file
         bsu_data = extract_xlsx_data(bsu_file)
@@ -148,7 +148,7 @@ def get_bsu_data():
     bsu_banks = get_bsu_banks()
 
     print('Start Google Spreadsheet handling for BSU data.')
-    update_form(bsu_banks, 2)
+    #update_form(bsu_banks, 2)
 
 
 # Method for handling savings account data
@@ -160,7 +160,7 @@ def get_savings_account_data():
     create_savings_table()
 
     # Download data content
-    download_content(savings_url, savings_file)
+    #download_content(savings_url, savings_file)
 
     # Extract data from xlsx file
     savings_data = extract_xlsx_data(savings_file)
@@ -172,4 +172,4 @@ def get_savings_account_data():
     savings_banks = get_savings_banks()
 
     print('Start Google Spreadsheet handling for savings data.')
-    update_form(savings_banks, 3)
+    #update_form(savings_banks, 3)
