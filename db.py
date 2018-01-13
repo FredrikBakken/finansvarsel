@@ -42,7 +42,7 @@ def create_user_table():
     print('Creating new user table in the SQLite3 database.')
     c = database_connection()
 
-    sql_cmd_ct = '''CREATE TABLE users(id INTEGER PRIMARY KEY, reg_date TEXT, email TEXT unique, firstname TEXT, lastname TEXT, postal_number TEXT, street_name TEXT, street_number TEXT, phone INTEGER, bsu TEXT, bsu_bank TEXT, savings TEXT, savings_bank TEXT, FOREIGN KEY(bsu_bank) REFERENCES bsu(bsu_bank), FOREIGN KEY(savings_bank) REFERENCES savings_account(savings_bank))'''
+    sql_cmd_ct = '''CREATE TABLE users(id INTEGER PRIMARY KEY, reg_date TEXT, email TEXT unique, firstname TEXT, lastname TEXT, age TEXT, postal_number TEXT, street_name TEXT, street_number TEXT, phone INTEGER, bsu TEXT, bsu_bank TEXT, savings TEXT, savings_bank TEXT, FOREIGN KEY(bsu_bank) REFERENCES bsu(bsu_bank), FOREIGN KEY(savings_bank) REFERENCES savings_account(savings_bank))'''
 
     try:
         c.execute(sql_cmd_ct)
@@ -99,14 +99,14 @@ def insert_user(usr):
 
     # New user ==> Insert
     try:
-        c.execute('''INSERT INTO users(reg_date, email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)''',
-                 (usr.reg_date, usr.email, usr.firstname, usr.lastname, usr.postal_number, usr.street_name, usr.street_number, usr.phone, usr.bsu, usr.bsu_bank, usr.savings, usr.savings_bank))
+        c.execute('''INSERT INTO users(reg_date, email, firstname, lastname, age, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)''',
+                 (usr.reg_date, usr.email, usr.firstname, usr.lastname, usr.age, usr.postal_number, usr.street_name, usr.street_number, usr.phone, usr.bsu, usr.bsu_bank, usr.savings, usr.savings_bank))
         response = 'new_user'
 
     # User exist ==> Update
     except sqlite3.IntegrityError:
-        c.execute('''UPDATE users SET firstname = ?, lastname = ?, postal_number = ?, street_name = ?, street_number = ?, phone = ?, bsu = ?, bsu_bank = ?, savings = ?, savings_bank = ? WHERE email = ?''',
-                 (usr.firstname, usr.lastname, usr.postal_number, usr.street_name, usr.street_number, usr.phone, usr.bsu, usr.bsu_bank, usr.savings, usr.savings_bank, usr.email))
+        c.execute('''UPDATE users SET firstname = ?, lastname = ?, age = ?, postal_number = ?, street_name = ?, street_number = ?, phone = ?, bsu = ?, bsu_bank = ?, savings = ?, savings_bank = ? WHERE email = ?''',
+                 (usr.firstname, usr.lastname, usr.age, usr.postal_number, usr.street_name, usr.street_number, usr.phone, usr.bsu, usr.bsu_bank, usr.savings, usr.savings_bank, usr.email))
         response = 'update_user'
 
     c.commit()
@@ -151,16 +151,17 @@ def get_all_users():
         email           = row[2]
         firstname       = row[3]
         lastname        = row[4]
-        postal_number   = row[5]
-        street_name     = row[6]
-        street_number   = row[7]
-        phone           = row[8]
-        bsu             = row[9]
-        bsu_bank        = row[10]
-        savings         = row[11]
-        savings_bank    = row[12]
+        age             = row[5]
+        postal_number   = row[6]
+        street_name     = row[7]
+        street_number   = row[8]
+        phone           = row[9]
+        bsu             = row[10]
+        bsu_bank        = row[11]
+        savings         = row[12]
+        savings_bank    = row[13]
 
-        current_user = User(reg_date, email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank)
+        current_user = User(reg_date, email, firstname, lastname, age, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank)
         user_list.append(current_user)
 
     c.close()

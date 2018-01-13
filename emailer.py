@@ -40,16 +40,17 @@ def update_email(usr):
     FROM = credentials()[0]
     SUBJECT = email_strings('Finansvarsel - Brukeroppdatering')
 
-    upd_firstname = email_strings(usr.firstname)
-    upd_lastname = email_strings(usr.lastname)
+    upd_firstname     = email_strings(usr.firstname)
+    upd_lastname      = email_strings(usr.lastname)
+    upd_age           = email_strings(usr.age)
     upd_postal_number = email_strings(usr.postal_number)
-    upd_street_name = email_strings(usr.street_name)
+    upd_street_name   = email_strings(usr.street_name)
     upd_street_number = email_strings(usr.street_number)
-    upd_phone = email_strings(usr.phone)
-    upd_bsu = email_strings(usr.bsu)
-    upd_bsu_bank = email_strings(usr.bsu_bank)
-    upd_savings = email_strings(usr.savings)
-    upd_savings_bank = email_strings(usr.savings_bank)
+    upd_phone         = email_strings(usr.phone)
+    upd_bsu           = email_strings(usr.bsu)
+    upd_bsu_bank      = email_strings(usr.bsu_bank)
+    upd_savings       = email_strings(usr.savings)
+    upd_savings_bank  = email_strings(usr.savings_bank)
 
     email_content = """
     <head>
@@ -61,6 +62,7 @@ def update_email(usr):
       <p>Vi har registrert din brukeroppdatering pÃ¥ Finansvarsel og har lagret fÃ¸lgende om deg:<br>
       Fornavn: """ + upd_firstname + """<br>
       Etternavn: """ + upd_lastname + """<br>
+      Alder: """ + upd_age + """<br>
       Postnummer: """ + upd_postal_number + """<br>
       Gatenavn: """ + upd_street_name + """<br>
       Gatenummer: """ + upd_street_number + """<br>

@@ -30,17 +30,18 @@ def register_users():
         email = new_user[1]
         firstname = new_user[2]
         lastname = new_user[3]
-        postal_number = new_user[4]
-        street_name = new_user[5]
-        street_number = new_user[6]
-        phone = new_user[7]
-        bsu = new_user[8]
-        bsu_bank = new_user[9]
-        savings = new_user[10]
-        savings_bank = new_user[11]
+        age = new_user[4]
+        postal_number = new_user[5]
+        street_name = new_user[6]
+        street_number = new_user[7]
+        phone = new_user[8]
+        bsu = new_user[9]
+        bsu_bank = new_user[10]
+        savings = new_user[11]
+        savings_bank = new_user[12]
 
         # Formatting current user to class
-        current_user = User(reg_date, email, firstname, lastname, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank)
+        current_user = User(reg_date, email, firstname, lastname, age, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank)
         
         # Insert new user into the user database
         response = insert_user(current_user)

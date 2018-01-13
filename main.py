@@ -41,7 +41,7 @@ def notification_controller():
     users = get_all_users()
     
     for x in range(len(users)):
-        print("User registration date: " + users[x].reg_date)
+        print("User age: " + users[x].age)
         bsu_data = bsu_notifier(users[x])
         savings_account_data = savings_account_notifier(users[x])
 
