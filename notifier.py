@@ -1,5 +1,5 @@
 
-from db import get_bsu_banks_with_higher_rates, get_savings_account_banks_with_higher_rates, get_savings_account_limit_banks_with_higher_rates
+from db import get_bsu_banks_with_higher_rates, get_savings_account_banks_with_higher_rates, get_savings_account_limit_banks_with_higher_rates, get_retirement_banks_with_higher_rates, get_usagesalary_banks_with_higher_rates
 
 
 # Method for printing notification data
@@ -48,6 +48,32 @@ def savings_limit_account_notifier(usr):
 
     results = sorted(results, key=lambda x:x[7], reverse=True)
 
+    print_notification_results(usr, results)
+
+    return results
+
+
+# Getting retirement banks with higher rates
+def retirement_notifier(usr):
+    if not usr.retirement == 'Nei':
+        results = get_retirement_banks_with_higher_rates(usr)
+    else:
+        results = ''
+        print('Ingen interesse for pensjonssparekonto registrert.')
+
+    print_notification_results(usr, results)
+
+    return results
+
+
+# Getting usage and salary banks with higher rates
+def usagesalary_notifier(usr):
+    if not usr.usagesalary == 'Nei':
+        results = get_usagesalary_banks_with_higher_rates(usr)
+    else:
+        results = ''
+        print('Ingen interesse for bruks-/lønnskonto registrert.')
+    
     print_notification_results(usr, results)
 
     return results

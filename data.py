@@ -74,8 +74,8 @@ def extract_xlsx_data(file):
             data.append(data_item)
 
     # Delete temporary file downloaded
-    with contextlib.suppress(FileNotFoundError):
-        os.remove('download/' + file)
+    #with contextlib.suppress(FileNotFoundError):
+    #    os.remove('download/' + file)
 
     return data
 
@@ -145,7 +145,7 @@ def get_bsu_data():
         bsu_url = bsu_urls[x]
 
         # Download data content
-        download_content(bsu_url, bsu_file)
+        #download_content(bsu_url, bsu_file)
 
         # Extract data from xlsx file
         bsu_data = extract_xlsx_data(bsu_file)
@@ -157,7 +157,7 @@ def get_bsu_data():
     bsu_banks = get_bsu_banks()
 
     print('Start Google Spreadsheet handling for BSU data.')
-    update_form(bsu_banks, 2)
+    #update_form(bsu_banks, 2)
 
 
 # Method for handling savings account (with no limit) data
@@ -169,7 +169,7 @@ def get_savings_acc_nolimit_data():
     create_savings_table()
 
     # Download data content
-    download_content(savings_url, savings_file)
+    #download_content(savings_url, savings_file)
 
     # Extract data from xlsx file
     savings_data = extract_xlsx_data(savings_file)
@@ -181,7 +181,7 @@ def get_savings_acc_nolimit_data():
     savings_banks = get_savings_banks()
 
     print('Start Google Spreadsheet handling for savings data.')
-    update_form(savings_banks, 3)
+    #update_form(savings_banks, 3)
 
 
 # Method for handling savings account (with limit) data
@@ -202,7 +202,7 @@ def get_savings_acc_limit_data():
         savings_url = savings_urls[x]
 
         # Download data content
-        download_content(savings_url, savings_file)
+        #download_content(savings_url, savings_file)
 
         # Extract data from xlsx file
         savings_limit_data = extract_xlsx_data(savings_file)
@@ -214,7 +214,7 @@ def get_savings_acc_limit_data():
     savings_limit_banks = get_savings_limit_banks()
 
     print('Start Google Spreadsheet handling for savings limit banks data.')
-    update_form(savings_limit_banks, 4)
+    #update_form(savings_limit_banks, 4)
 
 
 # Method for handling retirement data
@@ -226,7 +226,7 @@ def get_retirement_data():
     create_retirement_table()
 
     # Download data content
-    download_content(retirement_url, retirement_file)
+    #download_content(retirement_url, retirement_file)
 
     # Extract data from xlsx file
     retirement_data = extract_xlsx_data(retirement_file)
@@ -238,7 +238,7 @@ def get_retirement_data():
     retirement_banks = get_retirement_banks()
 
     print('Start Google Spreadsheet handling for retirement data.')
-    update_form(retirement_banks, 5)
+    #update_form(retirement_banks, 5)
 
 
 # Method for handling usage and salary data
@@ -250,7 +250,7 @@ def get_usage_and_salary_data():
     create_usage_and_salary_table()
 
     # Download data content
-    download_content(usage_and_salary_url, usage_and_salary_file)
+    #download_content(usage_and_salary_url, usage_and_salary_file)
 
     # Extract data from xlsx file
     usage_and_salary_data = extract_xlsx_data(usage_and_salary_file)
@@ -262,4 +262,4 @@ def get_usage_and_salary_data():
     usage_and_salary_banks = get_usage_and_salary_banks()
 
     print('Start Google Spreadsheet handling for usage and salary data.')
-    update_form(usage_and_salary_banks, 6)
+    #update_form(usage_and_salary_banks, 6)

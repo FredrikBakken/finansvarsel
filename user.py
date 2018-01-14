@@ -41,9 +41,13 @@ def register_users():
         savings_bank = new_user[12]
         savings_limit = new_user[13]
         savings_limit_bank = new_user[14]
+        retirement = new_user[15]
+        retirement_bank = new_user[16]
+        usagesalary = new_user[17]
+        usagesalary_bank = new_user[18]
 
         # Formatting current user to class
-        current_user = User(reg_date, email, firstname, lastname, age, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank, savings_limit, savings_limit_bank)
+        current_user = User(reg_date, email, firstname, lastname, age, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank, savings_limit, savings_limit_bank, retirement, retirement_bank, usagesalary, usagesalary_bank)
         
         # Insert new user into the user database
         response = insert_user(current_user)

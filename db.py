@@ -87,7 +87,7 @@ def create_user_table():
     print('Creating new user table in the SQLite3 database.')
     c = database_connection()
 
-    sql_cmd_ct = '''CREATE TABLE users(id INTEGER PRIMARY KEY, reg_date TEXT, email TEXT unique, firstname TEXT, lastname TEXT, age TEXT, postal_number TEXT, street_name TEXT, street_number TEXT, phone INTEGER, bsu TEXT, bsu_bank TEXT, savings TEXT, savings_bank TEXT, savings_limit TEXT, savings_limit_bank TEXT, FOREIGN KEY(bsu_bank) REFERENCES bsu(bsu_bank), FOREIGN KEY(savings_bank) REFERENCES savings_account(savings_bank))'''
+    sql_cmd_ct = '''CREATE TABLE users(id INTEGER PRIMARY KEY, reg_date TEXT, email TEXT unique, firstname TEXT, lastname TEXT, age TEXT, postal_number TEXT, street_name TEXT, street_number TEXT, phone INTEGER, bsu TEXT, bsu_bank TEXT, savings TEXT, savings_bank TEXT, savings_limit TEXT, savings_limit_bank TEXT, retirement TEXT, retirement_bank TEXT, usagesalary TEXT, usagesalary_bank TEXT, FOREIGN KEY(bsu_bank) REFERENCES bsu(bsu_bank), FOREIGN KEY(savings_bank) REFERENCES savings_account(savings_bank))'''
 
     try:
         c.execute(sql_cmd_ct)
@@ -184,14 +184,14 @@ def insert_user(usr):
 
     # New user ==> Insert
     try:
-        c.execute('''INSERT INTO users(reg_date, email, firstname, lastname, age, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank, savings_limit, savings_limit_bank) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
-                 (usr.reg_date, usr.email, usr.firstname, usr.lastname, usr.age, usr.postal_number, usr.street_name, usr.street_number, usr.phone, usr.bsu, usr.bsu_bank, usr.savings, usr.savings_bank, usr.savings_limit, usr.savings_limit_bank))
+        c.execute('''INSERT INTO users(reg_date, email, firstname, lastname, age, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank, savings_limit, savings_limit_bank, retirement, retirement_bank, usagesalary, usagesalary_bank) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
+                 (usr.reg_date, usr.email, usr.firstname, usr.lastname, usr.age, usr.postal_number, usr.street_name, usr.street_number, usr.phone, usr.bsu, usr.bsu_bank, usr.savings, usr.savings_bank, usr.savings_limit, usr.savings_limit_bank, usr.retirement, usr.retirement_bank, usr.usagesalary, usr.usagesalary_bank))
         response = 'new_user'
 
     # User exist ==> Update
     except sqlite3.IntegrityError:
-        c.execute('''UPDATE users SET firstname = ?, lastname = ?, age = ?, postal_number = ?, street_name = ?, street_number = ?, phone = ?, bsu = ?, bsu_bank = ?, savings = ?, savings_bank = ?, savings_limit = ?, savings_limit_bank = ? WHERE email = ?''',
-                 (usr.firstname, usr.lastname, usr.age, usr.postal_number, usr.street_name, usr.street_number, usr.phone, usr.bsu, usr.bsu_bank, usr.savings, usr.savings_bank, usr.savings_limit, usr.savings_limit_bank, usr.email))
+        c.execute('''UPDATE users SET firstname = ?, lastname = ?, age = ?, postal_number = ?, street_name = ?, street_number = ?, phone = ?, bsu = ?, bsu_bank = ?, savings = ?, savings_bank = ?, savings_limit = ?, savings_limit_bank = ?, retirement = ?, retirement_bank = ?, usagesalary = ?, usagesalary_bank = ? WHERE email = ?''',
+                 (usr.firstname, usr.lastname, usr.age, usr.postal_number, usr.street_name, usr.street_number, usr.phone, usr.bsu, usr.bsu_bank, usr.savings, usr.savings_bank, usr.savings_limit, usr.savings_limit_bank, usr.retirement, usr.retirement_bank, usr.usagesalary, usr.usagesalary_bank, usr.email))
         response = 'update_user'
 
     c.commit()
@@ -247,8 +247,12 @@ def get_all_users():
         savings_bank        = row[13]
         savings_limit       = row[14]
         savings_limit_bank  = row[15]
+        retirement          = row[16]
+        retirement_bank     = row[17]
+        usagesalary         = row[18]
+        usagesalary_bank    = row[19]
 
-        current_user = User(reg_date, email, firstname, lastname, age, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank, savings_limit, savings_limit_bank)
+        current_user = User(reg_date, email, firstname, lastname, age, postal_number, street_name, street_number, phone, bsu, bsu_bank, savings, savings_bank, savings_limit, savings_limit_bank, retirement, retirement_bank, usagesalary, usagesalary_bank)
         user_list.append(current_user)
 
     c.close()
@@ -424,6 +428,49 @@ def get_savings_account_limit_banks_with_higher_rates(usr):
     return results
 
 
+# Get retirement banks with higher interest rates
+def get_retirement_banks_with_higher_rates(usr):
+    c = database_connection()
+
+    sql_cmd_interest = c.execute('''SELECT interest_rate FROM retirement WHERE bank_name = ?''', (usr.retirement_bank,))
+
+    current_rate = 0
+    for row in sql_cmd_interest:
+        current_rate = row[0]
+
+    sql_cmd_s = c.execute('''SELECT * FROM retirement WHERE interest_rate > ? ''', (current_rate,))
+
+    results = []
+    for row in sql_cmd_s:
+        results.append(row)
+
+    c.close()
+
+    return results
+
+
+# Get usage and salary banks with higher interest rates
+def get_usagesalary_banks_with_higher_rates(usr):
+    c = database_connection()
+
+    sql_cmd_interest = c.execute('''SELECT interest_rate FROM usage_and_salary WHERE bank_name = ?''', (usr.usagesalary_bank,))
+
+    current_rate = 0
+    for row in sql_cmd_interest:
+        current_rate = row[0]
+
+    sql_cmd_s = c.execute('''SELECT * FROM usage_and_salary WHERE interest_rate > ? ''', (current_rate,))
+
+    results = []
+    for row in sql_cmd_s:
+        results.append(row)
+
+    c.close()
+
+    return results
+
+
+
 # Get user's BSU bank id
 def get_user_bsu_bank_id(usr):
     c = database_connection()
@@ -470,3 +517,32 @@ def get_user_savings_limit_bank_id(usr):
 
     return id
 
+
+# Get user's retirement bank id
+def get_user_retirement_bank_id(usr):
+    c = database_connection()
+
+    sql_cmd_s = c.execute('''SELECT bank_id FROM retirement WHERE bank_name = ?''', (usr.retirement_bank,))
+
+    id = ''
+    for row in sql_cmd_s:
+        id = row[0]
+
+    c.close()
+
+    return id
+
+
+# Get user's usage / salary bank id
+def get_user_usagesalary_bank_id(usr):
+    c = database_connection()
+
+    sql_cmd_s = c.execute('''SELECT bank_id FROM usage_and_salary WHERE bank_name = ?''', (usr.usagesalary_bank,))
+
+    id = ''
+    for row in sql_cmd_s:
+        id = row[0]
+
+    c.close()
+
+    return id
