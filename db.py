@@ -1,82 +1,22 @@
 import sqlite3
 
-from classes import User
+from classes import User, Saving
 from settings import database_connection#, db_encryption, db_decryption
 
 
 ########################################################################################################################
 ########################################################################################################################
 
-# Initialize BSU database table
-def create_bsu_table():
+# Initialize the saving banks database table
+def create_saving_table():
     c = database_connection()
 
     # Drop table
-    sql_cmd_dt = '''DROP TABLE IF EXISTS bsu'''
+    sql_cmd_dt = '''DROP TABLE IF EXISTS saving'''
     c.execute(sql_cmd_dt)
 
     # Create table
-    sql_cmd_ct = '''CREATE TABLE bsu(product_id TEXT, bank_id TEXT, bank_name TEXT, bank_url TEXT, bank_region TEXT, bank_account_name TEXT, publication_date TEXT, interest_rate REAL, PRIMARY KEY(bank_name))'''
-    c.execute(sql_cmd_ct)
-
-    c.close()
-
-
-# Initialize savings account database table
-def create_savings_table():
-    c = database_connection()
-
-    # Drop table
-    sql_cmd_dt = '''DROP TABLE IF EXISTS savings_account'''
-    c.execute(sql_cmd_dt)
-
-    # Create table
-    sql_cmd_ct = '''CREATE TABLE savings_account(product_id TEXT, bank_id TEXT, bank_name TEXT, bank_url TEXT, bank_region TEXT, bank_account_name TEXT, publication_date TEXT, interest_rate REAL, PRIMARY KEY(bank_name))'''
-    c.execute(sql_cmd_ct)
-
-    c.close()
-
-
-# Initialize savings limit account database table
-def create_savings_limit_table():
-    c = database_connection()
-
-    # Drop table
-    sql_cmd_dt = '''DROP TABLE IF EXISTS savings_account_limit'''
-    c.execute(sql_cmd_dt)
-
-    # Create table
-    sql_cmd_ct = '''CREATE TABLE savings_account_limit(product_id TEXT, bank_id TEXT, bank_name TEXT, bank_url TEXT, bank_region TEXT, bank_account_name TEXT, publication_date TEXT, interest_rate REAL, limit_age INTEGER, PRIMARY KEY(bank_name, bank_account_name))'''
-    c.execute(sql_cmd_ct)
-
-    c.close()
-
-
-# Initialize retirement savings database table
-def create_retirement_table():
-    c = database_connection()
-
-    # Drop table
-    sql_cmd_dt = '''DROP TABLE IF EXISTS retirement'''
-    c.execute(sql_cmd_dt)
-
-    # Create table
-    sql_cmd_ct = '''CREATE TABLE retirement(product_id TEXT, bank_id TEXT, bank_name TEXT, bank_url TEXT, bank_region TEXT, bank_account_name TEXT, publication_date TEXT, interest_rate REAL, PRIMARY KEY(bank_name))'''
-    c.execute(sql_cmd_ct)
-
-    c.close()
-
-
-# Initialize usage and salary database table
-def create_usage_and_salary_table():
-    c = database_connection()
-
-    # Drop table
-    sql_cmd_dt = '''DROP TABLE IF EXISTS usage_and_salary'''
-    c.execute(sql_cmd_dt)
-
-    # Create table
-    sql_cmd_ct = '''CREATE TABLE usage_and_salary(product_id TEXT, bank_id TEXT, bank_name TEXT, bank_url TEXT, bank_region TEXT, bank_account_name TEXT, publication_date TEXT, interest_rate REAL, PRIMARY KEY(bank_name))'''
+    sql_cmd_ct = '''CREATE TABLE saving(account_type TEXT, product_id TEXT, bank_id TEXT, bank_name TEXT, bank_url TEXT, bank_region TEXT, bank_account_name TEXT, publication_date TEXT, interest_rate REAL, limit_age INTEGER, PRIMARY KEY(account_type, bank_name, bank_account_name))'''
     c.execute(sql_cmd_ct)
 
     c.close()
@@ -87,7 +27,7 @@ def create_user_table():
     print('Creating new user table in the SQLite3 database.')
     c = database_connection()
 
-    sql_cmd_ct = '''CREATE TABLE users(id INTEGER PRIMARY KEY, reg_date TEXT, email TEXT unique, firstname TEXT, lastname TEXT, age TEXT, postal_number TEXT, street_name TEXT, street_number TEXT, phone INTEGER, bsu TEXT, bsu_bank TEXT, savings TEXT, savings_bank TEXT, savings_limit TEXT, savings_limit_bank TEXT, retirement TEXT, retirement_bank TEXT, usagesalary TEXT, usagesalary_bank TEXT, FOREIGN KEY(bsu_bank) REFERENCES bsu(bsu_bank), FOREIGN KEY(savings_bank) REFERENCES savings_account(savings_bank))'''
+    sql_cmd_ct = '''CREATE TABLE users(id INTEGER PRIMARY KEY, reg_date TEXT, email TEXT unique, firstname TEXT, lastname TEXT, age TEXT, postal_number TEXT, street_name TEXT, street_number TEXT, phone INTEGER, bsu TEXT, bsu_bank TEXT, savings TEXT, savings_bank TEXT, savings_limit TEXT, savings_limit_bank TEXT, retirement TEXT, retirement_bank TEXT, usagesalary TEXT, usagesalary_bank TEXT)'''
 
     try:
         c.execute(sql_cmd_ct)
@@ -114,32 +54,12 @@ def inactive_user_table():
 ########################################################################################################################
 ########################################################################################################################
 
-# Insert BSU bank data into BSU database
-def insert_bsu(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate):
-    c = database_connection()
-
-    c.execute('''INSERT INTO bsu(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate) VALUES (?,?,?,?,?,?,?,?)''',
-             (product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate))
-    c.commit()
-    c.close()
-
-
-# Insert savings bank data into savings database
-def insert_savings_account(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate):
-    c = database_connection()
-
-    c.execute('''INSERT INTO savings_account(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate) VALUES (?,?,?,?,?,?,?,?)''',
-             (product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate))
-    c.commit()
-    c.close()
-
-
-# Insert savings bank data into savings limit database
-def insert_savings_limit_account(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate, limit_age):
+# Insert Saving object into database
+def insert_savings_data(saving):
     c = database_connection()
 
     ### Check if account type exist from before
-    sql_cmd_exist = c.execute('''SELECT bank_name FROM savings_account_limit WHERE bank_name = ? AND interest_rate = ?''', (bank_name, interest_rate))
+    sql_cmd_exist = c.execute('''SELECT bank_name FROM saving WHERE bank_name = ? AND bank_account_name = ?''', (saving.bank_name, saving.bank_account_name))
 
     exist = False
     for row in sql_cmd_exist:
@@ -147,29 +67,8 @@ def insert_savings_limit_account(product_id, bank_id, bank_name, bank_url, bank_
 
     # If it does not exist, insert into database
     if not exist:
-        c.execute('''INSERT INTO savings_account_limit(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate, limit_age) VALUES (?,?,?,?,?,?,?,?,?)''',
-                    (product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate, limit_age))
-
-    c.commit()
-    c.close()
-
-
-# Insert retirement bank data into database
-def insert_retirement(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate):
-    c = database_connection()
-
-    c.execute('''INSERT INTO retirement(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate) VALUES (?,?,?,?,?,?,?,?)''',
-             (product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate))
-    c.commit()
-    c.close()
-
-
-# Insert usage and salary data into database
-def insert_usage_and_salary(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate):
-    c = database_connection()
-    
-    c.execute('''INSERT INTO usage_and_salary(product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate) VALUES (?,?,?,?,?,?,?,?)''',
-             (product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate))
+        c.execute('''INSERT INTO saving(account_type, product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate, limit_age) VALUES (?,?,?,?,?,?,?,?,?,?)''',
+                 (saving.account_type, saving.product_id, saving.bank_id, saving.bank_name, saving.bank_url, saving.bank_region, saving.bank_account_name, saving.publication_date, saving.interest_rate, saving.limit_age))
     c.commit()
     c.close()
 
@@ -178,9 +77,6 @@ def insert_usage_and_salary(product_id, bank_id, bank_name, bank_url, bank_regio
 def insert_user(usr):
     c = database_connection()
     response = ''
-
-    #local_email = db_encryption(email.encode())
-    #print(local_email)
 
     # New user ==> Insert
     try:
@@ -219,6 +115,33 @@ def delete_user(email, reason, store):
 
     c.commit()
     c.close()
+
+
+########################################################################################################################
+########################################################################################################################
+
+# Database lookup for savings banks
+def savings_look(usr, account_type):
+    if account_type == 'bsu':
+        bank_name = (usr.bsu_bank).split(' [')[0]
+        bank_account_name = (usr.bsu_bank).split('[')[1].replace('[', '').replace(']', '')
+    elif account_type == 'savings_nolimit':
+        bank_name = (usr.savings_bank).split(' [')[0]
+        bank_account_name = (usr.savings_bank).split('[')[1].replace('[', '').replace(']', '')
+    elif account_type == 'savings_limit':
+        bank_name = (usr.savings_limit_bank).split(' [')[0]
+        bank_account_name = (usr.savings_limit_bank).split('[')[1].replace('[', '').replace(']', '')
+    elif account_type == 'retirement':
+        bank_name = (usr.retirement_bank).split(' [')[0]
+        bank_account_name = (usr.retirement_bank).split('[')[1].replace('[', '').replace(']', '')
+    elif account_type == 'usage_salary':
+        bank_name = (usr.usagesalary_bank).split(' [')[0]
+        bank_account_name = (usr.usagesalary_bank).split('[')[1].replace('[', '').replace(']', '')
+    else:
+        bank_name = ''
+        bank_account_name = ''
+
+    return bank_name, bank_account_name
 
 
 ########################################################################################################################
@@ -275,269 +198,80 @@ def get_specific_user(email):
     return user_list
 
 
-# Get BSU banks from database
-def get_bsu_banks():
-    c = database_connection()
-
-    bsu_banks = []
-
-    sql_cmd_s = c.execute('''SELECT bank_name FROM bsu ORDER BY bank_name ASC''')
-
-    for row in sql_cmd_s:
-        bsu_banks.append(row[0])
-
-    c.close()
-
-    return bsu_banks
-
-# Get savings banks from database
-def get_savings_banks():
+# Get savings banks
+def get_saving_banks(account_type):
     c = database_connection()
 
     savings_banks = []
 
-    sql_cmd_s = c.execute('''SELECT bank_name FROM savings_account ORDER BY bank_name ASC''')
+    sql_cmd_s = c.execute('''SELECT bank_name, bank_account_name FROM saving WHERE account_type = ? ORDER BY bank_name ASC''', (account_type,))
 
     for row in sql_cmd_s:
-        savings_banks.append(row[0])
+        bank_account = row[0] + ' [' + row[1] + ']'
+        savings_banks.append(bank_account)
 
     c.close()
 
     return savings_banks
 
 
-# Get savings limit banks from database
-def get_savings_limit_banks():
+# Get specific savings banks with higher interest rates
+def get_saving_banks_with_higher_rates(usr, account_type):
     c = database_connection()
-
-    savings_limit_banks = []
-
-    sql_cmd_s = c.execute('''SELECT bank_name, bank_account_name, interest_rate FROM savings_account_limit ORDER BY bank_name ASC''')
-
-    for row in sql_cmd_s:
-        bank_name = row[0]
-        bank_account_name = row[1]
-        #interest_rate = row[2]
-        content = bank_name + ' [' + bank_account_name + ']' # + ' %.2f' % interest_rate  # TODO: xx.xx%
-        savings_limit_banks.append(content)
     
-    c.close()
+    lookup = savings_look(usr, account_type)
+    bank_name = lookup[0]
+    bank_account_name = lookup[1]
 
-    return savings_limit_banks
-
-
-# Get retirement banks from database
-def get_retirement_banks():
-    c = database_connection()
-
-    retirement_banks = []
-
-    sql_cmd_s = c.execute('''SELECT bank_name FROM retirement ORDER BY bank_name ASC''')
-
-    for row in sql_cmd_s:
-        retirement_banks.append(row[0])
-
-    c.close()
-
-    return retirement_banks
-
-
-# Get usage and salary banks from database
-def get_usage_and_salary_banks():
-    c = database_connection()
-
-    usage_and_salary_banks = []
-
-    sql_cmd_s = c.execute('''SELECT bank_name FROM usage_and_salary ORDER BY bank_name ASC''')
-
-    for row in sql_cmd_s:
-        usage_and_salary_banks.append(row[0])
-
-    c.close()
-
-    return usage_and_salary_banks
-
-
-# Get BSU banks with higher interest rates
-def get_bsu_banks_with_higher_rates(usr):
-    c = database_connection()
-
-    sql_cmd_interest = c.execute('''SELECT interest_rate FROM bsu WHERE bank_name = ?''', (usr.bsu_bank,))
-
+    sql_cmd_interest = c.execute('''SELECT interest_rate FROM saving WHERE account_type = ? AND bank_name = ? AND bank_account_name = ?''', (account_type, bank_name, bank_account_name))
+    
     current_rate = 0
     for row in sql_cmd_interest:
         current_rate = row[0]
 
-    sql_cmd_s = c.execute('''SELECT * FROM bsu WHERE interest_rate > ? ''', (current_rate,))
-
-    results = []
-    for row in sql_cmd_s:
-        results.append(row)
-
-    c.close()
-
-    return results
-
-
-# Get savings banks with higher interest rates
-def get_savings_account_banks_with_higher_rates(usr):
-    c = database_connection()
-
-    sql_cmd_interest = c.execute('''SELECT interest_rate FROM savings_account WHERE bank_name = ?''', (usr.savings_bank,))
-
-    current_rate = 0
-    for row in sql_cmd_interest:
-        current_rate = row[0]
-
-    sql_cmd_s = c.execute('''SELECT * FROM savings_account WHERE interest_rate > ? ''', (current_rate,))
-
-    results = []
-    for row in sql_cmd_s:
-        results.append(row)
-
-    c.close()
-
-    return results
-
-
-# Get savings limit banks with higher interest rates
-def get_savings_account_limit_banks_with_higher_rates(usr):
-    c = database_connection()
-
-    user_age = usr.age
-    bank_name = (usr.savings_limit_bank).split(' [')[0]
-    bank_account_name = (usr.savings_limit_bank).split('[')[1].replace('[', '').replace(']', '')
-
-    sql_cmd_interest = c.execute('''SELECT interest_rate FROM savings_account_limit WHERE bank_name = ? AND bank_account_name = ?''', (bank_name, bank_account_name))
-
-    current_rate = 0
-    for row in sql_cmd_interest:
-        current_rate = row[0]
-
-    if int(user_age) > 34:
-        sql_cmd_s = c.execute('''SELECT * FROM savings_account_limit WHERE limit_age = 0 AND interest_rate > ? ''', (current_rate,))
+    # Select the banks with higher rates
+    if not account_type == 'savings_limit':
+        user_age = usr.age
+        if int(user_age) > 34:
+            sql_cmd_s = c.execute('''SELECT * FROM saving WHERE limit_age = 0 AND account_type = ? AND interest_rate > ? ''', (account_type, current_rate))
+        else:
+            sql_cmd_s = c.execute('''SELECT * FROM saving WHERE account_type = ? AND interest_rate > ? ''', (account_type, current_rate))
     else:
-        sql_cmd_s = c.execute('''SELECT * FROM savings_account_limit WHERE interest_rate > ? ''', (current_rate,))
+        sql_cmd_s = c.execute('''SELECT * FROM saving WHERE account_type = ? AND interest_rate > ?''', (account_type, current_rate))
 
     results = []
     for row in sql_cmd_s:
-        results.append(row)
+        account_type      = row[0]
+        product_id        = row[1]
+        bank_id           = row[2]
+        bank_name         = row[3]
+        bank_url          = row[4]
+        bank_region       = row[5]
+        bank_account_name = row[6]
+        publication_date  = row[7]
+        interest_rate     = row[8]
+        limit_age         = row[9]
+
+        current_saving_bank = Saving(account_type, product_id, bank_id, bank_name, bank_url, bank_region, bank_account_name, publication_date, interest_rate, limit_age)
+        results.append(current_saving_bank)
 
     c.close()
+
+    # Sort the results based on interest rate
+    results = sorted(results, key=lambda x: x.interest_rate, reverse=True)
 
     return results
 
 
-# Get retirement banks with higher interest rates
-def get_retirement_banks_with_higher_rates(usr):
+# Get user's specific savings bank id
+def get_user_savings_bank_id(usr, account_type):
     c = database_connection()
 
-    sql_cmd_interest = c.execute('''SELECT interest_rate FROM retirement WHERE bank_name = ?''', (usr.retirement_bank,))
+    lookup = savings_look(usr, account_type)
+    bank_name = lookup[0]
+    bank_account_name = lookup[1]
 
-    current_rate = 0
-    for row in sql_cmd_interest:
-        current_rate = row[0]
-
-    sql_cmd_s = c.execute('''SELECT * FROM retirement WHERE interest_rate > ? ''', (current_rate,))
-
-    results = []
-    for row in sql_cmd_s:
-        results.append(row)
-
-    c.close()
-
-    return results
-
-
-# Get usage and salary banks with higher interest rates
-def get_usagesalary_banks_with_higher_rates(usr):
-    c = database_connection()
-
-    sql_cmd_interest = c.execute('''SELECT interest_rate FROM usage_and_salary WHERE bank_name = ?''', (usr.usagesalary_bank,))
-
-    current_rate = 0
-    for row in sql_cmd_interest:
-        current_rate = row[0]
-
-    sql_cmd_s = c.execute('''SELECT * FROM usage_and_salary WHERE interest_rate > ? ''', (current_rate,))
-
-    results = []
-    for row in sql_cmd_s:
-        results.append(row)
-
-    c.close()
-
-    return results
-
-
-
-# Get user's BSU bank id
-def get_user_bsu_bank_id(usr):
-    c = database_connection()
-
-    sql_cmd_s = c.execute('''SELECT bank_id FROM bsu WHERE bank_name = ?''', (usr.bsu_bank,))
-
-    id = ''
-    for row in sql_cmd_s:
-        id = row[0]
-
-    c.close()
-
-    return id
-
-
-# Get user's savings account bank id
-def get_user_savings_bank_id(usr):
-    c = database_connection()
-
-    sql_cmd_s = c.execute('''SELECT bank_id FROM savings_account WHERE bank_name = ?''', (usr.savings_bank,))
-
-    id = ''
-    for row in sql_cmd_s:
-        id = row[0]
-
-    c.close()
-
-    return id
-
-
-# Get user's savings account limit bank id ISSUES
-def get_user_savings_limit_bank_id(usr):
-    c = database_connection()
-
-    bank_name = (usr.savings_limit_bank).split(' [')[0]
-
-    sql_cmd_s = c.execute('''SELECT bank_id FROM savings_account_limit WHERE bank_name = ?''', (bank_name,))
-
-    id = ''
-    for row in sql_cmd_s:
-        id = row[0]
-
-    c.close()
-
-    return id
-
-
-# Get user's retirement bank id
-def get_user_retirement_bank_id(usr):
-    c = database_connection()
-
-    sql_cmd_s = c.execute('''SELECT bank_id FROM retirement WHERE bank_name = ?''', (usr.retirement_bank,))
-
-    id = ''
-    for row in sql_cmd_s:
-        id = row[0]
-
-    c.close()
-
-    return id
-
-
-# Get user's usage / salary bank id
-def get_user_usagesalary_bank_id(usr):
-    c = database_connection()
-
-    sql_cmd_s = c.execute('''SELECT bank_id FROM usage_and_salary WHERE bank_name = ?''', (usr.usagesalary_bank,))
+    sql_cmd_s = c.execute('''SELECT bank_id FROM saving WHERE account_type = ? AND bank_name = ? AND bank_account_name = ?''', (account_type, bank_name, bank_account_name))
 
     id = ''
     for row in sql_cmd_s:
