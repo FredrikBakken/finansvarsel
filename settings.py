@@ -9,6 +9,7 @@ import sqlite3
 from datetime import datetime
 from oauth2client.service_account import ServiceAccountCredentials
 
+
 # Centralized global variables
 
 ### Change Bank URL
@@ -61,22 +62,6 @@ def database_connection():
 
     connection = sqlite3.connect('database/db.db')
     return connection
-
-
-### Check and set codec exceptions
-def check_codec(v):
-    variable = v
-
-    if b"\xf8" in variable:
-        variable = variable.replace(b'\xf8', b'o')
-    elif b"\xd8" in variable:
-        variable = variable.replace(b'\xd8', b'O')
-    elif b"\xe5" in variable:
-        variable = variable.replace(b'\xe5', b'a')
-    elif b"\xe6" in variable:
-        variable = variable.replace(b'\xe6', b'ae')
-
-    return variable
 
 
 ### Get credentials from secrets file

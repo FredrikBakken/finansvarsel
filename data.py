@@ -7,8 +7,7 @@ import contextlib
 from classes import Saving
 
 from db import create_saving_table, insert_savings_data, get_saving_banks
-
-from settings import access_spreadsheet, url_bsu_regions, url_bsu_country, url_savings_acc_nolimit, url_savings_acc_limit_34less, url_savings_acc_limit_34more, url_retirement_savings, url_usage_and_salary, check_codec, time_now
+from settings import access_spreadsheet, url_bsu_regions, url_bsu_country, url_savings_acc_nolimit, url_savings_acc_limit_34less, url_savings_acc_limit_34more, url_retirement_savings, url_usage_and_salary, time_now
 
 
 # Method for downloading finansportalen content
@@ -93,9 +92,7 @@ def handle_and_store_data(savings_data, account_type, limit_age):
     for x in range(len(savings_data)):
         product_id = str(int(savings_data[x][0])).strip()
         bank_id = str(int(savings_data[x][1])).strip()
-
-        bank_name = savings_data[x][2].encode('ISO-8859-1', 'ignore')
-        bank_name = check_codec(bank_name).decode('ISO-8859-1').strip()
+        bank_name = savings_data[x][2].strip()
 
         bank_url = savings_data[x][3]
         if 'http:' in bank_url:

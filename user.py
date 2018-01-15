@@ -1,6 +1,7 @@
 
-from db import create_user_table, inactive_user_table, insert_user, delete_user
 from classes import User
+
+from db import create_user_table, inactive_user_table, insert_user, delete_user
 from emailer import registration_email, update_email, delete_email
 from settings import access_spreadsheet, time_now
 
@@ -23,7 +24,6 @@ def register_users():
     # Loop through new user registrations
     for x in range(number_of_users):
         new_user = users_sheet.row_values(2 + x)
-        #print('New user ' + str(x + 1) + ': ' + str(new_user))
 
         # Formatting user data
         reg_date = time_now('date.month.year')
