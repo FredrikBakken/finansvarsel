@@ -113,8 +113,8 @@ def handle_and_store_data(savings_data, account_type, limit_age):
 # Method for handling all savings account data
 def get_savings_data(account_types):
     account_data = [                                        # [account_type, filename, url, limit_age]
-        ['bsu', 'bsu_regions.xlsx', url_bsu_regions, ''],
-        ['bsu', 'bsu_country.xlsx', url_bsu_country, ''],
+        ['bsu', 'bsu_regions.xlsx', url_bsu_regions, '1'],
+        ['bsu', 'bsu_country.xlsx', url_bsu_country, '1'],
         ['savings_nolimit', 'savings_account_nolimit.xlsx', url_savings_acc_nolimit, ''],
         ['savings_limit', 'savings_account_limit_34h.xlsx', url_savings_acc_limit_34more, '0'],
         ['savings_limit', 'savings_account_limit_34l.xlsx', url_savings_acc_limit_34less, '1'],

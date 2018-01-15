@@ -20,35 +20,35 @@ def savings_notifier(usr, account_type):
     # BSU Banks
     if not usr.bsu == 'Nei':
         bsu_results = get_saving_banks_with_higher_rates(usr, account_type[0][0])
-        print_notification_results(usr, bsu_results, account_type[0][0])
+        print_notification_results(usr, bsu_results, account_type[0][0])                        # Used for testing db output
     else:
         bsu_results = ''
     
     # Savings no limit Banks
     if not usr.savings == 'Nei':
         savings_nolimit_results = get_saving_banks_with_higher_rates(usr, account_type[1][0])
-        print_notification_results(usr, savings_nolimit_results, account_type[1][0])
+        print_notification_results(usr, savings_nolimit_results, account_type[1][0])            # Used for testing db output
     else:
         savings_nolimit_results = ''
     
     # Savings limit Banks
     if not usr.savings_limit == 'Nei':
         savings_limit_results = get_saving_banks_with_higher_rates(usr, account_type[2][0])
-        print_notification_results(usr, savings_limit_results, account_type[2][0])
+        print_notification_results(usr, savings_limit_results, account_type[2][0])              # Used for testing db output
     else:
         savings_limit_results = ''
     
     # Retirement Banks
     if not usr.retirement == 'Nei':
         retirement_results = get_saving_banks_with_higher_rates(usr, account_type[3][0])
-        print_notification_results(usr, retirement_results, account_type[3][0])
+        print_notification_results(usr, retirement_results, account_type[3][0])                 # Used for testing db output
     else:
         retirement_results = ''
 
     # Usage and salary Banks
     if not usr.usagesalary == 'Nei':
         usagesalary_results = get_saving_banks_with_higher_rates(usr, account_type[4][0])
-        print_notification_results(usr, usagesalary_results, account_type[4][0])
+        print_notification_results(usr, usagesalary_results, account_type[4][0])                # Used for testing db output
     else:
         usagesalary_results = ''
     

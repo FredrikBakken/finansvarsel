@@ -230,7 +230,7 @@ def get_saving_banks_with_higher_rates(usr, account_type):
         current_rate = row[0]
 
     # Select the banks with higher rates
-    if account_type == 'savings_limit':
+    if account_type == 'savings_limit' or account_type == 'bsu':
         user_age = usr.age
         if int(user_age) > 34:
             sql_cmd_s = c.execute('''SELECT * FROM saving WHERE limit_age = 0 AND account_type = ? AND interest_rate > ? ''', (account_type, current_rate))
