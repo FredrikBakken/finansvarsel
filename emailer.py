@@ -4,17 +4,17 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 from db import get_user_savings_bank_id
-from settings import url_change_bank, credentials, email_strings, time_now
+from settings import url_change_bank, credentials, time_now
 
 
 # New user registration confirmation email
 def registration_email(usr):
     TO = usr.email
     FROM = credentials()[0]
-    SUBJECT = email_strings('Velkommen til Finansvarsel!')
+    SUBJECT = 'Velkommen til Finansvarsel!'
 
-    reg_firstname = email_strings(usr.firstname)
-    reg_lastname = email_strings(usr.lastname)
+    reg_firstname = usr.firstname
+    reg_lastname = usr.lastname
 
     email_content = """
     <head>
@@ -38,25 +38,25 @@ def registration_email(usr):
 def update_email(usr):
     TO = usr.email
     FROM = credentials()[0]
-    SUBJECT = email_strings('Finansvarsel - Brukeroppdatering')
+    SUBJECT = 'Finansvarsel - Brukeroppdatering'
 
-    upd_firstname           = email_strings(usr.firstname)
-    upd_lastname            = email_strings(usr.lastname)
-    upd_age                 = email_strings(usr.age)
-    upd_postal_number       = email_strings(usr.postal_number)
-    upd_street_name         = email_strings(usr.street_name)
-    upd_street_number       = email_strings(usr.street_number)
-    upd_phone               = email_strings(usr.phone)
-    upd_bsu                 = email_strings(usr.bsu)
-    upd_bsu_bank            = email_strings(usr.bsu_bank)
-    upd_savings             = email_strings(usr.savings)
-    upd_savings_bank        = email_strings(usr.savings_bank)
-    upd_savings_limit       = email_strings(usr.savings_limit_bank)
-    upd_savings_limit_bank  = email_strings(usr.savings_limit_bank)
-    upd_retirement          = email_strings(usr.retirement)
-    upd_retirement_bank     = email_strings(usr.retirement_bank)
-    upd_usagesalary         = email_strings(usr.usagesalary)
-    upd_usagesalary_bank    = email_strings(usr.usagesalary_bank)
+    upd_firstname           = usr.firstname
+    upd_lastname            = usr.lastname
+    upd_age                 = usr.age
+    upd_postal_number       = usr.postal_number
+    upd_street_name         = usr.street_name
+    upd_street_number       = usr.street_number
+    upd_phone               = usr.phone
+    upd_bsu                 = usr.bsu
+    upd_bsu_bank            = usr.bsu_bank
+    upd_savings             = usr.savings
+    upd_savings_bank        = usr.savings_bank
+    upd_savings_limit       = usr.savings_limit_bank
+    upd_savings_limit_bank  = usr.savings_limit_bank
+    upd_retirement          = usr.retirement
+    upd_retirement_bank     = usr.retirement_bank
+    upd_usagesalary         = usr.usagesalary
+    upd_usagesalary_bank    = usr.usagesalary_bank
 
     email_content = """
     <head>
@@ -97,7 +97,7 @@ def update_email(usr):
 def delete_email(email, store):
     TO = email
     FROM = credentials()[0]
-    SUBJECT = email_strings('Finansvarsel - Slett min bruker')
+    SUBJECT = 'Finansvarsel - Slett min bruker'
 
     email_content = """
     <head>
@@ -126,10 +126,10 @@ def delete_email(email, store):
 def news_email(usr, saving_data): #bsu_data, savings_account_data, savings_limit_account_data, retirement_data, usagesalary_data):
     TO = usr.email
     FROM = credentials()[0]
-    SUBJECT = email_strings('Oppdatering fra Finansvarsel: ' + time_now('date.month.year'))
+    SUBJECT = 'Oppdatering fra Finansvarsel: ' + time_now('date.month.year')
 
-    news_firstname = email_strings(usr.firstname)
-    news_lastname = email_strings(usr.lastname)
+    news_firstname = usr.firstname
+    news_lastname = usr.lastname
 
     bsu_data = saving_data[0]
     savings_account_data = saving_data[1]
@@ -167,7 +167,7 @@ def news_email(usr, saving_data): #bsu_data, savings_account_data, savings_limit
             seletectedBankId = bsu_data[x].bank_id
             url_change_bsu_bank = url_change_bank + '?yourBankId=' + yourBankId + '&selectedBankId=' + seletectedBankId + '&productType=' + productType + '&product=' + product
 
-            bank_name = email_strings(bsu_data[x].bank_name)
+            bank_name = bsu_data[x].bank_name
 
             email_content += """
               <p>""" + str(x + 1) + """. Rente: %.2f""" % bsu_data[x].interest_rate + """%. <a href='""" + bsu_data[x].bank_url + """'>""" + bank_name + """</a>. Søk om å bytte til """ + bank_name + """: """ + url_change_bsu_bank + """</p>
@@ -188,7 +188,7 @@ def news_email(usr, saving_data): #bsu_data, savings_account_data, savings_limit
             seletectedBankId = savings_account_data[x].bank_id
             url_change_savings_nolimit_bank = url_change_bank + '?yourBankId=' + yourBankId + '&selectedBankId=' + seletectedBankId + '&productType=' + productType + '&product=' + product
 
-            bank_name = email_strings(savings_account_data[x].bank_name)
+            bank_name = savings_account_data[x].bank_name
 
             email_content += """
               <p>""" + str(x + 1) + """. Rente: %.2f""" % savings_account_data[x].interest_rate + """%. <a href='""" + savings_account_data[x].bank_url + """'>""" + bank_name + """</a>. Søk om å bytte til """ + bank_name + """: """ + url_change_savings_nolimit_bank + """</p>
@@ -209,7 +209,7 @@ def news_email(usr, saving_data): #bsu_data, savings_account_data, savings_limit
             seletectedBankId = savings_limit_account_data[x].bank_id
             url_change_savings_limit_bank = url_change_bank + '?yourBankId=' + yourBankId + '&selectedBankId=' + seletectedBankId + '&productType=' + productType + '&product=' + product
 
-            bank_name = email_strings(savings_limit_account_data[x].bank_name)
+            bank_name = savings_limit_account_data[x].bank_name
 
             email_content += """
               <p>""" + str(x + 1) + """. Rente: %.2f""" % savings_limit_account_data[x].interest_rate + """%. <a href='""" + savings_limit_account_data[x].bank_url + """'>""" + bank_name + """</a>. Søk om å bytte til """ + bank_name + """: """ + url_change_savings_limit_bank + """</p>
@@ -230,7 +230,7 @@ def news_email(usr, saving_data): #bsu_data, savings_account_data, savings_limit
             seletectedBankId = retirement_data[x].bank_id
             url_change_retirement_bank = url_change_bank + '?yourBankId=' + yourBankId + '&selectedBankId=' + seletectedBankId + '&productType=' + productType + '&product=' + product
 
-            bank_name = email_strings(retirement_data[x].bank_name)
+            bank_name = retirement_data[x].bank_name
 
             email_content += """
               <p>""" + str(x + 1) + """. Rente: %.2f""" % retirement_data[x].interest_rate + """%. <a href='""" + retirement_data[x].bank_url + """'>""" + bank_name + """</a>. Søk om å bytte til """ + bank_name + """: """ + url_change_retirement_bank + """</p>
@@ -251,7 +251,7 @@ def news_email(usr, saving_data): #bsu_data, savings_account_data, savings_limit
             seletectedBankId = usagesalary_data[x].bank_id
             url_change_usagesalary_bank = url_change_bank + '?yourBankId=' + yourBankId + '&selectedBankId=' + seletectedBankId + '&productType=' + productType + '&product=' + product
 
-            bank_name = email_strings(usagesalary_data[x].bank_name)
+            bank_name = (usagesalary_data[x].bank_name)
 
             email_content += """
               <p>""" + str(x + 1) + """. Rente: %.2f""" % usagesalary_data[x].interest_rate + """%. <a href='""" + usagesalary_data[x].bank_url + """'>""" + bank_name + """</a>. Søk om å bytte til """ + bank_name + """: """ + url_change_usagesalary_bank + """</p>

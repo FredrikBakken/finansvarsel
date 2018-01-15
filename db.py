@@ -1,7 +1,7 @@
 import sqlite3
 
 from classes import User, Saving
-from settings import database_connection#, db_encryption, db_decryption
+from settings import database_connection
 
 
 ########################################################################################################################

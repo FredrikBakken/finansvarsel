@@ -6,7 +6,6 @@ from data import get_savings_data
 from user import register_users, remove_users
 from emailer import news_email
 from notifier import savings_notifier
-#from settings import db_decryption, db_encryption
 
 account_types = [['bsu', 2], ['savings_nolimit', 3], ['savings_limit', 4], ['retirement', 5], ['usage_salary', 6]]
 
@@ -50,17 +49,6 @@ def run():
     finance_controller()
     user_controller()
     notification_controller()
-
-
-    #get_savings_acc_limit_data()
-
-    #register_users()
-    #users = get_all_users()
-    #print(db_decryption(users[0][1]).decode())
-
-    #value = get_specific_user(db_encryption('username'.encode()))
-    #print(value)
-    #print(db_decryption(value[0][1]).decode())
 
 
 if __name__ == "__main__":
